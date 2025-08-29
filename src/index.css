@@ -13,9 +13,10 @@ header{
   display: flex;
   overflow-x: hidden;
   z-index: 1000;
-  position: absolute;
+  /* position: absolute; */
   overflow-y: auto;
 }
+
 .logo{
   display: flex;
   flex-direction: column;
@@ -58,11 +59,18 @@ header{
   box-shadow: 1px 2px 2px rgb(44, 50, 141);
   min-width: 305px;
 }
+.searchInput input:active{
+  background-color: white;
+}
 .searchInput{
   display: flex;
   background-color: white;
   margin-top: 8px;
 }
+.searchInput input{
+  cursor: text;
+}
+
 .searchInput svg{
   margin-top: 3px;
   color: blue;
@@ -257,7 +265,7 @@ nav{
   display: block;
   font-size: 17px;
   border-bottom: 1px solid #dddddd;
-  padding-bottom: 14px;
+  padding-bottom: 15px;
   cursor: pointer;
 }
 .mainClear{
@@ -328,11 +336,11 @@ nav{
   width: 100%;
 }
 #blueLine{
-      transform: translate(0px) scaleX(0.995);
-      background-color: #2874f0;
-      transform-origin: left center;
-      top: 8px;
-      height: 6px;
+  transform: translate(0px) scaleX(0.995);
+  background-color: #2874f0;
+  transform-origin: left center;
+  top: 8px;
+  height: 6px;
 }
 .priceDot{
   display: flex;
@@ -389,4 +397,117 @@ nav{
   line-height: 1;
   padding: 0 5px;
   outline: none;
+}
+#brand{
+  margin-top: 20px;
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 20px;
+}
+.checkBrand{
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  margin-left: 18px;
+  margin-top: 10px;
+}
+input{
+  width: 14px;
+  height: 14px;
+  border: 1.4px solid #dddddd;
+  cursor: pointer;
+  vertical-align: middle;
+}
+label{
+  margin-top: 15px;
+}
+input:active{
+  background-color: #2874f0;
+}
+.itemSelected span{
+  font-size: 12px;
+  font-weight: 400;
+  background-color: rgb(228, 225, 225);
+  padding: 10px;
+  border-radius: 3px ;
+  margin-left: 2px;
+  word-break: break-all;
+  white-space: normal;
+}
+.itemSelected span:hover{
+  text-decoration: line-through;
+  background-color: rgb(214, 213, 213);
+}
+#type{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+.checkType,.checkProcessor, .checkGen,.checkRam,
+.checkSsd,.checkSize,.checkOs, .checkWeight,
+.checkTouch,.checkProbrand,.checkUsage{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.processHead,.genHead,.ramHead,
+.ssdHead,.sizeHead,.osHead, .weightHead,
+.touchHead,.proBrandHead,.usageHead{
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 18px;
+  /* margin-top: 20px; */
+  cursor: pointer;
+}
+#processor{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+#generation{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+#ramCap{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+#ssd{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+#scrnSize{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+#os{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+#weight{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+#touch{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+#proBrand{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+#usage{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
 }

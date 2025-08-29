@@ -1,7 +1,127 @@
 import { useState } from "react";
 
 function FiltLeft() {
-    const [constiner, setContainer] = useState(null)
+    const [container, setContainer] = useState({});
+    const [hide, setHide] = useState(false);
+    const [typeHide, setTypeHide] = useState(false);
+    const [prosHide, setProsHide] = useState(false);
+    const [genHide, setGenHide] = useState(false);
+    const [ramHide, setRamHide] = useState(false);
+    const [ssdHide, setSsdHide] = useState(false)
+    const [sizeHide, setSizeHide] = useState(false);
+    const [osHide, setOsHide] = useState(false);
+    const [weightHide, setWeightHide] = useState(false);
+    const [touchHide, setTouchHide] = useState(false);
+    const [proBrandHide, setProbrandHide] = useState(false);
+    const [usageHide, setUsageHide] = useState(false);
+    const [graphicsHide, setGraphicHide] = useState(false);
+
+    const handleCheckbox = (section, value) => {
+        setContainer((prev) => {
+            const current = Array.isArray(prev[section]) ? prev[section] : []; // ✅ force array
+            if (current.includes(value)) {
+                return { ...prev, [section]: current.filter((v) => v !== value) };
+            } else {
+                return { ...prev, [section]: [...current, value] };
+            }
+        });
+    };
+    const handleRemoveItem = (section, value) => {
+        setContainer((prev) => {
+            const updated = { ...prev };
+            if (Array.isArray(updated[section])) {
+                updated[section] = updated[section].filter(
+                    (item) => (typeof item === "object" ? item.value : item) !== value
+                );
+                if (updated[section].length === 0) {
+                    delete updated[section];
+                }
+            }
+            return updated;
+        });
+    };
+    const clearBtnAll = () => {
+        setContainer({});
+    }
+
+    const clearItem = (section) => {
+        setContainer((prev) => {
+            const selected = { ...prev };
+            delete selected[section];
+            return selected;
+        })
+    }
+    const type = [
+        { label: "Gaming Laptop", value: "Gaming Laptop" },
+        { label: "2 in 1 Laptop", value: "2 in 1 Laptop" },
+        { label: "Laptop", value: "Laptop" },
+        { label: "Chromebook", value: "Chromebook" },
+        { label: "Creator Laptop", value: "Creator Laptop" }
+    ];
+
+    const processor = [
+        { label: "Core i5", value: "Core i5" },
+        { label: "Core i3", value: "Core i3" },
+        { label: "Core i7", value: "Core i7" },
+        { label: "Core i9", value: "Core i9" },
+    ];
+    const generation = [
+        { label: "13th Gen", value: "13th Gen" },
+        { label: "12th Gen", value: "12th Gen" },
+        { label: "11th Gen", value: "11th Gen" },
+        { label: "10th Gen", value: "10th Gen" },
+        { label: "8th Gen", value: "8th Gen" },
+    ];
+    const ram = [
+        {label: "8 GB" ,value: "8GB"},
+        {label: '16 GB',value:"16 GB"},
+        {label: '32 GB', value: "32 GB"},
+        {label:"6 GB", value:"6 GB"},
+    ];
+    const ssd = [
+        {label: "512 GB", value:"512 GB"},
+        {label: "256 GB", value: "256 GB"},
+        {label: "1 TB", value:"1 TB"},
+        {label: "128 GB", value: "128 GB"}
+    ];
+    const scrnSize = [
+        {label: "Below 12 inch",value:"Below 12 inch"},
+        {label:"13 inch - 13.9 inch", value:"13 inch - 13.9 inch"},
+        {label:"15 inch - 15.9 inch", value:'15 inch - 15.9 inch'},
+        {label:"Above 20 inch", value:"Above 20 inch"}
+    ];
+    const os =[
+        {label: "Windows 10", value:"Windows 10"},
+        {label: "Mac OS", value:"Mac OS"},
+        {label: "Android", value:"Android"},
+        {label: "Linux/Ubuntu", value:"Linux/Ubuntu"},
+        {label: "Chrome", value:"Chrome"}
+    ];
+    const weight = [
+        {label: "1.2 KG or Below", value:"1.2 KG or Below"},
+        {label: "1.6 KG to 1.8 KG", value:"1.6 KG to 1.8 KG"},
+        {label: "1.9 KG to 2.1 KG", value:"1.9 KG to 2.1 KG"},
+        {label: "Above 2.6 KG", value:"Above 2.6 KG"}
+    ];
+    const proBrand =[
+        {label:"Intel", value:"Intel"},
+        {label:"Apple", value:"Apple"},
+        {label:"Snapdragon", value:"Snapdragon"},
+        {label:"MediaTek",value:"MediaTek"}
+    ];
+    const usage =[
+        {label:"Student", value: "Student"},
+        {label:"Business", value:"Business"},
+        {label:"Gaming", value:"Gaming"},
+        {label:"Home/Office", value:"Home/Office"}
+    ];
+    const graphics =[
+        {label:"4 GB" , value:"4 GB"},
+        {label:"Integrated Graphics Card" ,value:"Integrated Graphics Card"},
+        {label:"6 GB", value:"6 GB"},
+        {label:"8 GB", value:"8 GB"}
+    ];
+
 
 
     return (
@@ -10,15 +130,30 @@ function FiltLeft() {
                 <div id="filter">
                     <div className="filtHead">
                         <span>Filters</span>
-                        <span className="mainClear">CLEAR ALL</span>
+                        {Object.keys(container).length > 0 && (
+                            <span className="mainClear" onClick={clearBtnAll}>CLEAR ALL</span>
+                        )}
                     </div>
-                    <span className="itemSelected"></span>
+                    <div className="itemSelected">
+
+                        {Object.entries(container).map(([section, value]) =>
+                            (Array.isArray(value) ? value : [value]).map((v, i) => (
+                                <span
+                                    key={section + i}
+                                    onClick={() => handleRemoveItem(section, typeof v == "object" ? v.value : v)}
+                                    style={{ cursor: "pointer", marginRight: "8px" }}
+                                >
+                                    x  {typeof v === "object" ? v.value : v}
+                                </span>
+                            ))
+                        )}
+                    </div>
                 </div>
 
                 <div id="category">
                     <span style={{ fontSize: "11px", fontWeight: "600" }}>CATEGORIES</span>
                     <a style={{ fontSize: "13px", color: "#6e6d6dff" }} href="laptop.com"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" className="bi bi-chevron-left" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+                        <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
                     </svg> Computers</a>
                     <span style={{ fontSize: "13px", fontWeight: "bold", cursor: "pointer", marginLeft: "13px", marginTop: "2px" }}>Laptops</span>
                 </div>
@@ -64,13 +199,13 @@ function FiltLeft() {
                         </div>
                         <div id="to">to</div>
                         <div className="maxPrice">
-                            <select name="mac">
+                            <select name="max" defaultValue="Max">
                                 <option value="₹20000">₹20000</option>
                                 <option value="₹40000">₹40000</option>
                                 <option value="₹50000">₹50000</option>
                                 <option value="₹60000">₹60000</option>
                                 <option value="₹75000">₹75000</option>
-                                <option value="Max" selected>₹75000+</option>
+                                <option value="Max">₹75000+</option>
                             </select>
                         </div>
                     </div>
@@ -78,17 +213,307 @@ function FiltLeft() {
                 </div>
 
                 <div id="brand">
-                    <span style={{ fontSize: "12px", fontWeight: "bold", paddingTop: "20px", marginLeft: "18px" }}>BRAND</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
-                    </svg>
+                    <div className="brandHead" style={{cursor:"pointer"}} onClick={() => setHide(prev => !prev)}>
+                        <span style={{ fontSize: "12px", fontWeight: "bold", marginLeft: "18px" }}>BRAND</span>
+                        <svg style={{ marginLeft: "180px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                    {hide && (
+                        <div className="checkBrand">
+                            {container.brand && container.brand.length > 0 && (
+                                <span className="brandClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("brand")}>
+                                    <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all</span>
+                            )}
+                            <label id="hp" htmlFor="hp"><input type="checkbox" value="HP" checked={container.brand?.includes("HP") || false} onChange={() => handleCheckbox("brand", "HP")} /> HP</label>
+                            <label id="asus" htmlFor="asus"><input type="checkbox" value="ASUS" checked={container.brand?.includes("ASUS") || false} onChange={() => handleCheckbox("brand", "ASUS")} /> ASUS</label>
+                            <label id="lenovo" htmlFor="lenovo"><input type="checkbox" value="Lenovo" checked={container.brand?.includes("Lenovo") || false} onChange={() => handleCheckbox("brand", "Lenovo")} /> Lenovo</label>
+                            <label id="dell" htmlFor="dell"><input type="checkbox" value="DELL" checked={container.brand?.includes("DELL") || false} onChange={() => handleCheckbox("brand", "DELL")} /> DELL</label>
+                            <span style={{ fontSize: "12px", color: "#2c7af8ff", marginTop: "10px", fontWeight: "bold" }}>19 MORE</span>
+                        </div>
+                    )}
                 </div>
+
+                <div id="type">
+                    <div className="typeHead" style={{cursor:"pointer"}} onClick={() => setTypeHide(prev => !prev)}>
+                        <span style={{ fontSize: "13px", fontWeight: "bold", marginLeft: "18px", marginTop: "20px" }}>TYPE</span>
+                        <svg style={{ marginLeft: "188px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+
+                    {typeHide && (
+                        <div className="checkType">
+                            {container.type && container.type.length > 0 && (
+                                <div className="typeClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("type")}>
+                                    <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all</div>
+                            )}
+                            {type.map((item) => (
+                                <label key={item.label} className={item.label}>
+                                    <input type="checkbox" value={item.value} checked={container.type?.includes(item.value) || false} onChange={() => handleCheckbox("type", item.value)} />
+                                    {item.label}
+                                </label>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <div id="processor">
+                    <div className="processHead" onClick={() => setProsHide(prev => !prev)}>
+                        <span>PROCESSOR</span>
+                        <svg style={{ marginLeft: "140px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+
+                    {prosHide && (
+                        <div className="checkProcessor">
+                            {container.processor && container.processor.length > 0 && (
+                                <div className="procesorClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("processor")}>
+                                    <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all
+                                </div>
+                            )}
+
+                            {processor.map((item) => (
+                                <label key={item.label} className={item.label}>
+                                    <input type="checkbox" value={item.value} checked={container.processor?.includes(item.value) || false} onChange={() => handleCheckbox("processor", item.value)} />
+                                    {item.label}
+                                </label>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <div id="generation">
+                    <div className="genHead" onClick={() => setGenHide(prev => !prev)}>
+                        <span>PROCESSOR GENERATION</span>
+                        <svg style={{ marginLeft: "52px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    
+                    </div>
+                    {genHide && (
+                        <div className="checkGen">
+                            {container.generation && container.generation.length > 0 && (
+                            <div className="genClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("generation")}>
+                                <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all
+                            </div>
+                            )}
+                            {generation.map((item) => (
+                                <label key={item.label} className={item.label}>
+                                    <input type="checkbox" value={item.value} checked={container.generation?.includes(item.value) || false} onChange={() => handleCheckbox("generation", item.value)} /> {item.value}
+                                </label>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <div id="ramCap">
+                    <div className="ramHead" onClick={() => setRamHide(prev => !prev)}>
+                        <span>RAM CAPACITY</span>
+                        <svg style={{ marginLeft: "127px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+
+                    {ramHide && (
+                    <div className="checkRam">
+                        {container.ram && container.ram.length > 0 && (
+                            <div className="ramClear" style={{color:"#878787", cursor:"pointer"}} onClick={() => clearItem("ram")}>
+                                <span style={{backgroundColor: "#dddd", color:"black", padding:"1px",paddingLeft:"3px",paddingRight:"3px"}}>x</span> Clear all
+                            </div>
+                        )}
+                        {ram.map((item) =>(
+                            <label key={item.label} className={item.label}>
+                                <input type="checkbox" value={item.value} checked= {container.ram?.includes(item.value) || false} onChange={() => handleCheckbox("ram", item.value)} /> {item.value}
+                            </label>
+                        ))}
+                    </div>
+                    )}
+                </div>
+
+                <div id="ssd">
+                    <div className="ssdHead" onClick={() => setSsdHide(prev => !prev)}>
+                        <span>SSD CAPACITY</span>
+                        <svg style={{ marginLeft: "130px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+
+                    {ssdHide && (
+                        <div className="checkSsd">
+                            {container.ssd && container.ssd.length > 0 && (
+                                <div className="ssdClear" style={{color:"#878787", cursor:"pointer"}} onClick={() => clearItem("ssd")}>
+                                    <span style={{backgroundColor:"#dddd", color:"black",padding:"1px",paddingLeft:"3px",paddingRight:"3px"}}>x</span> Clear all 
+                                </div>
+                            )}
+                            {ssd.map((item) =>(
+                                <label key={item.label} className={item.label}>
+                                    <input type="checkbox" value={item.value} checked={container.ssd?.includes(item.value) || false} onChange={() =>handleCheckbox("ssd", item.value)} /> {item.value}
+                                </label>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <div id="scrnSize">
+                    <div className="sizeHead" onClick={() =>setSizeHide(prev => !prev)}>
+                        <span>SCREEN SIZE</span>
+                        <svg style={{ marginLeft: "140px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+
+                    {sizeHide && (
+                        <div className="checkSize">
+                            {container.scrnSize && container.scrnSize.length > 0&&(
+                                <div className="sizeClear" style={{color:"#878787", cursor:"pointer"}} onClick={() => clearItem("scrnSize")}>
+                                    <span style={{backgroundColor:'#dddd', color:"black", padding:"1px",paddingLeft:"3px",paddingRight:"3px"}}>x</span> Clear all
+                                </div>
+                            )}
+                            {scrnSize.map((item) =>(
+                                <label key={item.label} className={item.label}>
+                                    <input type="checkbox" value={item.value} checked ={container.scrnSize?.includes(item.value) || false} onChange={() => handleCheckbox("scrnSize",item.value)} /> {item.value}
+                                </label>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <div id="os">
+                    <div className="osHead" onClick={() => setOsHide(prev => !prev)}>
+                        <span>OPERATING SYSTEM</span>
+                        <svg style={{ marginLeft: "92px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+
+                    {osHide && (
+                        <div className="checkOs">
+                            {container.os && container.os.length >0 && (
+                                <div className="osClear" style={{color:"#878787", cursor:"pointer"}} onClick={() =>clearItem("os")}>
+                                    <span style={{backgroundColor:"#dddd", color:"black",padding:"1px",paddingLeft:"3px",paddingRight:"3px"}}>x</span> Clear all
+                                </div>
+                            )}
+                            {os.map((item) =>(
+                                <label key={item.label} className={item.label}>
+                                    <input type="checkbox" value={item.value} checked= {container.os?.includes(item.value) || false} onChange={() =>handleCheckbox("os", item.value)}/> {item.value}
+                                </label>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <div id="weight">
+                    <div className="weightHead" onClick={() => setWeightHide(prev => !prev)}>
+                        <span>WEIGHT</span>
+                        <svg style={{ marginLeft: "173px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                    {weightHide && (
+                        <div className="checkWeight">
+                            {container.weight && container.weight.length >0 && (
+                                <div className="weightClear" style={{color:"#878787", cursor:"pointer"}} onClick={() =>clearItem("weight")}>
+                                    <span style={{backgroundColor:"#dddd", color:"black", padding:"1px", paddingLeft:"3px",paddingRight:"3px"}}>x</span> Clear all
+                                </div>
+                            )}
+                            {weight.map((item) =>(
+                                <label key={item.label} className={item.label}>
+                                    <input type="checkbox" value={item.value} checked={container.weight?.includes(item.value) || false} onChange={() =>handleCheckbox("weight", item.value)}/> {item.label}
+                                </label>
+                            ))}
+                        </div>
+                    )}
+
+                </div>
+
+                <div id="touch">
+                    <div className="touchHead" onClick={() =>setTouchHide(prev => !prev)}>
+                        <span>TOUCH SCREEN</span>
+                        <svg style={{ marginLeft: "121px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                    {touchHide && (
+                        <div className="checkTouch">
+                            {container.touch && container.touch.length > 0 && (
+                                <div className="touchClear" style={{color: "#878787", cursor:"pointer"}} onClick={() => clearItem("touch")}>
+                                    <span style={{backgroundColor:"#dddd",color:'black', padding:"1px",paddingLeft:"3px",paddingRight:"3px"}}>x</span> Clear all
+                                </div>
+                            )}
+                            <label className="yes"><input type="checkbox" value="Yes" />Yes</label>
+                            <label className="no"><input type="checkbox" value="No" />No</label>
+                        </div>
+                    )}
+                </div>
+
+                <div id="proBrand">
+                    <div className="proBrandHead" onClick={() =>setProbrandHide(prev=> !prev)}>
+                        <span>PROCESSOR BRAND</span>
+                        <svg style={{ marginLeft: "90px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                    {proBrandHide && (
+                        <div className="checkProbrand">
+                            {container.proBrand && container.proBrand.length >0 && (
+                                <div className="proBrandClear" style={{color:"#878787",cursor:"pointer"}} onClick={() => clearItem("proBrand")}>
+                                    <span style={{backgroundColor:"#dddd", color:"black",padding:"1px", paddingLeft:"3px", paddingRight:"3px"}}>x</span> Clear all
+                                </div>
+                            )}
+                            {proBrand.map((item) => (
+                                <label key={item.label} className={item.label}>
+                                    <input type="checkbox" value={item.value} checked={container.proBrand?.includes(item.value) || false} onChange={() => handleCheckbox("proBrand", item.value)}/> {item.label}
+                                </label>
+                            ))}
+                        </div>
+                    )}
+
+                </div>
+
+                <div id="usage">
+                    <div className="usageHead" onClick={() => setUsageHide(prev => !prev)}>
+                        <span>USAGE</span>
+                        <svg style={{ marginLeft: "177px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                    {usageHide && (
+                        <div className="checkUsage">
+                            {container.usage && container.usage.length >0 && (
+                                <div className="usageClear" style={{color:"#878787", cursor:"pointer"}} onClick={() => clearItem("usage")}>
+                                    <span style={{backgroundColor:"#dddd", color:"black",padding:"1px",paddingLeft:"3px",paddingRight:"3px"}}>x</span> Clear all
+                                </div>
+                            )}
+                            {usage.map((item) => (
+                                <label key={item.label} className={item.label}>
+                                    <input type="checkbox" value={item.value} checked={container.usage?.includes(item.value) || false} onChange={() =>handleCheckbox("usage", item.value)} /> {item.label}
+                                </label>
+                            ))}
+                        </div>
+                    )}
+                </div>
+
+                <div id="graphics">
+                    <div className="graphicsHead" onClick={() => setGraphicHide(prev => !prev)}>
+                        <span>DEDICATED GRAPHICS MEMORY</span>
+                        <svg style={{ marginLeft: "80px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                        </svg>
+                    </div>
+                    {graphicsHide && (
+                        <div className="checkGraphics">
+                            {container.graphics && }
+                        </div>
+                    )}
+                </div>
+
             </div>
         </>
     )
 }
+
 export default FiltLeft;
-
-
 
 
