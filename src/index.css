@@ -444,7 +444,7 @@ input:active{
 }
 .checkType,.checkProcessor, .checkGen,.checkRam,
 .checkSsd,.checkSize,.checkOs, .checkWeight,
-.checkTouch,.checkProbrand,.checkUsage{
+.checkTouch,.checkProbrand,.checkUsage,.checkGraphics{
   display: flex;
   flex-direction: column;
   margin-left: 15px;
@@ -454,7 +454,7 @@ input:active{
 
 .processHead,.genHead,.ramHead,
 .ssdHead,.sizeHead,.osHead, .weightHead,
-.touchHead,.proBrandHead,.usageHead{
+.touchHead,.proBrandHead,.usageHead,.graphicsHead{
   font-size: 13px;
   font-weight: bold;
   margin-left: 18px;
@@ -510,4 +510,58 @@ input:active{
   margin-top: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #dddddd;
+}
+#graphics{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+.assureCheck span{
+  margin-left: 112px;
+  font-size: 14px;
+  color: #646464;
+  border: 1px solid #b8b6b6;
+  border-radius: 50%;
+  /* width: 17px; */
+  padding: 1px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+#assure{
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 18px;
+}
+#right{
+  margin-top: 65px;
+  margin-left: 402px;
+  background-color: white;
+  height: auto;
+  /* width: 100%; */
+  box-shadow: 1px 1px 3px #dddd;
+  width: 72.6%;
+  padding-top: 17px;
+  /* padding-left: 15px; */
+}
+#path{
+  font-size: 11px;
+  letter-spacing: .3px;
+  color: #878787;
+}
+#path span{
+  cursor: pointer;
+}
+#sorting{
+  display: flex;
+  margin-top: 13px;
+  font-size: 13px;
+  letter-spacing: .3px;
+}
+.sortFilt{
+  margin-left: 20px;
+  cursor: pointer;
+}
+.rightHeadPart{
+  border-bottom: 1px solid #ebeaea;
+  padding-bottom: 10px;
+  padding-left: 15px;
 }
