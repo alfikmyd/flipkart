@@ -3,7 +3,6 @@ import data from "./data.json";
 
 function Product() {
 
-    
 
     return (
         <>
@@ -37,39 +36,59 @@ function Product() {
                     </div>
                 </div>
 
-                <div className="productPart">
-                    {data.map((item,index) => (
-                        <div key={index} className="">
-                            <img src={item.img} alt={item.brand} className="" />
-                            <h3 className="">{item.brand}</h3>
-
-                            <div className="">
-                                <span className="">{item.price} </span>
-                                <span className="">{item.oldPrice}</span>
-                                <span className="">{item.off} </span>
+                <div id="productPart">
+                    {data.map((item, index) => (
+                        <div key={index} className="items">
+                            <div className="col-one">
+                                <div>
+                                    <img src={item.img} alt={item.name} />
+                                    <label><input type="checkbox" value="compare" />Add to Compare</label>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#bebdbdff" className="bi bi-heart-fill" viewBox="0 0 16 16">
+                                    <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+                                </svg>
                             </div>
+                            <div className="col-two">
+                                {/* <span></span> */}
+                                <h3>{item.brand}</h3>
+                                <div>
+                                    <button>{item.rate}</button>
+                                    <span>{item.review}</span>
 
-                            <p className="">{item.processor} </p>
-                            <p className="">{item.ram} | {item.ssd} </p>
-                            <p className="">{item.cm} </p>
+                                </div>
+                                <div className="details">
+                                    <ul>
+                                        <li><p>{item.processor}</p></li>
+                                        <li><p>{item.ram}</p></li>
+                                        <li><p>{item.os}</p></li>
+                                        <li><p>{item.ssd}</p></li>
+                                        <li><p>{item.cm}</p></li>
+                                        <li><p>{item.include}</p></li>
+                                        <li><p>{item.warranty}</p></li>
+                                    </ul>
+                                </div>
 
-                            <div className="">
-                                <span className="">{item.rate} ★ </span>
-                                <span className="">{item["rate-rev"]}</span>
                             </div>
+                            <div className="col-three">
+                                <div className="price-col">
+                                    <span>{item.price}
+                                        <p>{item.oldPrice}</p> <p>{item.off}</p></span>
+                                    <img src={item.assured} alt="assured" />
+                                </div>
 
-                            <div className="">
-                                <img src={item.assured} alt="assure" className="" />
+                                <span>{item.nmbr}</span>
+                                <span>{item.exchange}</span>
                                 <span>{item.bank}</span>
-                            </div>
 
-                            <p className="">{item.exchange}</p>
+                            </div>
                         </div>
                     ))}
                 </div>
+
             </div>
         </>
-    ); 
+    );
 }
 export default Product;
+
 

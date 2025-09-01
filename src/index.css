@@ -534,6 +534,7 @@ input:active{
 #right{
   margin-top: 65px;
   margin-left: 402px;
+  /* margin-left: 21%; */
   background-color: white;
   height: auto;
   /* width: 100%; */
@@ -565,3 +566,15 @@ input:active{
   padding-bottom: 10px;
   padding-left: 15px;
 }
+#productPart{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.items{
+  display: flex;
+}
+.col-one,.col-two,.col-three{
+  display: flex;
+}
+    c

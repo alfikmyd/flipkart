@@ -1,115 +1,30 @@
-import React, { useState } from "react";
+<div className="productPart">
+    {data.map((item,index) => (
+        <div key={index} className="">
+            <img src={item.img} alt={item.brand} className="" />
+            <h3 className="">{item.brand}</h3>
 
-export default function FilterSidebar() {
-  const [selectedFilters, setSelectedFilters] = useState({});
+            <div className="">
+                <span className="">{item.price} </span>
+                <span className="">{item.oldPrice}</span>
+                <span className="">{item.off} </span>
+            </div>
 
-  // Toggle a checkbox value
-  const handleCheckboxChange = (section, value) => {
-    setSelectedFilters((prev) => {
-      const current = prev[section] || [];
-      if (current.includes(value)) {
-        // remove
-        return { ...prev, [section]: current.filter((v) => v !== value) };
-      } else {
-        // add
-        return { ...prev, [section]: [...current, value] };
-      }
-    });
-  };
+            <p className="">{item.processor} </p>
+            <p className="">{item.ram} | {item.ssd} </p>
+            <p className="">{item.cm} </p>
 
-  // Clear section
-  const clearSection = (section) => {
-    setSelectedFilters((prev) => {
-      const copy = { ...prev };
-      delete copy[section];
-      return copy;
-    });
-  };
+            <div className="">
+                <span className="">{item.rate} ★ </span>
+                <span className="">{item["rate-rev"]}</span>
+            </div>
 
-  // Clear all
-  const clearAll = () => {
-    setSelectedFilters({});
-  };
+            <div className="">
+                <img src={item.assured} alt="assure" className="" />
+                <span>{item.bank}</span>
+            </div>
 
-  return (
-    <div className="filter-sidebar">
-      {/* Selected items display */}
-      <div className="itemSelected">
-        {Object.entries(selectedFilters).flatMap(([section, values]) =>
-          values.map((val) => (
-            <span
-              key={`${section}-${val}`}
-              className="selected-item"
-              onClick={() => handleCheckboxChange(section, val)}
-            >
-              {val} ✕
-            </span>
-          ))
-        )}
-      </div>
-
-      {/* Brand Section */}
-      <div className="filt-select">
-        <div className="brand-select">
-          <span className="brandClear" onClick={() => clearSection("brand")}>
-            Clear all
-          </span>
+            <p className="">{item.exchange}</p>
         </div>
-        <div>
-          <input
-            type="checkbox"
-            id="apple"
-            value="Apple"
-            checked={selectedFilters.brand?.includes("Apple") || false}
-            onChange={() => handleCheckboxChange("brand", "Apple")}
-          />
-          <label htmlFor="apple">Apple</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="samsung"
-            value="Samsung"
-            checked={selectedFilters.brand?.includes("Samsung") || false}
-            onChange={() => handleCheckboxChange("brand", "Samsung")}
-          />
-          <label htmlFor="samsung">Samsung</label>
-        </div>
-      </div>
-
-      {/* RAM Section */}
-      <div className="filt-select">
-        <div className="ram-select">
-          <span className="blueClear" onClick={() => clearSection("ram")}>
-            Clear all
-          </span>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="ram-4"
-            value="4 GB"
-            checked={selectedFilters.ram?.includes("4 GB") || false}
-            onChange={() => handleCheckboxChange("ram", "4 GB")}
-          />
-          <label htmlFor="ram-4">4 GB</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            id="ram-8"
-            value="8 GB"
-            checked={selectedFilters.ram?.includes("8 GB") || false}
-            onChange={() => handleCheckboxChange("ram", "8 GB")}
-          />
-          <label htmlFor="ram-8">8 GB</label>
-        </div>
-      </div>
-
-      {/* Global CLEAR ALL */}
-      <button className="filt-blue" onClick={clearAll}>
-        CLEAR ALL
-      </button>
-    </div>
-  );
-}
+    ))}
+</div> 
