@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import assurePic from "./img/assured.png";
+import data from "./data.json"
 
 function FiltLeft() {
+
+
     const [container, setContainer] = useState({});
     const [hide, setHide] = useState(false);
     const [typeHide, setTypeHide] = useState(false);
@@ -211,6 +214,7 @@ function FiltLeft() {
                     </div>
                 </div>
 
+                
                 <div id="category">
                     <span style={{ fontSize: "11px", fontWeight: "600" }}>CATEGORIES</span>
                     <a style={{ fontSize: "13px", color: "#6e6d6dff" }} href="laptop.com"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" className="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -273,6 +277,7 @@ function FiltLeft() {
 
                 </div>
 
+            {data.map((filt) => (
                 <div id="brand">
                     <div className="brandHead" style={{ cursor: "pointer" }} onClick={() => setHide(prev => !prev)}>
                         <span style={{ fontSize: "12px", fontWeight: "bold", marginLeft: "18px" }}>BRAND</span>
@@ -855,12 +860,14 @@ function FiltLeft() {
                         </div>
                     )}
                 </div>
-
+            ))}
             </div>
+            
         </>
     )
 }
 
 export default FiltLeft;
+
 
 

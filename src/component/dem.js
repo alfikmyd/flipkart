@@ -1,4 +1,4 @@
-<div className="productPart">
+{/* <div className="productPart">
     {data.map((item,index) => (
         <div key={index} className="">
             <img src={item.img} alt={item.brand} className="" />
@@ -27,4 +27,6 @@
             <p className="">{item.exchange}</p>
         </div>
     ))}
-</div> 
+</div>  */}
+
+
