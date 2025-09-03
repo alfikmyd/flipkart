@@ -82,13 +82,13 @@ function Footer() {
                             <h6>Social</h6>
 
                             <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12.9331 21C17.9037 21 21.9331 16.9706 21.9331 12C21.9331 7.02944 17.9037 3 12.9331 3C7.96254 3 3.93311 7.02944 3.93311 12C3.93311 16.9706 7.96254 21 12.9331 21Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M16.6831 8.25H15.1831C14.5864 8.25 14.0141 8.48705 13.5921 8.90901C13.1702 9.33097 12.9331 9.90326 12.9331 10.5V21" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                <path d="M9.93311 13.5H15.9331" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M12.9331 21C17.9037 21 21.9331 16.9706 21.9331 12C21.9331 7.02944 17.9037 3 12.9331 3C7.96254 3 3.93311 7.02944 3.93311 12C3.93311 16.9706 7.96254 21 12.9331 21Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M16.6831 8.25H15.1831C14.5864 8.25 14.0141 8.48705 13.5921 8.90901C13.1702 9.33097 12.9331 9.90326 12.9331 10.5V21" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                <path d="M9.93311 13.5H15.9331" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
 
                             <svg style={{ marginLeft: "15px" }} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_183_20)">
+                                <g clipPath="url(#clip0_183_20)">
                                     <path d="M13.5436 10.6179L20.0971 3H18.5441L12.8537 9.61448L8.30887 3H3.06689L9.93964 13.0023L3.06689 20.9908H4.61994L10.6291 14.0056L15.4288 20.9908H20.6708L13.5432 10.6179H13.5436ZM11.4165 13.0904L10.7202 12.0944L5.17953 4.16911H7.56491L12.0363 10.5651L12.7326 11.5611L18.5448 19.8748H16.1595L11.4165 13.0908V13.0904Z" fill="white" />
                                 </g>
                                 <defs>
@@ -100,8 +100,8 @@ function Footer() {
 
                             <svg style={{ marginLeft: "15px" }} width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="YoutubeLogo">
-                                    <path id="Vector" d="M15.9331 12L11.4331 9V15L15.9331 12Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path id="Vector_2" d="M3.18311 12C3.18311 14.7895 3.47131 16.4263 3.69039 17.2675C3.74896 17.4972 3.86142 17.7097 4.01847 17.8873C4.17552 18.0649 4.37263 18.2026 4.59347 18.2888C7.73193 19.4949 12.9331 19.4618 12.9331 19.4618C12.9331 19.4618 18.1342 19.4949 21.2727 18.2888C21.4936 18.2026 21.6907 18.0649 21.8477 17.8873C22.0048 17.7097 22.1172 17.4972 22.1758 17.2675C22.3949 16.4263 22.6831 14.7896 22.6831 12C22.6831 9.21039 22.3949 7.57368 22.1758 6.73248C22.1173 6.50273 22.0048 6.29025 21.8477 6.11264C21.6907 5.93502 21.4936 5.79738 21.2727 5.71113C18.1343 4.50506 12.9331 4.53818 12.9331 4.53818C12.9331 4.53818 7.73199 4.50506 4.5935 5.71112C4.37266 5.79737 4.17555 5.93501 4.0185 6.11262C3.86145 6.29024 3.74898 6.50272 3.69041 6.73246C3.47132 7.57366 3.18311 9.21039 3.18311 12Z" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                    <path id="Vector" d="M15.9331 12L11.4331 9V15L15.9331 12Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                    <path id="Vector_2" d="M3.18311 12C3.18311 14.7895 3.47131 16.4263 3.69039 17.2675C3.74896 17.4972 3.86142 17.7097 4.01847 17.8873C4.17552 18.0649 4.37263 18.2026 4.59347 18.2888C7.73193 19.4949 12.9331 19.4618 12.9331 19.4618C12.9331 19.4618 18.1342 19.4949 21.2727 18.2888C21.4936 18.2026 21.6907 18.0649 21.8477 17.8873C22.0048 17.7097 22.1172 17.4972 22.1758 17.2675C22.3949 16.4263 22.6831 14.7896 22.6831 12C22.6831 9.21039 22.3949 7.57368 22.1758 6.73248C22.1173 6.50273 22.0048 6.29025 21.8477 6.11264C21.6907 5.93502 21.4936 5.79738 21.2727 5.71113C18.1343 4.50506 12.9331 4.53818 12.9331 4.53818C12.9331 4.53818 7.73199 4.50506 4.5935 5.71112C4.37266 5.79737 4.17555 5.93501 4.0185 6.11262C3.86145 6.29024 3.74898 6.50272 3.69041 6.73246C3.47132 7.57366 3.18311 9.21039 3.18311 12Z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </g>
                             </svg>
 
@@ -127,13 +127,13 @@ function Footer() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 16 15">
                             <defs>
                                 <linearGradient id="a" x1="0%" x2="86.876%" y1="0%" y2="80.202%">
-                                    <stop offset="0%" stop-color="#FFD800" />
-                                    <stop offset="100%" stop-color="#FFAF00" />
+                                    <stop offset="0%" stopColor="#FFD800" />
+                                    <stop offset="100%" stopColor="#FFAF00" />
                                 </linearGradient>
                             </defs>
-                            <g fill="none" fill-rule="evenodd">
+                            <g fill="none" fillRule="evenodd">
                                 <path d="M-2-2h20v20H-2z" />
-                                <path fill="url(#a)" fill-rule="nonzero" d="M15.93 5.614h-2.948V4.14c0-.818-.655-1.473-1.473-1.473H8.56c-.817 0-1.473.655-1.473 1.473v1.474H4.14c-.818 0-1.466.656-1.466 1.474l-.007 8.105c0 .818.655 1.474 1.473 1.474h11.79c.818 0 1.474-.656 1.474-1.474V7.088c0-.818-.656-1.474-1.474-1.474zm-4.421 0H8.56V4.14h2.948v1.474z" transform="translate(-2 -2)" />
+                                <path fill="url(#a)" fillRule="nonzero" d="M15.93 5.614h-2.948V4.14c0-.818-.655-1.473-1.473-1.473H8.56c-.817 0-1.473.655-1.473 1.473v1.474H4.14c-.818 0-1.466.656-1.466 1.474l-.007 8.105c0 .818.655 1.474 1.473 1.474h11.79c.818 0 1.474-.656 1.474-1.474V7.088c0-.818-.656-1.474-1.474-1.474zm-4.421 0H8.56V4.14h2.948v1.474z" transform="translate(-2 -2)" />
                             </g>
                         </svg> Become a Seller
                         
@@ -143,13 +143,13 @@ function Footer() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
                             <defs>
                                 <linearGradient id="a" x1="0%" x2="86.876%" y1="0%" y2="80.202%">
-                                    <stop offset="0%" stop-color="#FFD800" />
-                                    <stop offset="100%" stop-color="#FFAF00" />
+                                    <stop offset="0%" stopColor="#FFD800" />
+                                    <stop offset="100%" stopColor="#FFAF00" />
                                 </linearGradient>
                             </defs>
-                            <g fill="none" fill-rule="evenodd">
+                            <g fill="none" fillRule="evenodd">
                                 <path d="M-3-3h20v20H-3z" />
-                                <path fill="url(#a)" fill-rule="nonzero" d="M10.492 3C6.353 3 3 6.36 3 10.5c0 4.14 3.353 7.5 7.492 7.5C14.64 18 18 14.64 18 10.5 18 6.36 14.64 3 10.492 3zm3.18 12L10.5 13.088 7.327 15l.84-3.607L5.37 8.97l3.69-.315L10.5 5.25l1.44 3.398 3.69.315-2.798 2.422.84 3.615z" transform="translate(-3 -3)" />
+                                <path fill="url(#a)" fillRule="nonzero" d="M10.492 3C6.353 3 3 6.36 3 10.5c0 4.14 3.353 7.5 7.492 7.5C14.64 18 18 14.64 18 10.5 18 6.36 14.64 3 10.492 3zm3.18 12L10.5 13.088 7.327 15l.84-3.607L5.37 8.97l3.69-.315L10.5 5.25l1.44 3.398 3.69.315-2.798 2.422.84 3.615z" transform="translate(-3 -3)" />
                             </g>
                         </svg> Advertise
                         
@@ -159,13 +159,13 @@ function Footer() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17">
                             <defs>
                                 <linearGradient id="a" x1="0%" x2="86.876%" y1="0%" y2="80.202%">
-                                    <stop offset="0%" stop-color="#FFD800" />
-                                    <stop offset="100%" stop-color="#FFAF00" />
+                                    <stop offset="0%" stopColor="#FFD800" />
+                                    <stop offset="100%" stopColor="#FFAF00" />
                                 </linearGradient>
                             </defs>
-                            <g fill="none" fill-rule="evenodd">
+                            <g fill="none" fillRule="evenodd">
                                 <path d="M-1-1h20v20H-1z" />
-                                <path fill="url(#a)" fill-rule="nonzero" d="M16.667 5H14.85c.092-.258.15-.542.15-.833a2.497 2.497 0 0 0-4.583-1.375L10 3.35l-.417-.567A2.51 2.51 0 0 0 7.5 1.667a2.497 2.497 0 0 0-2.5 2.5c0 .291.058.575.15.833H3.333c-.925 0-1.658.742-1.658 1.667l-.008 9.166A1.66 1.66 0 0 0 3.333 17.5h13.334a1.66 1.66 0 0 0 1.666-1.667V6.667A1.66 1.66 0 0 0 16.667 5zm0 6.667H3.333v-5h4.234L5.833 9.025l1.35.975 1.984-2.7L10 6.167l.833 1.133 1.984 2.7 1.35-.975-1.734-2.358h4.234v5z" transform="translate(-1 -1)" />
+                                <path fill="url(#a)" fillRule="nonzero" d="M16.667 5H14.85c.092-.258.15-.542.15-.833a2.497 2.497 0 0 0-4.583-1.375L10 3.35l-.417-.567A2.51 2.51 0 0 0 7.5 1.667a2.497 2.497 0 0 0-2.5 2.5c0 .291.058.575.15.833H3.333c-.925 0-1.658.742-1.658 1.667l-.008 9.166A1.66 1.66 0 0 0 3.333 17.5h13.334a1.66 1.66 0 0 0 1.666-1.667V6.667A1.66 1.66 0 0 0 16.667 5zm0 6.667H3.333v-5h4.234L5.833 9.025l1.35.975 1.984-2.7L10 6.167l.833 1.133 1.984 2.7 1.35-.975-1.734-2.358h4.234v5z" transform="translate(-1 -1)" />
                             </g>
                         </svg> Gift Cards
                         
@@ -175,19 +175,19 @@ function Footer() {
                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
                             <defs>
                                 <linearGradient id="a" x1="0%" x2="86.876%" y1="0%" y2="80.202%">
-                                    <stop offset="0%" stop-color="#FFD800" />
-                                    <stop offset="100%" stop-color="#FFAF00" />
+                                    <stop offset="0%" stopColor="#FFD800" />
+                                    <stop offset="100%" stopColor="#FFAF00" />
                                 </linearGradient>
                             </defs>
-                            <g fill="none" fill-rule="evenodd">
+                            <g fill="none" fillRule="evenodd">
                                 <path d="M-2-3h20v20H-2z" />
-                                <path fill="url(#a)" fill-rule="nonzero" d="M9.5 3C5.36 3 2 6.36 2 10.5 2 14.64 5.36 18 9.5 18c4.14 0 7.5-3.36 7.5-7.5C17 6.36 13.64 3 9.5 3zm.75 12.75h-1.5v-1.5h1.5v1.5zm1.553-5.813l-.676.69c-.54.548-.877.998-.877 2.123h-1.5v-.375c0-.825.338-1.575.877-2.123l.93-.945c.278-.27.443-.645.443-1.057 0-.825-.675-1.5-1.5-1.5S8 7.425 8 8.25H6.5a3 3 0 1 1 6 0c0 .66-.27 1.26-.697 1.688z" transform="translate(-2 -3)" />
+                                <path fill="url(#a)" fillRule="nonzero" d="M9.5 3C5.36 3 2 6.36 2 10.5 2 14.64 5.36 18 9.5 18c4.14 0 7.5-3.36 7.5-7.5C17 6.36 13.64 3 9.5 3zm.75 12.75h-1.5v-1.5h1.5v1.5zm1.553-5.813l-.676.69c-.54.548-.877.998-.877 2.123h-1.5v-.375c0-.825.338-1.575.877-2.123l.93-.945c.278-.27.443-.645.443-1.057 0-.825-.675-1.5-1.5-1.5S8 7.425 8 8.25H6.5a3 3 0 1 1 6 0c0 .66-.27 1.26-.697 1.688z" transform="translate(-2 -3)" />
                             </g>
                         </svg> Help Center
                         
                     </div>
                     <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" className="bi bi-c-circle" viewBox="0 0 16 16">
                             <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512" />
                         </svg> 2007 - 2025 Flipkart.com 
                     </div>

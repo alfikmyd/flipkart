@@ -1,14 +1,18 @@
 import Header from "./component/header"
-import FilterSidebar from "./component/filtLeft"
-import Product from "./component/proRight"
 import Footer from "./component/footer"
+import data from "./component/data.json"
+import { useState } from "react"
+import Parent from "./component/filterPage"
+import SelectedItem from "./component/selectItem"
 
-function App(){
-  return(
+function App() {
+  const product = data;
+
+  return (
     <>
-      <Header/>
-      <FilterSidebar/>
-      <Product/>
+      <Header />
+      <Parent  product = {product} />
+      {/* <SelectedItem /> */}
       <Footer />
     </>
   )

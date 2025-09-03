@@ -1,6 +1,9 @@
+// import React from "react";
 import { useEffect, useState } from "react";
 import assurePic from "./img/assured.png";
-import data from "./data.json"
+// import data from "./data.json"
+// import Parent from "./parent";
+
 
 function FiltLeft() {
 
@@ -29,8 +32,7 @@ function FiltLeft() {
     const [offHide, setOffHide] = useState(false);
     const [rateHide, setRateHide] = useState(false);
     const [gstHide, setGstHide] = useState(false);
-    const [offerHide,setOfferHide] = useState(false);
-
+    const [offerHide, setOfferHide] = useState(false);
 
     const handleCheckbox = (section, value) => {
         setContainer((prev) => {
@@ -42,6 +44,8 @@ function FiltLeft() {
             }
         });
     };
+
+
     const handleRemoveItem = (section, value) => {
         setContainer((prev) => {
             const updated = { ...prev };
@@ -67,6 +71,8 @@ function FiltLeft() {
             return selected;
         })
     }
+
+
     const type = [
         { label: "Gaming Laptop", value: "Gaming Laptop" },
         { label: "2 in 1 Laptop", value: "2 in 1 Laptop" },
@@ -182,9 +188,9 @@ function FiltLeft() {
         { label: "1★ & above", value: "1★ & above" }
     ];
     const offers = [
-        {label: "Special Price",value:"Special Price"},
-        {label:"Buy More, Save More", value:"Buy More, Save More"},
-        {label:"No Cost EMI",value:"No Cost EMI"}
+        { label: "Special Price", value: "Special Price" },
+        { label: "Buy More, Save More", value: "Buy More, Save More" },
+        { label: "No Cost EMI", value: "No Cost EMI" }
     ];
 
 
@@ -214,7 +220,7 @@ function FiltLeft() {
                     </div>
                 </div>
 
-                
+
                 <div id="category">
                     <span style={{ fontSize: "11px", fontWeight: "600" }}>CATEGORIES</span>
                     <a style={{ fontSize: "13px", color: "#6e6d6dff" }} href="laptop.com"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" className="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -277,11 +283,10 @@ function FiltLeft() {
 
                 </div>
 
-            {data.map((filt) => (
                 <div id="brand">
                     <div className="brandHead" style={{ cursor: "pointer" }} onClick={() => setHide(prev => !prev)}>
                         <span style={{ fontSize: "12px", fontWeight: "bold", marginLeft: "18px" }}>BRAND</span>
-                        <svg style={{ marginLeft: "180px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "180px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -300,10 +305,11 @@ function FiltLeft() {
                     )}
                 </div>
 
+
                 <div id="type">
                     <div className="typeHead" style={{ cursor: "pointer" }} onClick={() => setTypeHide(prev => !prev)}>
                         <span style={{ fontSize: "13px", fontWeight: "bold", marginLeft: "18px", marginTop: "20px" }}>TYPE</span>
-                        <svg style={{ marginLeft: "188px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "188px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -327,7 +333,7 @@ function FiltLeft() {
                 <div id="processor">
                     <div className="processHead" onClick={() => setProsHide(prev => !prev)}>
                         <span>PROCESSOR</span>
-                        <svg style={{ marginLeft: "140px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "140px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -353,7 +359,7 @@ function FiltLeft() {
                 <div id="generation">
                     <div className="genHead" onClick={() => setGenHide(prev => !prev)}>
                         <span>PROCESSOR GENERATION</span>
-                        <svg style={{ marginLeft: "52px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "52px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
 
@@ -377,7 +383,7 @@ function FiltLeft() {
                 <div id="ramCap">
                     <div className="ramHead" onClick={() => setRamHide(prev => !prev)}>
                         <span>RAM CAPACITY</span>
-                        <svg style={{ marginLeft: "127px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "127px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -401,7 +407,7 @@ function FiltLeft() {
                 <div id="ssd">
                     <div className="ssdHead" onClick={() => setSsdHide(prev => !prev)}>
                         <span>SSD CAPACITY</span>
-                        <svg style={{ marginLeft: "130px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "130px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -425,7 +431,7 @@ function FiltLeft() {
                 <div id="scrnSize">
                     <div className="sizeHead" onClick={() => setSizeHide(prev => !prev)}>
                         <span>SCREEN SIZE</span>
-                        <svg style={{ marginLeft: "140px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "140px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -449,7 +455,7 @@ function FiltLeft() {
                 <div id="os">
                     <div className="osHead" onClick={() => setOsHide(prev => !prev)}>
                         <span>OPERATING SYSTEM</span>
-                        <svg style={{ marginLeft: "92px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "92px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -473,7 +479,7 @@ function FiltLeft() {
                 <div id="weight">
                     <div className="weightHead" onClick={() => setWeightHide(prev => !prev)}>
                         <span>WEIGHT</span>
-                        <svg style={{ marginLeft: "173px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "173px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -497,7 +503,7 @@ function FiltLeft() {
                 <div id="touch">
                     <div className="touchHead" onClick={() => setTouchHide(prev => !prev)}>
                         <span>TOUCH SCREEN</span>
-                        <svg style={{ marginLeft: "121px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "121px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -517,7 +523,7 @@ function FiltLeft() {
                 <div id="proBrand">
                     <div className="proBrandHead" onClick={() => setProbrandHide(prev => !prev)}>
                         <span>PROCESSOR BRAND</span>
-                        <svg style={{ marginLeft: "90px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "90px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -541,7 +547,7 @@ function FiltLeft() {
                 <div id="usage">
                     <div className="usageHead" onClick={() => setUsageHide(prev => !prev)}>
                         <span>USAGE</span>
-                        <svg style={{ marginLeft: "177px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "177px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -564,7 +570,7 @@ function FiltLeft() {
                 <div id="graphics">
                     <div className="graphicsHead" onClick={() => setGraphicHide(prev => !prev)}>
                         <span>DEDICATED GRAPHICS MEMORY</span>
-                        <svg style={{ marginLeft: "17px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "17px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -587,7 +593,7 @@ function FiltLeft() {
                 <div id="usage">
                     <div className="usageHead" onClick={() => setFeatureHide(prev => !prev)}>
                         <span>FEATURES</span>
-                        <svg style={{ marginLeft: "155px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "155px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -610,7 +616,7 @@ function FiltLeft() {
                 <div id="usage">
                     <div className="usageHead" onClick={() => setStorageHide(prev => !prev)}>
                         <span>STORAGE TYPE</span>
-                        <svg style={{ marginLeft: "123px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "123px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -633,7 +639,7 @@ function FiltLeft() {
                 <div id="usage">
                     <div className="usageHead" onClick={() => setMemoryHide(prev => !prev)}>
                         <span>GRAPHICS MEMORY TYPE</span>
-                        <svg style={{ marginLeft: "56px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "56px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -656,7 +662,7 @@ function FiltLeft() {
                 <div id="usage">
                     <div className="usageHead" onClick={() => setPronameHide(prev => !prev)}>
                         <span>GRAPHICS PROCESSOR NAME</span>
-                        <svg style={{ marginLeft: "27px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "27px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -679,7 +685,7 @@ function FiltLeft() {
                 <div id="usage">
                     <div className="usageHead" onClick={() => setDiskHide(prev => !prev)}>
                         <span>HARD DISK CAPACITY</span>
-                        <svg style={{ marginLeft: "83px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "83px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -702,7 +708,7 @@ function FiltLeft() {
                 <div id="usage">
                     <div className="usageHead" onClick={() => setRtypeHide(prev => !prev)}>
                         <span>RAM TYPE</span>
-                        <svg style={{ marginLeft: "157px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "157px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -725,7 +731,7 @@ function FiltLeft() {
                 <div id="usage">
                     <div className="usageHead" onClick={() => setAvailHide(prev => !prev)}>
                         <span>AVAILABILITY</span>
-                        <svg style={{ marginLeft: "137px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "137px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -746,7 +752,7 @@ function FiltLeft() {
                 <div id="usage">
                     <div className="usageHead" onClick={() => setOffHide(prev => !prev)}>
                         <span>DISCOUNT</span>
-                        <svg style={{ marginLeft: "156px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "156px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -769,7 +775,7 @@ function FiltLeft() {
                 <div id="usage">
                     <div className="usageHead" onClick={() => setRateHide(prev => !prev)}>
                         <span>CUSTOMER RATING</span>
-                        <svg style={{ marginLeft: "98px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "98px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
@@ -791,27 +797,27 @@ function FiltLeft() {
 
 
                 <div id="assure">
-                    <div className="assureCheck" style={{display:"flex",flexDirection:"row"}}>
-                        <label style={{ cursor: "pointer", display: "flex", alignItems: "center",marginLeft:"18px" }}>
+                    <div className="assureCheck" style={{ display: "flex", flexDirection: "row" }}>
+                        <label style={{ cursor: "pointer", display: "flex", alignItems: "center", marginLeft: "18px" }}>
                             <input
                                 type="checkbox"
                                 value="F-assured"
                                 checked={container.assure?.includes("F-assured")}
-                                onChange={() => handleCheckbox("assure","F-assured")}
-                                // style={{ display: "none" }} // hide default checkbox
+                                onChange={() => handleCheckbox("assure", "F-assured")}
+                            // style={{ display: "none" }} // hide default checkbox
                             />
                             <img
                                 src={assurePic}
                                 alt="F-assured"
                                 style={{
                                     width: "75px",
-                                    marginLeft:"5px"
+                                    marginLeft: "5px"
                                 }}
                             />
 
                             <span>?</span>
                         </label>
-                        
+
                     </div>
                 </div>
 
@@ -819,19 +825,19 @@ function FiltLeft() {
                 <div id="usage">
                     <div className="usageHead" onClick={() => setGstHide(prev => !prev)}>
                         <span>GST INVOICE AVAILABLE</span>
-                        <svg style={{ marginLeft: "65px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "65px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
                     {gstHide && (
                         <div className="checkUsage">
                             {container.gst && container.gst.length > 0 && (
-                                <div className="usageClear" style={{color:"#878787",cursor:"pointer"}} onClick={() => clearItem("gst")}>
-                                    <span style={{backgroundColor:"#dddd",color:"black",padding:"1px",paddingLeft:"3px",paddingRight:"3px"}}>x</span> Clear all
+                                <div className="usageClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("gst")}>
+                                    <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all
                                 </div>
                             )}
                             <label>
-                                <input type="checkbox" value="GST Invoice Available" checked={container.gst?.includes("GST Invoice Available")} onChange={() => handleCheckbox("gst","GST Invoice Available")} />
+                                <input type="checkbox" value="GST Invoice Available" checked={container.gst?.includes("GST Invoice Available")} onChange={() => handleCheckbox("gst", "GST Invoice Available")} />
                                 GST Invoice Available
                             </label>
                         </div>
@@ -839,35 +845,36 @@ function FiltLeft() {
                 </div>
 
                 <div id="usage">
-                    <div className="usageHead" onClick={() =>setOfferHide(prev => !prev)}>
+                    <div className="usageHead" onClick={() => setOfferHide(prev => !prev)}>
                         <span>OFFERS</span>
-                        <svg style={{ marginLeft: "170px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16">
+                        <svg style={{ marginLeft: "170px" }} xmlns="http://www.w3.org/2000/svg" width="12" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                         </svg>
                     </div>
                     {offerHide && (
                         <div className="checkUsage">
                             {container.offers && container.offers.length > 0 && (
-                                <div className="usageClear" style={{color:"#878787",cursor:"pointer"}} onClick={() => clearItem("offers")}>
-                                    <span style={{backgroundColor:"#dddd",color:"black",padding:"1px",paddingLeft:"3px",paddingRight:"3px"}}>x</span> Clear all
+                                <div className="usageClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("offers")}>
+                                    <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all
                                 </div>
                             )}
-                            {offers.map((item)=>(
+                            {offers.map((item) => (
                                 <label key={item.label}>
-                                    <input type="checkbox" value={item.value} checked={container.offers?.includes(item.value) || false} onChange={() => handleCheckbox("offers",item.value)} /> {item.label}
+                                    <input type="checkbox" value={item.value} checked={container.offers?.includes(item.value) || false} onChange={() => handleCheckbox("offers", item.value)} /> {item.label}
                                 </label>
                             ))}
                         </div>
                     )}
                 </div>
-            ))}
+
             </div>
-            
+
         </>
     )
 }
 
 export default FiltLeft;
+
 
 
 
