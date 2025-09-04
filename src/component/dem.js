@@ -30,3 +30,95 @@
 </div>  */}
 
 
+
+
+
+<div id="itemPage" style={{ marginTop: "59px", backgroundColor: "white", marginLeft: "14.2%", marginRight: "14.1%", height: "auto" }}>
+            <div id="itemDetials">
+                <div className="itemImage" style={{ display: "block", flexGrow: "50%", width: "49.6%", height: "446px" }}>
+                    <div className="imageBox">
+                        <div className="itemParts" style={{ display: "flex", flexDirection: "column", gap: "10px", paddingLeft: "10px", paddingRight: '-10px' }}>
+                            <img style={{ width: "60px" }} src="https://rukminim2.flixcart.com/image/416/416/xif0q/computer/r/4/p/-original-imahcd9hzmubfynx.jpeg?q=70&crop=false" alt="" />
+                            <img style={{ width: "60px" }} src="https://rukminim2.flixcart.com/image/416/416/xif0q/computer/n/t/s/-original-imahcd9hyrsyvp4p.jpeg?q=70&crop=false" alt="" />
+                            <img style={{ width: "60px" }} src="https://rukminim2.flixcart.com/image/416/416/xif0q/allinone-desktop/c/k/n/-original-imahcd99hb9jznvn.jpeg?q=70&crop=false" alt="" />
+                            <img style={{ width: "60px" }} src="https://rukminim2.flixcart.com/image/416/416/xif0q/computer/j/f/d/-original-imahcd9hwvxytr4y.jpeg?q=70&crop=false" alt="" />
+                        </div>
+                        <div style={{ borderLeft: "1px solid #e4e4e4", marginLeft: "-10px", width: "100%", marginBottom: "-20px", alignItems: "center", justifyItems: "center" }}>
+                            <img style={{ marginTop: "100px", marginLeft: "50px" }} src="https://rukminim2.flixcart.com/image/312/312/xif0q/computer/h/t/t/-original-imahcd9hhh6y4knb.jpeg?q=70" alt="" />
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+                            </svg>
+                        </div>
+                    </div>
+                    <button style={{ backgroundColor: "#ff9f00", width: "11%", height: "55px", color: "white", fontWeight: "bold", border: "none" }}><svg className="NwyjNT" width="16" height="16" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg"><path className="" d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86" fill="#fff"></path></svg>
+                        ADD TO CART
+                    </button>
+                    <button style={{ backgroundColor: "#f87432ff", color: "white", fontWeight: "bold", width: "11%", height: "55px", border: "none", marginLeft: "8px" }}><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" className="bi bi-lightning-fill" viewBox="0 0 16 16">
+                        <path d="M5.52.359A.5.5 0 0 1 6 0h4a.5.5 0 0 1 .474.658L8.694 6H12.5a.5.5 0 0 1 .395.807l-7 9a.5.5 0 0 1-.873-.454L6.823 9.5H3.5a.5.5 0 0 1-.48-.641z" />
+                    </svg>
+                        BUY NOW
+                    </button>
+                </div>
+                <div id="detailText">
+                    <div id="detailPath">
+                        <div>
+                            <span>Home</span>
+                            <svg style={{ marginLeft: "6px" }} xmlns="http://www.w3.org/2000/svg" width="10" height="8" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                            <span style={{ marginLeft: "6px" }}>Computers</span>
+                            <svg style={{ marginLeft: "6px" }} xmlns="http://www.w3.org/2000/svg" width="10" height="8" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                            <span style={{ marginLeft: "6px" }}>Laptops</span>
+                            <svg style={{ marginLeft: "6px" }} xmlns="http://www.w3.org/2000/svg" width="10" height="8" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                            <span>Laptop Name...</span>
+                            <svg style={{ marginLeft: "6px" }} xmlns="http://www.w3.org/2000/svg" width="10" height="8" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                            </svg>
+                            <span>Laptop Intel...</span>
+                        </div>
+                        <div className="detailShare" style={{ marginLeft: "280px", marginTop: "-7px", cursor: "pointer", fontSize: "13px", color: "black" }}>
+                            <label htmlFor="compare">
+                                <input type="checkbox" value="compare" /> Compare
+                            </label>
+
+                            <span style={{ color: "black", fontSize: "13px", marginLeft: "40px" }} ><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" className="jWKn+i"><path d="M14.78 5.883L9.032 0v3.362C3.284 4.202.822 8.404 0 12.606 2.053 9.666 4.927 8.32 9.032 8.32v3.446l5.748-5.883z" className="g9gS7K" fill="#c2c2c2" fillRule="evenodd"></path></svg> Share</span>
+                        </div>
+                    </div>
+                    <div className="detailTx">
+                        <h4 style={{ fontWeight: "400" }}>CHUWI Intel Celeron Dual Core 11th Gen N4020 - (8 GB/256 GB SSD/Windows 11 Home) HeroBook Pro Laptop  (14.1 inch, Grey, 1.39 kg)</h4>
+                        <div style={{ marginTop: "-15px" }}>
+                            <button>3.7 *</button>
+                            <span>1,728 Ratings & 207 Reviews</span>
+                        </div>
+                        <span>Special Price</span>
+                        <div className="detailPrice">
+                            <span>₹18,990</span>
+                            <span style={{ color: "#878787" }}>₹34,990</span>
+                            <span>45% off</span>
+                            <span className="i">i</span>
+                        </div>
+
+                        <span>+ ₹59 Protect Promise Fee <a href="#">Learn more</a></span>
+                        <span>Secure delivery by 10 Sep, Wednesday</span>
+
+                        <div>
+                            <h6>Available offers</h6>
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" className="bi bi-tag-fill" viewBox="0 0 16 16">
+                                <path d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0" />
+                            </svg><p>Bank Offer</p> 5% cashback on Flipkart Axis Bank Credit Card upto ₹4,000 per statemenet quarter <a href="#">T&C</a> <a href="#">T&C</a></span>
+                            <span>
+
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
