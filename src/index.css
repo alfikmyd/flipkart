@@ -834,11 +834,11 @@ footer a{
   top: 0;
   left: -17px;
   border-radius: 2px;
-  width: 100%;
-  margin-bottom:100%;
+  width: 120%;
+  /* margin-bottom:100%; */
   margin: 16px ;
   margin-bottom: 67%; 
-  margin-right: 4%;
+  margin-right: -6.5%;
   height: 442px;
 }
 .iImage img{
@@ -888,7 +888,7 @@ footer a{
   flex-flow: column;
   width: 66.6%;
   margin-top: 18px;
-  margin-left: 38px;
+  margin-left: 40px;
 }
 .iPath{
   display: flex;
@@ -939,7 +939,8 @@ footer a{
   flex-direction: column;
   gap: 10px;
   font-size: 13px;
-  margin-top: -7px;
+  margin-top: -6px;
+  line-height: px;
 }
 .iOffers svg{
   color: #06bd0f;
@@ -949,7 +950,7 @@ footer a{
   text-decoration: none;
   font-weight: bold;
 }
-.selectExchange{
+/* .selectExchange{
   display: block;
   margin-top: 20px;
 }
@@ -957,5 +958,125 @@ footer a{
   border: 1px solid #dddddd;
   padding: 15px;
   margin-right: 50%;
+} */
+
+.iWarranty img{
+  width: 20px;
+  border: 1px solid #eeeded;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+.iWarranty span{
+  margin-left: 35px;
+}
+.iWarranty a{
+  margin-left: 10px;
+}
+.iDelivery{
+  display: flex;
+  margin-top: 16px;
+  cursor: text;
+  letter-spacing: .3px;
+}
+.delivAdrs{
+  display: flex;
+  flex-direction: column;
+  margin-left: 60px;
+  margin-top: -13px;
+  letter-spacing: .3px;
+}
+.delivAdrs input{
+  width: auto;
+padding-left: 10px;
+font-weight: 600;
+font-size: 12px;
+border: none;
+outline: none;
+background-color: none;
+border-bottom:2px solid #001aff;
+cursor: text;
+padding-bottom: 7px;
+
+}
+.delivAdrs input:active{
+  background-color: white;
+}
+.highlSection ul{
+  color: #aaa8a8;
+  margin-top: 0px;
+  margin-left: 20px;
+  line-height: 27px;
+}
+.highlSection li span{
+  color: black;
+}
+.delivQues{
+  border: 1px solid #dddddd;
+  color: #a3a2a2;
+  font-weight: none;
+  margin-left: 10px;
+  border-radius: 50%;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+.iSeller button{
+  color: white;
+  background-color: #001aff;
+  border: none;
+  margin-left: 7px;
+  border-radius: 10px;
+  width: 49px;
+  font-size: 11px;
+  padding: 4px;
+  font-weight: bold;
+  max-width: max-content;
+}
+.sellerQues{
+  color: #878787;
+  margin-left: 8px;
+  border: 1px solid #d6d3d3;
+  padding-left: 3px;
+  padding-right: 3px;
+  border-radius: 50%;
+}
+.iDescription{
+  display: flex;
 }
 
+#description{
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-right: 15px;
+  margin-top: 72px;
+}
+#description div{
+  border: 1px solid #f1f1f1;
+}
+.ips,.smartPro{
+  display: flex;
+  margin-top: -1px;
+  gap: 10px;
+}
+#description span{
+  font-size: 13px;
+  max-width: 700px;
+}
+#description a,#specification a{
+  color: #1b70fa;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+#specification{
+  margin-top: 24px;
+  margin-right: 15px;
+}
+#specification div{
+  border: 1px solid #f1f1f1;
+}
+.blur{
+  color: #a19f9f;
+  padding-right: 32px;
+}
