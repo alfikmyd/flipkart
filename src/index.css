@@ -1080,3 +1080,49 @@ padding-bottom: 7px;
   color: #a19f9f;
   padding-right: 32px;
 }
+
+.comboImage img{
+  width: 112px;
+}
+.comboRate button{
+  color: white;
+  background-color: #388e3c;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 12px;
+  height: 19px;
+}
+#comboImage input{
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+}
+
+.old{
+  color: #a19f9f;
+  font-weight: 500;
+  font-size: 13px;
+  text-decoration: line-through;
+}
+.percent{
+  font-size: 14px;
+  color: #388e3c;
+  font-weight: 600;
+}
+.origin{
+  font-size: 16px;
+  font-weight: bold;
+}
+#combo{
+  display: block;
+  margin-top: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.comboItem{
+  display: flex;
+}
+.comboImage{
+  display: flex;
+  flex-direction: row-reverse;
+}

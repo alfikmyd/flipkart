@@ -138,138 +138,196 @@ function SelectedItem() {
 
 
                             <div className="iDelivery">
-                                <span style={{color:"#929191ff",fontWeight:"bold"}}>Delivery</span>
+                                <span style={{ color: "#929191ff", fontWeight: "bold" }}>Delivery</span>
                                 <div className="delivAdrs">
                                     <label>
-                                        <input type="text" placeholder="Enter Delivery Pincode" maxLength="6"/>
+                                        <input type="text" placeholder="Enter Delivery Pincode" maxLength="6" />
                                         <a href="#">Check</a>
                                     </label>
-                                    <span style={{fontWeight:"bold",marginTop:"5px"}}>Delivery by 13 Sep, Saturday <span className="delivQues">?</span></span>
-                                    <span style={{fontSize:"11px",letterSpacing:".5px",marginTop:"-7px"}}>if ordered before 11:18 AM</span>
-                                    <span style={{fontWeight:"bold"}}>Installation & Demo by 12 Sep, Friday <span style={{color:"#b9b8b8ff"}}>|</span> ₹599</span>
-                                    <a style={{marginTop:"5px"}} href="#">View Details</a>
+                                    <span style={{ fontWeight: "bold", marginTop: "5px" }}>Delivery by 13 Sep, Saturday <span className="delivQues">?</span></span>
+                                    <span style={{ fontSize: "11px", letterSpacing: ".5px", marginTop: "-7px" }}>if ordered before 11:18 AM</span>
+                                    <span style={{ fontWeight: "bold" }}>Installation & Demo by 12 Sep, Friday <span style={{ color: "#b9b8b8ff" }}>|</span> ₹599</span>
+                                    <a style={{ marginTop: "5px" }} href="#">View Details</a>
                                 </div>
                             </div>
 
-                            <div className="highlSection" style={{display:"flex",marginTop:"8px"}}>
-                                <div className="iHighlight" style={{display:"flex"}}>
-                                    <span style={{color:"#878787",fontWeight:"bold"}}>Highlights</span>
+                            <div className="highlSection" style={{ display: "flex", marginTop: "8px" }}>
+                                <div className="iHighlight" style={{ display: "flex" }}>
+                                    <span style={{ color: "#878787", fontWeight: "bold" }}>Highlights</span>
                                     <ul>
                                         <li><span>Light Laptop without Optical Disk Drive</span></li>
                                         <li><span>14.1 inch Full HD</span></li>
                                     </ul>
                                 </div>
-                                <div className="iPayment" style={{display:"flex",marginLeft:"40px"}}>
-                                    <span style={{color:"#878787",fontWeight:"bold",maxWidth:"100px"}}>Easy Payment Options</span>
-                                    <ul style={{marginLeft:"-12px"}}>
+                                <div className="iPayment" style={{ display: "flex", marginLeft: "40px" }}>
+                                    <span style={{ color: "#878787", fontWeight: "bold", maxWidth: "100px" }}>Easy Payment Options</span>
+                                    <ul style={{ marginLeft: "-12px" }}>
                                         <li><span>EMI starting from ₹688/month</span></li>
                                         <li><span>Cash on Delivery</span></li>
                                         <li><span>Net banking & Credit/ Debit/ ATM card</span></li>
-                                        <a style={{marginTop:"3px"}} href="View">View Details</a>
+                                        <a style={{ marginTop: "3px" }} href="View">View Details</a>
                                     </ul>
-                                    
+
                                 </div>
                             </div>
 
-                            <div className="iSeller" style={{display:"flex"}}>
-                                <span style={{color:"#878787",fontWeight:"bold"}}>Seller</span>
-                                <div style={{display:"block",marginLeft:"75px"}}>
+                            <div className="iSeller" style={{ display: "flex" }}>
+                                <span style={{ color: "#878787", fontWeight: "bold" }}>Seller</span>
+                                <div style={{ display: "block", marginLeft: "75px" }}>
                                     <a href="#">TheElefANT <button>4.1 ★</button></a>
-                                    <ul style={{color:"#a1a1a1ff",marginLeft:"-25px",marginTop:"7px"}}>
-                                        <li><span style={{color:"black"}}>7 Days Brand Support <span className="sellerQues">?</span></span></li>
+                                    <ul style={{ color: "#a1a1a1ff", marginLeft: "-25px", marginTop: "7px" }}>
+                                        <li><span style={{ color: "black" }}>7 Days Brand Support <span className="sellerQues">?</span></span></li>
                                     </ul>
-                                    <a style={{marginTop:"-5px"}} href="sell">See other sellers</a>
+                                    <a style={{ marginTop: "-5px" }} href="sell">See other sellers</a>
                                 </div>
                             </div>
 
                             <div className="iDescription">
-                                <span style={{color:"#878787",fontWeight:"bold"}}>Description</span>
-                                <span style={{marginLeft:"39px",lineHeight:"20px",marginTop:"5px",maxWidth:"670px"}}>This HeroBook Pro laptop is packed with an array of features to provude seamless operations. Equipped with a 35.81 cm (14.1) IPS screen to view the visuals in 1920x1080 UHD resolution with
-                                    utmost detailing.This laptop features a poowerful Intel Celeron N4020 processor and UHD Graphics 600 so you can enable smooth and efficient multitasking and 4K video playback. 
+                                <span style={{ color: "#878787", fontWeight: "bold" }}>Description</span>
+                                <span style={{ marginLeft: "39px", lineHeight: "20px", marginTop: "5px", maxWidth: "670px" }}>This HeroBook Pro laptop is packed with an array of features to provude seamless operations. Equipped with a 35.81 cm (14.1) IPS screen to view the visuals in 1920x1080 UHD resolution with
+                                    utmost detailing.This laptop features a poowerful Intel Celeron N4020 processor and UHD Graphics 600 so you can enable smooth and efficient multitasking and 4K video playback.
                                     The 38 Wh polymer lithium-ion battery offers long-lasting battery life so you can enjoy uninterrupted performancen for up to 9 hours.
                                     This laptop comes with multiple connectivity ports to offer seamless connections to enhance your productivity.
                                 </span>
                             </div>
                         </div>
                         <div id="description">
-                            <div style={{padding:"21.5px"}}>
-                                <span style={{fontSize:"24px",fontWeight:"bold",letterSpacing:".1px",marginLeft:"7px"}}>Product Description</span>
+                            <div style={{ padding: "21.5px" }}>
+                                <span style={{ fontSize: "24px", fontWeight: "bold", letterSpacing: ".1px", marginLeft: "7px" }}>Product Description</span>
                             </div>
-                            <div className="ips" style={{padding:"27.5px"}}>
-                                <div style={{border:"none",marginTop:"-20px"}}>
-                                <h3 style={{fontSize:"20px",fontWeight:"500"}}>IPS Display</h3>
-                                    <span>The HeroBook Pro laptop features a large 35.81 cm (14.1) IPS screen to offer a wide vision and UHD resolution (1920x1080). You can view every visual with 
+                            <div className="ips" style={{ padding: "27.5px" }}>
+                                <div style={{ border: "none", marginTop: "-20px" }}>
+                                    <h3 style={{ fontSize: "20px", fontWeight: "500" }}>IPS Display</h3>
+                                    <span>The HeroBook Pro laptop features a large 35.81 cm (14.1) IPS screen to offer a wide vision and UHD resolution (1920x1080). You can view every visual with
                                         utmost clarity and detail. The night mode and colour setting of this laptop reduce eye fatigue and
                                         strain during prolonged usage or dim light settings.
                                     </span>
                                 </div>
-                                <img style={{width:"168px",height:"168px",marginTop:"-2px",marginLeft:"5px"}} src="https://rukminim2.flixcart.com/image/200/200/cms-rpd-img/d87a624129ad4254a67015d660f039a6_18ae1abe3b5_-original-imagrfsb9ntehrey.jpeg?q=90" alt="" />
+                                <img style={{ width: "168px", height: "168px", marginTop: "-2px", marginLeft: "5px" }} src="https://rukminim2.flixcart.com/image/200/200/cms-rpd-img/d87a624129ad4254a67015d660f039a6_18ae1abe3b5_-original-imagrfsb9ntehrey.jpeg?q=90" alt="" />
                             </div>
-                            <div className="smartPro" style={{padding:"27px"}}>
-                                <img style={{width:"168px",height:"168px",marginTop:"-3px",marginLeft:"-1px"}} src="https://rukminim2.flixcart.com/image/200/200/cms-rpd-img/14339805697d4cd99556fa324d64dda4_18ae1abc6e9_-original-imagrfsbvhm5khwy.jpeg?q=90" alt="" />
-                                <div style={{border:'none',marginLeft:"23px",marginTop:"-22px"}}>
-                                    <h3 style={{fontSize:"20px",fontWeight:"500"}}>Smart Processor</h3>
-                                    <span style={{marginTop:"-10px"}}>This laptop is equipped with a powerful Intel Celeron N4020 processor and UHD Graphics 600 which allows you to seamlessly multitask and enjoy 
+                            <div className="smartPro" style={{ padding: "27px" }}>
+                                <img style={{ width: "168px", height: "168px", marginTop: "-3px", marginLeft: "-1px" }} src="https://rukminim2.flixcart.com/image/200/200/cms-rpd-img/14339805697d4cd99556fa324d64dda4_18ae1abc6e9_-original-imagrfsbvhm5khwy.jpeg?q=90" alt="" />
+                                <div style={{ border: 'none', marginLeft: "23px", marginTop: "-22px" }}>
+                                    <h3 style={{ fontSize: "20px", fontWeight: "500" }}>Smart Processor</h3>
+                                    <span style={{ marginTop: "-10px" }}>This laptop is equipped with a powerful Intel Celeron N4020 processor and UHD Graphics 600 which allows you to seamlessly multitask and enjoy
                                         smooth 4K video playback. With up to 8 GB of RAM and up to 256 GB of SSD, this laptop provides smart performance and efficient storage to enhance your productivity.
                                     </span>
                                 </div>
                             </div>
-                            <div style={{marginTop:"-1px",cursor:"pointer",padding:"25px"}}>
+                            <div style={{ marginTop: "-1px", cursor: "pointer", padding: "25px" }}>
                                 <a href="feature">View all features</a>
                             </div>
                         </div>
 
                         <div id="specification">
-                            <div style={{padding:"21.5px"}}>
-                                <span style={{fontSize:"24px",fontWeight:"bold",letterSpacing:".1px",marginLeft:"7px"}}>Specification</span>
+                            <div style={{ padding: "21.5px" }}>
+                                <span style={{ fontSize: "24px", fontWeight: "bold", letterSpacing: ".1px", marginLeft: "7px" }}>Specification</span>
                             </div>
-                            <div  style={{padding:"25px",marginTop:"-1px"}}>
-                                <h3 style={{fontSize:"18px",fontWeight:"500",marginTop:"3px"}}>Warranty</h3>
-                                <table style={{fontSize:"13px",lineHeight:"29px",marginTop:"-4px"}}>
+                            <div style={{ padding: "25px", marginTop: "-1px" }}>
+                                <h3 style={{ fontSize: "18px", fontWeight: "500", marginTop: "3px" }}>Warranty</h3>
+                                <table style={{ fontSize: "13px", lineHeight: "29px", marginTop: "-4px" }}>
                                     <tr>
                                         <td className="blur">Warranty Summary</td>
-                                        <td style={{marginLeft:"20px"}}>1 Year Onsite Warranty</td>
+                                        <td style={{ marginLeft: "20px" }}>1 Year Onsite Warranty</td>
                                     </tr>
                                     <tr>
                                         <td className="blur">Warranty Service type</td>
-                                        <td style={{marginLeft:"20px"}}>Service Center</td>
+                                        <td style={{ marginLeft: "20px" }}>Service Center</td>
                                     </tr>
                                     <tr>
                                         <td className="blur">Convered in Warranty</td>
-                                        <td style={{marginLeft:"20px"}}>Manufacturing Defects</td>
+                                        <td style={{ marginLeft: "20px" }}>Manufacturing Defects</td>
                                     </tr>
                                     <tr>
                                         <td className="blur">Not Covered in Warranty</td>
-                                        <td style={{marginLeft:"20px"}}>Water & Physical Damage</td>
+                                        <td style={{ marginLeft: "20px" }}>Water & Physical Damage</td>
                                     </tr>
                                     <tr>
                                         <td className="blur">Domestic Warranty</td>
-                                        <td style={{marginLeft:"20px"}}>1 Year</td>
+                                        <td style={{ marginLeft: "20px" }}>1 Year</td>
                                     </tr>
                                 </table>
                             </div>
-                            <div style={{marginTop:"-1px",padding:"5px",paddingLeft:"23px"}}>
-                                <h3 style={{color:"#979595ff",fontWeight:"530"}}>Processor And Memory Features</h3>
-                                <span style={{color:"#e0e0e0ff",fontSize:"13px"}}>Dedicated Graphic Memory <span style={{marginLeft:"20px"}}>DDR4</span></span>
+                            <div style={{ marginTop: "-1px", padding: "5px", paddingLeft: "23px" }}>
+                                <h3 style={{ color: "#979595ff", fontWeight: "530" }}>Processor And Memory Features</h3>
+                                <span style={{ color: "#e0e0e0ff", fontSize: "13px" }}>Dedicated Graphic Memory <span style={{ marginLeft: "20px" }}>DDR4</span></span>
                             </div>
-                            <div style={{marginTop:"-1px",padding:"25px",cursor:"pointer"}}>
+                            <div style={{ marginTop: "-1px", padding: "25px", cursor: "pointer" }}>
                                 <a href="read">Read More</a>
                             </div>
                         </div>
 
-                        <div id="addItem">
-                            <div>
-                                <h2>Buy together and save upto 10%</h2>
-                                <div className="ofItem">
-                                    <div>
-                                        <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/computer/h/t/t/-original-imahcd9hhh6y4knb.jpeg?q=70&crop=false" alt="" />
-                                        <span>CHUWI Intel Celero Dual Core 11th Gen N4020 - (8 GB/256 GB SSD/W..</span>
-                                        <button>3.7 ★</button>
+                        
+                        <div id="combo">
+                            <div id="comboCol-one" style={{border:"1px solid #f1f1f1"}}>
+                                <span style={{fontSize:"24px",fontWeight:"bold"}}>Buy together and save upto 10%</span>
+                                <div className="comboItem">
+                                    <div className="one">
+                                        <div className="comboImage">
+                                            <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/computer/h/t/t/-original-imahcd9hhh6y4knb.jpeg?q=70&crop=false" alt="" />
+                                        </div>
+                                        <div>
+                                            <span style={{fontSize:"13px"}}>CHUWI Intel Celeron Dual Core 11th Gen N4020 - (8 GB/256 GB SSD/W...</span>
+                                            <div className="comboRate">
+                                                <button>3.7 ★</button>
+                                                <span>(1,735)</span>
+                                            </div>
+                                            <div>
+                                                <span className="origin">₹18,990</span>
+                                                <span className="old">₹34,990</span>
+                                                <span className="percent">45% off</span>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    <span className="comboPlus">+</span>
+
+                                    <div className="two">
+                                        <div className="comboImage">
+                                            <input type="checkbox" />
+                                            <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/mouse/d/d/2/-original-imahbg3mcksqv9pq.jpeg?q=70&crop=false" alt="" />
+                                        </div>
+                                        <div>
+                                            <span style={{fontSize:"13px"}}>Logitech B175 / Optical Tracking, 12-Months Battery Life, Ambidex</span>
+                                            <div className="comboRate">
+                                                <button>4.4 ★</button>
+                                                <span>(1,72,552)</span>
+                                            </div>
+                                            <div>
+                                                <span className="origin">₹535</span>
+                                                <span className="old">₹595</span>
+                                                <span className="percent">10% off</span>
+                                            </div>
+                                            <span>Special price if bought with this item</span>
+                                        </div>
+                                    </div>
+
+                                    <span className="comboPlus">+</span>
+
+                                    <div className="three">
+                                        <div className="comboImage">
+                                            <input type="checkbox" />
+                                            <img src="https://rukminim2.flixcart.com/image/312/312/kyhlfgw0/keyboard/desktop-keyboard/c/p/1/330-mouse-keyboard-combo-hp-original-imagapd3yucmbby4.jpeg?q=70&crop=false" alt="" />
+                                        </div>
+                                        <div>
+                                            <span style={{fontSize:"13px"}}>HP 330 Mouse & Keyboard Combo Wireless Standard Desktop Keyboard ...</span>
+                                            <div className="comboRate">
+                                                <button>4.2 ★</button>
+                                                <span>(18,025)</span>
+                                            </div>
+                                            <span className="origin">₹1,299</span>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
+
+                            <div id="comboCol-two" style={{border:"1px solid #f1f1f1"}}>
+                                <span>select</span>
+                                <button>ADD to cart</button>
+                            </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
