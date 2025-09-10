@@ -257,22 +257,25 @@ function SelectedItem() {
                             </div>
                         </div>
 
-                        
+
                         <div id="combo">
-                            <div id="comboCol-one" style={{border:"1px solid #f1f1f1"}}>
-                                <span style={{fontSize:"24px",fontWeight:"bold"}}>Buy together and save upto 10%</span>
+                            <div id="comboCol-one" style={{ border: "1px solid #f1f1f1" }}>
+                                <span style={{ fontSize: "24px", fontWeight: "bold", cursor: "default" }}>Buy together and save upto 10%</span>
                                 <div className="comboItem">
-                                    <div className="one">
-                                        <div className="comboImage">
-                                            <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/computer/h/t/t/-original-imahcd9hhh6y4knb.jpeg?q=70&crop=false" alt="" />
-                                        </div>
-                                        <div>
-                                            <span style={{fontSize:"13px"}}>CHUWI Intel Celeron Dual Core 11th Gen N4020 - (8 GB/256 GB SSD/W...</span>
+                                    <div className="one" style={{ paddingRight: "15px" }}>
+                                        <a href="chuwi">
+                                            <div className="comboImage">
+                                                <img style={{ marginRight: "92px", marginTop: "9px", paddingBottom: "40px" }} src="https://rukminim2.flixcart.com/image/312/312/xif0q/computer/h/t/t/-original-imahcd9hhh6y4knb.jpeg?q=70&crop=false" alt="" />
+                                            </div>
+
+                                            <span style={{ fontSize: "13px", llineHeight: "20px" }}>CHUWI Intel Celeron Dual Core 11th Gen N4020 - (8 GB/256 GB SSD/W...</span>
+                                        </a>
+                                        <div >
                                             <div className="comboRate">
                                                 <button>3.7 ★</button>
-                                                <span>(1,735)</span>
+                                                <span className="rateCount">(1,735)</span>
                                             </div>
-                                            <div>
+                                            <div style={{ marginTop: "7px" }}>
                                                 <span className="origin">₹18,990</span>
                                                 <span className="old">₹34,990</span>
                                                 <span className="percent">45% off</span>
@@ -280,51 +283,161 @@ function SelectedItem() {
                                         </div>
                                     </div>
 
-                                    <span className="comboPlus">+</span>
+                                    <span className="comboPlus" style={{}}>+</span>
 
-                                    <div className="two">
-                                        <div className="comboImage">
-                                            <input type="checkbox" />
-                                            <img src="https://rukminim2.flixcart.com/image/312/312/xif0q/mouse/d/d/2/-original-imahbg3mcksqv9pq.jpeg?q=70&crop=false" alt="" />
-                                        </div>
+                                    <div className="two" style={{ paddingLeft: "20px" }}>
+                                        <a href="mouse">
+                                            <div className="comboImage">
+                                                <input type="checkbox" />
+                                                <img style={{ marginRight: "22px", paddingBottom: "30px" }} src="https://rukminim2.flixcart.com/image/312/312/xif0q/mouse/d/d/2/-original-imahbg3mcksqv9pq.jpeg?q=70&crop=false" alt="" />
+                                            </div>
+
+                                            <span style={{ fontSize: "13px", lineHeight: "20px" }}>Logitech B175 / Optical Tracking, 12-Months Battery Life, Ambidex</span>
+                                        </a>
                                         <div>
-                                            <span style={{fontSize:"13px"}}>Logitech B175 / Optical Tracking, 12-Months Battery Life, Ambidex</span>
                                             <div className="comboRate">
                                                 <button>4.4 ★</button>
-                                                <span>(1,72,552)</span>
+                                                <span className="rateCount">(1,72,552)</span>
                                             </div>
-                                            <div>
+                                            <div style={{ marginTop: "7px", gap: "10px" }}>
                                                 <span className="origin">₹535</span>
                                                 <span className="old">₹595</span>
                                                 <span className="percent">10% off</span>
                                             </div>
-                                            <span>Special price if bought with this item</span>
+                                            <span style={{ fontSize: "11px", color: "#388e3c", macWidth: "max-content" }}>Special price if bought with this item</span>
                                         </div>
                                     </div>
 
-                                    <span className="comboPlus">+</span>
+                                    <span className="comboPlus" style={{ marginTop: "78px", marginRight: "33px" }}>+</span>
 
-                                    <div className="three">
-                                        <div className="comboImage">
-                                            <input type="checkbox" />
-                                            <img src="https://rukminim2.flixcart.com/image/312/312/kyhlfgw0/keyboard/desktop-keyboard/c/p/1/330-mouse-keyboard-combo-hp-original-imagapd3yucmbby4.jpeg?q=70&crop=false" alt="" />
-                                        </div>
+                                    <div className="three" style={{}}>
+                                        <a href="keyboard">
+                                            <div className="comboImage">
+                                                <input type="checkbox" />
+                                                <img style={{ marginRight: "25px", marginTop: "32px", paddingBottom: "56px" }} src="https://rukminim2.flixcart.com/image/312/312/kyhlfgw0/keyboard/desktop-keyboard/c/p/1/330-mouse-keyboard-combo-hp-original-imagapd3yucmbby4.jpeg?q=70&crop=false" alt="" />
+                                            </div>
+
+                                            <span style={{ fontSize: "13px", lineHeight: "20px" }}>HP 330 Mouse & Keyboard Combo Wireless Standard Desktop Keyboard ...</span>
+                                        </a>
                                         <div>
-                                            <span style={{fontSize:"13px"}}>HP 330 Mouse & Keyboard Combo Wireless Standard Desktop Keyboard ...</span>
                                             <div className="comboRate">
                                                 <button>4.2 ★</button>
-                                                <span>(18,025)</span>
+                                                <span className="rateCount">(18,025)</span>
                                             </div>
-                                            <span className="origin">₹1,299</span>
+                                            <div style={{ marginTop: "7px" }}>
+                                                <span className="origin">₹1,299</span>
+                                            </div>
                                         </div>
                                     </div>
 
                                 </div>
                             </div>
 
-                            <div id="comboCol-two" style={{border:"1px solid #f1f1f1"}}>
-                                <span>select</span>
-                                <button>ADD to cart</button>
+                            <div id="comboCol-two">
+                                <span style={{ fontSize: "12px", fontWeight: "bold" }}>Please add at least 1 add-on item to proceed</span>
+                                <button><svg className="XWLYwr" width="16" height="16" viewBox="0 0 16 15" xmlns="http://www.w3.org/2000/svg"><path className="" d="M15.32 2.405H4.887C3 2.405 2.46.805 2.46.805L2.257.21C2.208.085 2.083 0 1.946 0H.336C.1 0-.064.24.024.46l.644 1.945L3.11 9.767c.047.137.175.23.32.23h8.418l-.493 1.958H3.768l.002.003c-.017 0-.033-.003-.05-.003-1.06 0-1.92.86-1.92 1.92s.86 1.92 1.92 1.92c.99 0 1.805-.75 1.91-1.712l5.55.076c.12.922.91 1.636 1.867 1.636 1.04 0 1.885-.844 1.885-1.885 0-.866-.584-1.593-1.38-1.814l2.423-8.832c.12-.433-.206-.86-.655-.86" fill="#fff"></path></svg> ADD TO CART</button>
+                            </div>
+                        </div>
+
+                        <div id="ratingReview" >
+                            <div style={{ border: "1px solid #dddd",padding:"27px",paddingLeft:"27px" }}>
+                                <div id="reviewHead" style={{ display: "flex", justifyContent: "space-between" }}>
+                                    <span>Ratings & Reviews</span>
+                                    <button>Rate Product</button>
+                                </div>
+
+                                <div id="reviewStar" style={{ marginTop: "30px",display:"flex" }}>
+                                    <div className="reviewRate" style={{ display: "flex",marginTop:"-1px", }}>
+                                        <div className="reviewHead">
+                                            <span style={{ fontSize: "32px", color: "black" }}>3.7★</span>
+                                            <span style={{marginTop:"13px"}}>1,738 Ratings & </span>
+                                            <span>209 Reviews</span>
+                                        </div>
+                                        <div>
+                                            <div className="rateD" >
+                                                <span style={{fontWeight:"bold",maxWidth:"max-content"}}>5★</span>
+                                                <div className="rateDiagram" >
+                                                    <span className="diagone"></span>
+                                                </div>
+                                                <span style={{marginLeft:"14px",color:"#878787",marginTop:"-4px"}}>841</span>
+                                            </div>
+                                            <div className="rateD">
+                                                <span style={{fontWeight:"bold"}}>4★</span>
+                                                <div className="rateDiagram">
+                                                    <span className="diagTwo"></span>
+                                                </div>
+                                                <span style={{marginLeft:"14px",color:"#878787",marginTop:"-4px"}}>273</span>
+                                            </div>
+                                            <div className="rateD">
+                                                <span style={{fontWeight:"bold"}}>3★</span>
+                                                <div className="rateDiagram">
+                                                    <span className="diagThree"></span>
+                                                </div>
+                                                <span style={{marginLeft:"14px",color:"#878787",marginTop:"-4px"}}>194</span>
+                                            </div>
+                                            <div className="rateD">
+                                                <span style={{fontWeight:"bold"}}>2★</span>
+                                                <div className="rateDiagram">
+                                                    <span className="diagFour"></span>
+                                                </div>
+                                                <span style={{marginLeft:"14px",color:"#878787",marginTop:"-4px"}}>110</span>
+                                            </div>
+                                            <div className="rateD">
+                                                <span style={{fontWeight:"bold"}}>1★</span>
+                                                <div className="rateDiagram">
+                                                    <span className="diagFive"></span>
+                                                </div>
+                                                <span style={{marginLeft:"14px",color:"#878787",marginTop:"-4px"}}>320</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="reviewPerform">
+                                        <a href="chuwi">
+                                            <div className="rateRound">
+                                                <svg className="y5U2lD" viewBox="0 0 100 100">
+                                                    <path className="FhjqaA" d="M50,4 A 46,46,0,1,1,49.9999,4" strokeWidth="8" fillOpacity="0"></path>
+                                                    <path className="ucl9bG" d="M50,4 A 46,46,0,1,1,4.814786466480328,58.61954047094337" strokeWidth="8" fillOpacity="0"></path>
+                                                    <text className="_2DdnFS" x="35" y="57">3.2</text>
+                                                </svg>
+                                            </div>
+                                            <span style={{fontSize:"14px",fontWeight:"bold"}}>Performance</span>
+                                        </a>
+
+                                        <a href="chuwi">
+                                            <div className="rateRound">
+                                                <svg className="y5U2lD" viewBox="0 0 100 100">
+                                                    <path className="FhjqaA" d="M50,4 A 46,46,0,1,1,49.9999,4" strokeWidth="8" fillOpacity="0"></path>
+                                                    <path className="ucl9bG" d="M50,4 A 46,46,0,1,1,4.814786466480328,58.61954047094337" strokeWidth="8" fillOpacity="0"></path>
+                                                    <text className="_2DdnFS" x="35" y="57">3.2</text>
+                                                </svg>
+                                            </div>
+                                            <span style={{fontSize:"14px",fontWeight:"bold"}}>Battery</span>
+                                        </a>
+
+                                        <a href="chuwi">
+                                            <div className="rateRound">
+                                                <svg className="y5U2lD" viewBox="0 0 100 100">
+                                                    <path className="FhjqaA" d="M50,4 A 46,46,0,1,1,49.9999,4" strokeWidth="8" fillOpacity="0"></path>
+                                                    <path className="ucl9bG" d="M50,4 A 46,46,0,1,1,4.814786466480328,58.61954047094337" strokeWidth="8" fillOpacity="0"></path>
+                                                    <text className="_2DdnFS" x="35" y="57">3.6</text>
+                                                </svg>
+                                            </div>
+                                            <span style={{fontSize:"14px",fontWeight:"bold"}}>Design</span>
+                                        </a>
+
+                                        <a href="chuwi">
+                                            <div className="rateRound">
+                                                <svg className="y5U2lD" viewBox="0 0 100 100">
+                                                    <path className="FhjqaA" d="M50,4 A 46,46,0,1,1,49.9999,4" strokeWidth="8" fillOpacity="0"></path>
+                                                    <path className="ucl9bG" d="M50,4 A 46,46,0,1,1,4.814786466480328,58.61954047094337" strokeWidth="8" fillOpacity="0"></path>
+                                                    <text className="_2DdnFS" x="35" y="57">3.6</text>
+                                                </svg>
+                                            </div>
+                                            <span style={{fontSize:"14px",fontWeight:"bold"}}>Display</span>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -335,4 +448,8 @@ function SelectedItem() {
     )
 }
 export default SelectedItem;
+
+
+
+
 

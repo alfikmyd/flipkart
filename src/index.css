@@ -1083,6 +1083,7 @@ padding-bottom: 7px;
 
 .comboImage img{
   width: 112px;
+  /* margin-right: 36px; */
 }
 .comboRate button{
   color: white;
@@ -1093,10 +1094,12 @@ padding-bottom: 7px;
   font-size: 12px;
   height: 19px;
 }
-#comboImage input{
+.comboImage input{
   height: 20px;
   width: 20px;
   border-radius: 4px;
+  margin-top: -12px;
+  margin-right: 17px;
 }
 
 .old{
@@ -1104,11 +1107,13 @@ padding-bottom: 7px;
   font-weight: 500;
   font-size: 13px;
   text-decoration: line-through;
+  margin-left: 8px;
 }
 .percent{
-  font-size: 14px;
+  font-size: 13px;
   color: #388e3c;
   font-weight: 600;
+  margin-left: 8px;
 }
 .origin{
   font-size: 16px;
@@ -1118,11 +1123,180 @@ padding-bottom: 7px;
   display: block;
   margin-top: 25px;
   font-family: Arial, Helvetica, sans-serif;
+  margin-right: 15px;
 }
 .comboItem{
   display: flex;
+  margin-top: 29px;
+  padding-left: 8px;
 }
 .comboImage{
   display: flex;
   flex-direction: row-reverse;
+}
+#comboCol-one {
+  padding: 27px;
+  padding-bottom: 20px;
+}
+#comboCol-one a{
+  text-decoration: none;
+  color: black;
+}
+.comboPlus{
+  font-size: 36px;
+  color: #bebebe;
+  margin-top: 67px;
+  /* padding-left: 30px; */
+  /* margin-left: -15px;
+  margin-right: 0px; */
+}
+.rateCount{
+  color: #878787;
+  font-weight: bold;
+  font-size: 13px;
+  margin-left: 10px;
+}
+.comboRate{
+  margin-top: 4px;
+}
+#comboCol-two{
+  border: 1px solid #f1f1f1;
+  margin-top: -1px;
+  padding: 18px;
+  padding-left: 44px;
+  letter-spacing: .3px;
+  padding-right: 0px;
+}
+#comboCol-two button{
+  margin-left: 215px;
+  width: 34%;
+  cursor: not-allowed;
+  background-color: #878787;
+  color: white;
+  border: none;
+  font-weight: bold;
+  height: 50px;
+}
+
+
+#ratingReview{
+  display: block;
+  margin-right: 15px;
+  margin-top: 22px;
+  
+}
+#reviewHead span{
+  font-size: 24px;
+  font-weight: bold;
+}
+#reviewHead button{
+  background-color: white;
+  border: none;
+  box-shadow: 1px 1px 2px #878787;
+  width: 155px;
+  height: 45px;
+  margin-top: -7px;
+  margin-right: -7px;
+  font-weight: bold;
+}
+.rateDiagram{
+  width: 100%;
+  background-color: #f3f2f2;
+  height: 5px;
+  border-radius: 100px;
+  position: relative;
+  /* padding-right: -20px; */
+  margin-left: 19px;
+  /* margin-right: -20px; */
+  margin-top: 6px;
+}
+.rateDiagram .diagone{
+  width: 100%;
+  height: 5px;
+  border-radius: 100px;
+  position: absolute;
+  background-color: #388e3c;
+
+}
+.rateD{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-size: 11px;
+  margin-left: 27px;
+  margin-right: 89px;
+  line-height: 22px;
+  margin-top: -2px;
+}
+.rateDiagram .diagTwo{
+  width: 33%;
+  background-color: #388e3c;
+  height: 5px;
+  border-radius: 100px;
+  position: absolute;
+}
+.rateDiagram .diagThree{
+  width: 23%;
+  background-color: #388e3c;
+  height: 5px;
+  border-radius: 100px;
+  position: absolute;
+}
+.rateDiagram .diagFour{
+  width: 13%;
+  background-color: #ff9f00;
+  position: absolute;
+  border-radius: 100px;
+  height: 5px;
+}
+.rateDiagram .diagFive{
+  width: 39%;
+  background-color: red;
+  position: absolute;
+  border-radius: 100px;
+  height: 5px;
+}
+.reviewHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  color: #878787;
+  margin-left: 6px;
+  margin-top: 12px;
+  line-height: 20px;
+  font-weight: 500;
+}
+.reviewRate{
+  /* border-right: 1px solid #ebebebdd; */
+  margin-right: 35%;
+  border-right: 1px solid #b8b6b6;
+}
+
+.reviewPerform{
+  /* width: 800px; */
+  margin-left: -150px;
+  display: flex;
+  
+}
+.reviewPerform a{
+  cursor: pointer;
+  text-align: center;
+  width: 25%;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  display: block;
+  color: black;
+  font-size: 25px;
+  /* font-weight: bold; */
+}
+.rateRound{
+  padding: 12px 20px 0;
+}
+.rateRound svg{
+  /* width: 45%; */
+  width: 57px;
+  stroke-linecap: round;
+  stroke: #388e3c;
 }
