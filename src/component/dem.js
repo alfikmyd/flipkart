@@ -217,3 +217,47 @@
                                 </button>
                             </div>
                         </div> */}
+
+
+
+
+
+
+function ScrollableSimilar() {
+    const scrollRef = useRef(null);
+
+    const scroll = (direction) => {
+        if (scrollRef.current) {
+            const scrollAmount = 300; // Adjust as needed
+            scrollRef.current.scrollBy({
+                left: direction === "right" ? scrollAmount : -scrollAmount,
+                behavior: "smooth"
+            });
+        }
+    };
+
+    return (
+        <div style={{ display: "flex", alignItems: "center" }}>
+            <button onClick={() => scroll("left")}>←</button>
+            <div
+                ref={scrollRef}
+                style={{
+                    overflowX: "auto",
+                    whiteSpace: "nowrap",
+                    width: "600px"
+                }}
+            >
+                {/* Example items */}
+                <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 1</div>
+                <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 2</div>
+                <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 3</div>
+                <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 4</div>
+                <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 5</div>
+            </div>
+            <button onClick={() => scroll("right")}>→</button>
+        </div>
+    );
+}
+
+export { ScrollableSimilar };
+

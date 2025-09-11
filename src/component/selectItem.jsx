@@ -1,3 +1,4 @@
+import Similar from "./suggestItem";
 
 
 function SelectedItem() {
@@ -340,54 +341,54 @@ function SelectedItem() {
                         </div>
 
                         <div id="ratingReview" >
-                            <div style={{ border: "1px solid #dddd",padding:"27px",paddingLeft:"27px" }}>
+                            <div style={{ border: "1px solid #f0efefdd", padding: "27px", paddingLeft: "27px" }}>
                                 <div id="reviewHead" style={{ display: "flex", justifyContent: "space-between" }}>
                                     <span>Ratings & Reviews</span>
                                     <button>Rate Product</button>
                                 </div>
 
-                                <div id="reviewStar" style={{ marginTop: "30px",display:"flex" }}>
-                                    <div className="reviewRate" style={{ display: "flex",marginTop:"-1px", }}>
+                                <div id="reviewStar" style={{ marginTop: "30px", display: "flex" }}>
+                                    <div className="reviewRate" >
                                         <div className="reviewHead">
                                             <span style={{ fontSize: "32px", color: "black" }}>3.7★</span>
-                                            <span style={{marginTop:"13px"}}>1,738 Ratings & </span>
+                                            <span style={{ marginTop: "13px" }}>1,738 Ratings & </span>
                                             <span>209 Reviews</span>
                                         </div>
                                         <div>
                                             <div className="rateD" >
-                                                <span style={{fontWeight:"bold",maxWidth:"max-content"}}>5★</span>
+                                                <span style={{ fontWeight: "bold", maxWidth: "max-content" }}>5★</span>
                                                 <div className="rateDiagram" >
                                                     <span className="diagone"></span>
                                                 </div>
-                                                <span style={{marginLeft:"14px",color:"#878787",marginTop:"-4px"}}>841</span>
+                                                <span style={{ marginLeft: "14px", color: "#878787", marginTop: "-4px" }}>841</span>
                                             </div>
                                             <div className="rateD">
-                                                <span style={{fontWeight:"bold"}}>4★</span>
+                                                <span style={{ fontWeight: "bold" }}>4★</span>
                                                 <div className="rateDiagram">
                                                     <span className="diagTwo"></span>
                                                 </div>
-                                                <span style={{marginLeft:"14px",color:"#878787",marginTop:"-4px"}}>273</span>
+                                                <span style={{ marginLeft: "14px", color: "#878787", marginTop: "-4px" }}>273</span>
                                             </div>
                                             <div className="rateD">
-                                                <span style={{fontWeight:"bold"}}>3★</span>
+                                                <span style={{ fontWeight: "bold" }}>3★</span>
                                                 <div className="rateDiagram">
                                                     <span className="diagThree"></span>
                                                 </div>
-                                                <span style={{marginLeft:"14px",color:"#878787",marginTop:"-4px"}}>194</span>
+                                                <span style={{ marginLeft: "14px", color: "#878787", marginTop: "-4px" }}>194</span>
                                             </div>
                                             <div className="rateD">
-                                                <span style={{fontWeight:"bold"}}>2★</span>
+                                                <span style={{ fontWeight: "bold" }}>2★</span>
                                                 <div className="rateDiagram">
                                                     <span className="diagFour"></span>
                                                 </div>
-                                                <span style={{marginLeft:"14px",color:"#878787",marginTop:"-4px"}}>110</span>
+                                                <span style={{ marginLeft: "14px", color: "#878787", marginTop: "-4px" }}>110</span>
                                             </div>
                                             <div className="rateD">
-                                                <span style={{fontWeight:"bold"}}>1★</span>
+                                                <span style={{ fontWeight: "bold" }}>1★</span>
                                                 <div className="rateDiagram">
                                                     <span className="diagFive"></span>
                                                 </div>
-                                                <span style={{marginLeft:"14px",color:"#878787",marginTop:"-4px"}}>320</span>
+                                                <span style={{ marginLeft: "14px", color: "#878787", marginTop: "-4px" }}>320</span>
                                             </div>
                                         </div>
                                     </div>
@@ -401,7 +402,7 @@ function SelectedItem() {
                                                     <text className="_2DdnFS" x="35" y="57">3.2</text>
                                                 </svg>
                                             </div>
-                                            <span style={{fontSize:"14px",fontWeight:"bold"}}>Performance</span>
+                                            <span style={{ fontSize: "13px", fontWeight: "bold", marginTop: "-6px" }}>Performance</span>
                                         </a>
 
                                         <a href="chuwi">
@@ -412,7 +413,7 @@ function SelectedItem() {
                                                     <text className="_2DdnFS" x="35" y="57">3.2</text>
                                                 </svg>
                                             </div>
-                                            <span style={{fontSize:"14px",fontWeight:"bold"}}>Battery</span>
+                                            <span style={{ fontSize: "13px", fontWeight: "bold", marginTop: "-6px" }}>Battery</span>
                                         </a>
 
                                         <a href="chuwi">
@@ -423,7 +424,7 @@ function SelectedItem() {
                                                     <text className="_2DdnFS" x="35" y="57">3.6</text>
                                                 </svg>
                                             </div>
-                                            <span style={{fontSize:"14px",fontWeight:"bold"}}>Design</span>
+                                            <span style={{ fontSize: "13px", fontWeight: "bold", marginTop: "-6px" }}>Design</span>
                                         </a>
 
                                         <a href="chuwi">
@@ -434,15 +435,231 @@ function SelectedItem() {
                                                     <text className="_2DdnFS" x="35" y="57">3.6</text>
                                                 </svg>
                                             </div>
-                                            <span style={{fontSize:"14px",fontWeight:"bold"}}>Display</span>
+                                            <span style={{ fontSize: "13px", fontWeight: "bold" }}>Display</span>
                                         </a>
                                     </div>
                                 </div>
+
+                                <div id="proImage">
+                                    <img src="https://rukminim1.flixcart.com/blobio/178/178/imr/blobio-imr_0cd65418db3b46aa82ef46938d9bd078.jpg?q=90" alt="..." />
+                                    <img src="https://rukminim1.flixcart.com/blobio/178/178/imr/blobio-imr_83966b4b8e324fe2b6f34fe97330c1a5.jpg?q=90" alt="" />
+                                    <img src="https://rukminim1.flixcart.com/blobio/178/178/imr/blobio-imr_19a7ceaca6044e48a6e7584eb6a54b5a.jpg?q=90" alt="...." />
+                                    <span>+ 61</span>
+                                </div>
+
                             </div>
+
+                            <div id="rateComntOne">
+                                <div style={{ marginBottom: "14px" }}>
+                                    <button className="comntBtn">5 ★</button>
+                                    <span style={{ fontWeight: "bold", marginLeft: "10px" }}>Perfect product!</span>
+                                </div>
+                                <span>Laptop is a Good But Battery Problem.. Continue use 4 to 5 hour's is Battery Backup..</span>
+                                <div style={{ display: "flex", marginTop: "15px", gap: "4px", cursor: "pointer" }}>
+                                    <img src="https://rukminim1.flixcart.com/blobio/178/178/imr/blobio-imr_0cd65418db3b46aa82ef46938d9bd078.jpg?q=90" alt="..." />
+                                    <img src="https://rukminim1.flixcart.com/blobio/178/178/imr/blobio-imr_83966b4b8e324fe2b6f34fe97330c1a5.jpg?q=90" alt="" />
+                                </div>
+                                <div className="cusName" >
+                                    <div>
+                                        <span style={{ fontWeight: "bold" }}>Mohan Jigale</span>
+                                        <span style={{ marginLeft: "7px" }}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="14" fill="currentColor" className="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                            </svg>
+                                            Certified Buyer, Nanded Nov, 2023
+                                        </span>
+                                    </div>
+                                    <div className="cusLike">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16" fill="currentColor" className="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                                            <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                                        </svg> 282</span>
+                                        <span style={{ marginLeft: "26px" }}><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="16" fill="currentColor" className="bi bi-hand-thumbs-down-fill" viewBox="0 0 16 16">
+                                            <path d="M6.956 14.534c.065.936.952 1.659 1.908 1.42l.261-.065a1.38 1.38 0 0 0 1.012-.965c.22-.816.533-2.512.062-4.51q.205.03.443.051c.713.065 1.669.071 2.516-.211.518-.173.994-.68 1.2-1.272a1.9 1.9 0 0 0-.234-1.734c.058-.118.103-.242.138-.362.077-.27.113-.568.113-.856 0-.29-.036-.586-.113-.857a2 2 0 0 0-.16-.403c.169-.387.107-.82-.003-1.149a3.2 3.2 0 0 0-.488-.9c.054-.153.076-.313.076-.465a1.86 1.86 0 0 0-.253-.912C13.1.757 12.437.28 11.5.28H8c-.605 0-1.07.08-1.466.217a4.8 4.8 0 0 0-.97.485l-.048.029c-.504.308-.999.61-2.068.723C2.682 1.815 2 2.434 2 3.279v4c0 .851.685 1.433 1.357 1.616.849.232 1.574.787 2.132 1.41.56.626.914 1.28 1.039 1.638.199.575.356 1.54.428 2.591" />
+                                        </svg> 67</span>
+                                        <span style={{ marginLeft: "26px" }}><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
+                                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                                        </svg></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="rateComntTwo">
+                                <div style={{ marginBottom: "14px" }}>
+                                    <button className="comntBtn">5 ★</button>
+                                    <span style={{ fontWeight: "bold", marginLeft: "10px" }}>Perfect Product!</span>
+                                </div>
+                                <span>Nice 🙂</span>
+                                <div style={{ display: "flex", marginTop: "15px", gap: "4px", cursor: "pointer" }}>
+                                    <img src="https://rukminim1.flixcart.com/blobio/178/178/imr/blobio-imr_19a7ceaca6044e48a6e7584eb6a54b5a.jpg?q=90" alt="...." />
+                                </div>
+                                <div className="cusName">
+                                    <div>
+                                        <span style={{ fontWeight: "bold" }}>MD Saddam Saddam</span>
+                                        <span style={{ marginLeft: "7px" }}>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="14" fill="currentColor" className="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                                                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+                                            </svg>
+                                            Certified Buyer, Alanthurai Mar, 2024
+                                        </span>
+                                    </div>
+
+                                    <div className="cusLike">
+                                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16" fill="currentColor" className="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                                            <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                                        </svg> 119</span>
+                                        <span style={{ marginLeft: "26px" }}><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="16" fill="currentColor" className="bi bi-hand-thumbs-down-fill" viewBox="0 0 16 16">
+                                            <path d="M6.956 14.534c.065.936.952 1.659 1.908 1.42l.261-.065a1.38 1.38 0 0 0 1.012-.965c.22-.816.533-2.512.062-4.51q.205.03.443.051c.713.065 1.669.071 2.516-.211.518-.173.994-.68 1.2-1.272a1.9 1.9 0 0 0-.234-1.734c.058-.118.103-.242.138-.362.077-.27.113-.568.113-.856 0-.29-.036-.586-.113-.857a2 2 0 0 0-.16-.403c.169-.387.107-.82-.003-1.149a3.2 3.2 0 0 0-.488-.9c.054-.153.076-.313.076-.465a1.86 1.86 0 0 0-.253-.912C13.1.757 12.437.28 11.5.28H8c-.605 0-1.07.08-1.466.217a4.8 4.8 0 0 0-.97.485l-.048.029c-.504.308-.999.61-2.068.723C2.682 1.815 2 2.434 2 3.279v4c0 .851.685 1.433 1.357 1.616.849.232 1.574.787 2.132 1.41.56.626.914 1.28 1.039 1.638.199.575.356 1.54.428 2.591" />
+                                        </svg> 30</span>
+                                        <span style={{ marginLeft: "26px" }}><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
+                                            <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                                        </svg></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="cmntLink">
+                                <a href="#">
+                                    <span>All 209 reviews </span>
+                                    <div style={{ color: "#878787", marginTop: "2px", marginRight: "1px" }}>+</div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div id="proQuery">
+                            <div className="quesHead">
+                                <span>Questions and Answers</span>
+                                <div className="searchQues">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
+                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div className="questions" >
+                                <div style={{ display: "flex", flexDirection: "column" }}>
+                                    <span><b>Q: Can we use for trading??</b></span>
+                                    <span style={{ marginTop: "10px" }}><b>A:</b> Yes</span>
+                                    <span style={{ marginTop: "12px", color: "#878787", fontSize: "11px", fontWeight: "bold" }}>TheElefANT</span>
+                                    <span style={{ marginTop: "10px", fontSize: "11px", color: "#878787" }}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" className="tdsVnH"><path fill="#878787" d="M4 0s1.5.2 2.3 0C7 0 7.8.5 8 1c0 0 1.4 0 .8 2.7.2.2.3.4 0 1-.2 1-.4 1-.5 1a3.8 3.8 0 0 1-.3 1v1c.4.2 2 1 3.6 2.3.2.2.4.6.4 1v1.6H6.8l-.5-2.4c1-1.4 0-1.5-.3-1.5s-1.3 0-.3 1.5l-.5 2.4H0V11c0-.4.2-.8.4-1A19 19 0 0 1 4 7.8v-1a3.8 3.8 0 0 1-.4-1.2c-.2 0-.3-.2-.5-1s0-1 .4-1c0 0-.6-2 1-3C4.4.6 4 .2 4 0z"></path></svg>Flipkart Seller</span>
+                                </div>
+                                <div className="cusLike">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16" fill="currentColor" className="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                                        <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                                    </svg> 34</span>
+                                    <span style={{ marginLeft: "26px" }}><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="16" fill="currentColor" className="bi bi-hand-thumbs-down-fill" viewBox="0 0 16 16">
+                                        <path d="M6.956 14.534c.065.936.952 1.659 1.908 1.42l.261-.065a1.38 1.38 0 0 0 1.012-.965c.22-.816.533-2.512.062-4.51q.205.03.443.051c.713.065 1.669.071 2.516-.211.518-.173.994-.68 1.2-1.272a1.9 1.9 0 0 0-.234-1.734c.058-.118.103-.242.138-.362.077-.27.113-.568.113-.856 0-.29-.036-.586-.113-.857a2 2 0 0 0-.16-.403c.169-.387.107-.82-.003-1.149a3.2 3.2 0 0 0-.488-.9c.054-.153.076-.313.076-.465a1.86 1.86 0 0 0-.253-.912C13.1.757 12.437.28 11.5.28H8c-.605 0-1.07.08-1.466.217a4.8 4.8 0 0 0-.97.485l-.048.029c-.504.308-.999.61-2.068.723C2.682 1.815 2 2.434 2 3.279v4c0 .851.685 1.433 1.357 1.616.849.232 1.574.787 2.132 1.41.56.626.914 1.28 1.039 1.638.199.575.356 1.54.428 2.591" />
+                                    </svg> 14</span>
+                                    <span style={{ marginLeft: "26px" }}><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                                    </svg></span>
+                                </div>
+                            </div>
+
+                            <div className="questions" >
+                                <div style={{ display: "flex", flexDirection: "column" }}>
+                                    <span><b>Q: Can we play games</b></span>
+                                    <span style={{ marginTop: "10px" }}><b>A:</b> Yes, you can play</span>
+                                    <span style={{ marginTop: "12px", color: "#878787", fontSize: "11px", fontWeight: "bold" }}>TheElefANT</span>
+                                    <span style={{ marginTop: "10px", fontSize: "11px", color: "#878787" }}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" className="tdsVnH"><path fill="#878787" d="M4 0s1.5.2 2.3 0C7 0 7.8.5 8 1c0 0 1.4 0 .8 2.7.2.2.3.4 0 1-.2 1-.4 1-.5 1a3.8 3.8 0 0 1-.3 1v1c.4.2 2 1 3.6 2.3.2.2.4.6.4 1v1.6H6.8l-.5-2.4c1-1.4 0-1.5-.3-1.5s-1.3 0-.3 1.5l-.5 2.4H0V11c0-.4.2-.8.4-1A19 19 0 0 1 4 7.8v-1a3.8 3.8 0 0 1-.4-1.2c-.2 0-.3-.2-.5-1s0-1 .4-1c0 0-.6-2 1-3C4.4.6 4 .2 4 0z"></path></svg>Flipkart Seller</span>
+                                </div>
+                                <div className="cusLike">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16" fill="currentColor" className="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                                        <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                                    </svg> 78</span>
+                                    <span style={{ marginLeft: "26px" }}><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="16" fill="currentColor" className="bi bi-hand-thumbs-down-fill" viewBox="0 0 16 16">
+                                        <path d="M6.956 14.534c.065.936.952 1.659 1.908 1.42l.261-.065a1.38 1.38 0 0 0 1.012-.965c.22-.816.533-2.512.062-4.51q.205.03.443.051c.713.065 1.669.071 2.516-.211.518-.173.994-.68 1.2-1.272a1.9 1.9 0 0 0-.234-1.734c.058-.118.103-.242.138-.362.077-.27.113-.568.113-.856 0-.29-.036-.586-.113-.857a2 2 0 0 0-.16-.403c.169-.387.107-.82-.003-1.149a3.2 3.2 0 0 0-.488-.9c.054-.153.076-.313.076-.465a1.86 1.86 0 0 0-.253-.912C13.1.757 12.437.28 11.5.28H8c-.605 0-1.07.08-1.466.217a4.8 4.8 0 0 0-.97.485l-.048.029c-.504.308-.999.61-2.068.723C2.682 1.815 2 2.434 2 3.279v4c0 .851.685 1.433 1.357 1.616.849.232 1.574.787 2.132 1.41.56.626.914 1.28 1.039 1.638.199.575.356 1.54.428 2.591" />
+                                    </svg> 42</span>
+                                    <span style={{ marginLeft: "26px" }}><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                                    </svg></span>
+                                </div>
+                            </div>
+
+                            <div className="questions" >
+                                <div style={{ display: "flex", flexDirection: "column" }}>
+                                    <span><b>Q: Can we use for programing language</b></span>
+                                    <span style={{ marginTop: "10px" }}><b>A:</b> Yes, of course you can use for programing languages software.</span>
+                                    <span style={{ marginTop: "12px", color: "#878787", fontSize: "11px", fontWeight: "bold" }}>TheElefANT</span>
+                                    <span style={{ marginTop: "10px", fontSize: "11px", color: "#878787" }}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" className="tdsVnH"><path fill="#878787" d="M4 0s1.5.2 2.3 0C7 0 7.8.5 8 1c0 0 1.4 0 .8 2.7.2.2.3.4 0 1-.2 1-.4 1-.5 1a3.8 3.8 0 0 1-.3 1v1c.4.2 2 1 3.6 2.3.2.2.4.6.4 1v1.6H6.8l-.5-2.4c1-1.4 0-1.5-.3-1.5s-1.3 0-.3 1.5l-.5 2.4H0V11c0-.4.2-.8.4-1A19 19 0 0 1 4 7.8v-1a3.8 3.8 0 0 1-.4-1.2c-.2 0-.3-.2-.5-1s0-1 .4-1c0 0-.6-2 1-3C4.4.6 4 .2 4 0z"></path></svg>Flipkart Seller</span>
+                                </div>
+                                <div className="cusLike">
+                                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16" fill="currentColor" className="bi bi-hand-thumbs-up-fill" viewBox="0 0 16 16">
+                                        <path d="M6.956 1.745C7.021.81 7.908.087 8.864.325l.261.066c.463.116.874.456 1.012.965.22.816.533 2.511.062 4.51a10 10 0 0 1 .443-.051c.713-.065 1.669-.072 2.516.21.518.173.994.681 1.2 1.273.184.532.16 1.162-.234 1.733q.086.18.138.363c.077.27.113.567.113.856s-.036.586-.113.856c-.039.135-.09.273-.16.404.169.387.107.819-.003 1.148a3.2 3.2 0 0 1-.488.901c.054.152.076.312.076.465 0 .305-.089.625-.253.912C13.1 15.522 12.437 16 11.5 16H8c-.605 0-1.07-.081-1.466-.218a4.8 4.8 0 0 1-.97-.484l-.048-.03c-.504-.307-.999-.609-2.068-.722C2.682 14.464 2 13.846 2 13V9c0-.85.685-1.432 1.357-1.615.849-.232 1.574-.787 2.132-1.41.56-.627.914-1.28 1.039-1.639.199-.575.356-1.539.428-2.59z" />
+                                    </svg> 65</span>
+                                    <span style={{ marginLeft: "26px" }}><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="16" fill="currentColor" className="bi bi-hand-thumbs-down-fill" viewBox="0 0 16 16">
+                                        <path d="M6.956 14.534c.065.936.952 1.659 1.908 1.42l.261-.065a1.38 1.38 0 0 0 1.012-.965c.22-.816.533-2.512.062-4.51q.205.03.443.051c.713.065 1.669.071 2.516-.211.518-.173.994-.68 1.2-1.272a1.9 1.9 0 0 0-.234-1.734c.058-.118.103-.242.138-.362.077-.27.113-.568.113-.856 0-.29-.036-.586-.113-.857a2 2 0 0 0-.16-.403c.169-.387.107-.82-.003-1.149a3.2 3.2 0 0 0-.488-.9c.054-.153.076-.313.076-.465a1.86 1.86 0 0 0-.253-.912C13.1.757 12.437.28 11.5.28H8c-.605 0-1.07.08-1.466.217a4.8 4.8 0 0 0-.97.485l-.048.029c-.504.308-.999.61-2.068.723C2.682 1.815 2 2.434 2 3.279v4c0 .851.685 1.433 1.357 1.616.849.232 1.574.787 2.132 1.41.56.626.914 1.28 1.039 1.638.199.575.356 1.54.428 2.591" />
+                                    </svg> 37</span>
+                                    <span style={{ marginLeft: "26px" }}><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
+                                        <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+                                    </svg></span>
+                                </div>
+                            </div>
+
+                            <div id="cmntLink">
+                                <a href="#">
+                                    <span>All questions </span>
+                                    <div style={{ color: "#878787", marginTop: "2px", marginRight: "1px" }}>+</div>
+                                </a>
+                            </div>
+
+                        </div>
+
+
+                        <div id="scrollSecure">
+                            <img src="	https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/shield_b33c0c.svg" alt="..." />
+                            <span style={{ marginTop: "-5px" }}>Safe and Secure Payments.Easy returns.100% Authentic products.</span>
                         </div>
 
                     </div>
                 </div>
+
+                <div id="intrstItem">
+                    <div style={{ fontSize: "24px", fontWeight: "bold" }}>You might be interested in</div>
+
+                    <div className="intrstScroll">
+                        <div style={{ cursor: "pointer" }} className="physicalItem">
+                            <img src="https://rukminim2.flixcart.com/image/400/400/xif0q/operating-system/e/d/6/windows-11-windows-11-neozone-original-imahf9pskehgkhnj.jpeg?q=90" alt="..." />
+                            <div className="scrollItemName">
+                                <span style={{ fontSize: "21px", fontWeight: "bold" }}>Physical</span>
+                                <span style={{ fontSize: "18px", color: "#878787", marginTop: "4px" }}>Min. 50% Off</span>
+                                <button className="scrollShopBtn">Shop Now</button>
+                            </div>
+                        </div>
+
+                        <div className="physicalItem" style={{ marginLeft: "15px" }}>
+                            <img style={{width:"140px",marginLeft:"-15px"}} src="https://rukminim2.flixcart.com/image/400/400/kcxpbww0/external-hard-drive/ssd/z/j/b/samsung-mu-pc1t0h-ww-original-imaftxkfp8rrfeku.jpeg?q=90" alt="..." />
+                            <div className="scrollItemName">
+                                <span style={{ fontSize: "21px", fontWeight: "bold" }}>External SSD</span>
+                                <span style={{ fontSize: "18px", color: "#878787", marginTop: "4px" }}>Min. 50% Off</span>
+                                <button className="scrollShopBtn">Shop Now</button>
+                            </div>
+                        </div>
+
+                        <div className="physicalItem" style={{ marginLeft: "15px" }}>
+                            <img style={{width:"80px"}} src="https://rukminim2.flixcart.com/image/400/400/xif0q/headphone/x/f/r/-original-imahfpmehbsghzyj.jpeg?q=90" alt="..." />
+                            <div className="scrollItemName">
+                                <span style={{ fontSize: "21px", fontWeight: "bold", }}>Wired Ear</span>
+                                <span style={{ fontSize: "18px", color: "#878787", marginTop: "4px" }}>Min. 50% Off</span>
+                                <button className="scrollShopBtn">Shop Now</button>
+                            </div>
+                        </div>
+
+                        <div className="physicalItem" style={{ marginLeft: "15px" }} >
+                            <img style={{width:"140px",marginLeft:"-15px"}} src="https://rukminim2.flixcart.com/image/400/400/xif0q/datacard/l/n/w/mini-wifi-dongle-adapter-with-upto-150-mbps-speed-for-pc-data-original-imah4h265zyy392x.jpeg?q=90" alt="..." />
+                            <div className="scrollItemName">
+                                <span style={{fontSize:"21px",fontWeight:"bold"}}>Data Cards</span>
+                                <span style={{fontSize:"18px",color:"#878787",marginTop:"4px"}}>Min. 50% Off</span>
+                                <button className="scrollShopBtn">Shop Now</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div id="suggested">
+                <Similar/>
             </div>
         </>
     )
