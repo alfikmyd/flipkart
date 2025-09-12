@@ -637,7 +637,7 @@ function SelectedItem() {
                         <div className="physicalItem" style={{ marginLeft: "15px" }}>
                             <img style={{width:"80px"}} src="https://rukminim2.flixcart.com/image/400/400/xif0q/headphone/x/f/r/-original-imahfpmehbsghzyj.jpeg?q=90" alt="..." />
                             <div className="scrollItemName">
-                                <span style={{ fontSize: "21px", fontWeight: "bold", }}>Wired Ear</span>
+                                <span style={{ fontSize: "21px", fontWeight: "bold", }}>Wired Earphones</span>
                                 <span style={{ fontSize: "18px", color: "#878787", marginTop: "4px" }}>Min. 50% Off</span>
                                 <button className="scrollShopBtn">Shop Now</button>
                             </div>

@@ -4,15 +4,19 @@ import Footer from "./component/footer"
 import { useState } from "react"
 import Parent from "./component/filterPage"
 import SelectedItem from "./component/selectItem"
+import HomeHeader from "./component/home/HomeHeader"
+
 
 function App() {
   // const product = data;
 
   return (
     <>
-      <Header />
+      <HomeHeader/>
+
+      {/* <Header /> */}
       {/* <Parent initialData={data} /> */}
-      <SelectedItem />
+      {/* <SelectedItem /> */}
 
       <Footer />
     </>
