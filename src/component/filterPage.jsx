@@ -5,11 +5,11 @@
 //  function Parent ({initialData}){
 //     const [filterValue,setFilterValue] = useState("");
 //     // const [products,setProducts] = useState(initialData);
-//     came.includes(filterValue));
-//     }, [products, filterVaonst [products,setProducts] = useState(Array.isArray(initialData) ? initialData : []);
+//     // came.includes(filterValue));
+//     // }, [products, filterVaonst [products,setProducts] = useState(Array.isArray(initialData) ? initialData : []);
 
 //     const filteredProducts = useMemo(() =>{
-//         return products.filter(p => p.nlue]);
+//         return products.filter(p => p.value));
 
 //     return(
 //         <>

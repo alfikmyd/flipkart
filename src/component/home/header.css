@@ -1,4 +1,291 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    letter-spacing: 0px;
+}
+/* @font-face{
+    font-family: italic;
+    src: url('.../font');
+} */
+
 #header{
     background-color: white;
     display: flex;
+    height: 67px;
+    padding: 12px;
+    /* justify-content: space-between; */
+    padding-right: 0px;
+}
+.headerLogo{
+    width: 160px;
+    overflow: clip;
+    cursor: pointer;
+    height: 40px;
+    /* margin-right: 36px; */
+    /* margin-left: 176px; */
+    margin-left: 9.3%;
+}
+#searchSpace{
+    width: 42.7%;
+    min-width: 480px;
+    cursor: pointer;
+    margin-left: -62px;
+    margin-right: 0px;
+}
+.sechBar{
+    width: 100%;
+    height: 40px;
+    /* display: inline-block; */
+    /* position: relative; */
+    border-radius: 8px;
+    background-color: #f0f5ff;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2px;
+}
+.sechBar svg{
+    height: 40px;
+    border-radius: 2px;
+    cursor: pointer;
+    /* padding: 8px 8px 8px 12px; */
+    background-color: transparent;
+    color: #8b8b8b;
+    margin-left: 15px;
+}
+.sechBar input{
+    /* position: relative; */
+    background-color: transparent;
+    width: 100%;
+    text-overflow: ellipsis;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    height: 40px;
+    cursor: text;
+    margin-left: 8px;
+    
+}
+
+.headerLogin{
+    font-size: 16px;
+    color: #212121;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: 18px;
+    margin-top: 4px;
+    cursor: pointer;
+}
+.headerCart{
+    margin-left: -50px;
+    font-size: 16px;
+    margin-top: 9px;
+    align-items: center;
+}
+.headerSeller{
+    display: flex;
+    align-items: center;
+    margin-left: -50px;
+    margin-top: 2px;
+}
+.dropShow{
+    margin-left: -140px;
+    margin-top: 10px;
+    position: relative;
+    width: 30px;
+    padding: 5px;
+    border-radius: 5px;
+}
+.searchHide{
+    background-color: white;
+    padding: 15px;
+    font-size: 14px;
+    line-height: 40px;
+    z-index: 10;
+}
+.searchHide img{
+    width: 30px;
+}
+.searchHide svg{
+    color: #8b8b8b;
+    padding-right: 0px;
+}
+.reload{
+    display: flex;
+    margin-left: -710px;
+    justify-content: center;
+}
+.reload span{
+    margin-left: -695px;
+    margin-top: -5px;
+}
+.trendList{
+    margin-left: 15px;
+}
+.loginHide{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 5px;
+    cursor: pointer;
+    margin-left: -10px;
+    width: 280px;
+    height: 293px;
+    border-radius: 10px;
+    justify-items: left;
+    align-content: left;
+    text-align: left;
+    box-shadow: 1px 1px 3px #cac7c7;
+    font-size: 15px;
+}
+.loginHide img{
+    width: 20px;
+}
+.loginHide div{
+    width: 100%;
+    padding-left: 17px;
+    line-height: 40px;
+}
+.loginHide a{
+    text-decoration: none;
+    color: #2874f0;
+    font-weight: bold;
+    margin-left: 76px;
+}
+.logSpan{
+    margin-left: 14px;
+}
+.loginShow{
+    display: flex;
+    align-items: center;
+    position: relative;
+    /* height: 35px;
+    width: 110px; */
+    cursor: pointer;    
+}
+.dropHide{
+    position: absolute;
+    margin-top: 45px;
+    margin-left: -323px;
+    background-color: white;
+    padding: 10px;
+    line-height: 33px;
+    cursor: pointer;
+    height: 160px;
+    width: 208px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 3px #dad8d8;
+    font-size: 14px;
+}
+.dropHide img{
+    width: 19px;
+}
+#mobSetting{
+    display: none;
+}
+#mobHeadDown{
+    display: none;
+}
+
+@media (max-width: 1024px) {
+    .headerLogo{
+        margin-left: 15px;
+    }
+    #searchSpace{
+        margin-left: 10px;
+        width: 511px;
+    }
+    .headerLogin{
+        margin-left: 5px;
+    }
+    #headCart{
+        display: none;
+    }
+    .headerCart{
+        margin-left: -6px;
+        margin-top: 13px;
+    }
+    .headerSeller{
+        margin-left: 2px;
+        margin-top: 5px;
+    }
+    .dropShow{
+        margin-left: -20px;
+        margin-right: 6px;
+    }
+    #mobSetting{
+        display: none;
+    }
+    #mobHeadDown{
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .headerLogo{
+        margin-left: 0px;
+    }
+    #searchSpace{
+        margin-left: 16px;
+        min-width: 282px;
+        max-width: 100px;
+    }
+    #mobSetting{
+        display: none;
+    }
+    #mobHeadDown{
+        display: none;
+    }
+}
+
+@media (max-width: 425px){
+    #header{
+        padding: 4px;
+    }
+    #searchSpace{
+        display: none;
+    }
+    #header{
+        height: 47px;
+    }
+    #mobSetting{
+        display: flex;
+        margin-left: 13px;
+        margin-top: 4px;
+    }
+    #mobHeadDown{
+        display: flex;
+        
+    }
+    #mobHeadDown img{
+        margin-right: -121px;
+        margin-top: 8px;
+    }
+    .headerLogo{
+        margin-left: -41px;
+    }
+    .headerSeller{
+        display: none;
+    }
+    .dropShow{
+        display: none;
+    }
+    .headerCart{
+        margin-left: 17px;
+        margin-top: 10px;
+    }
+    .headerLogin{
+        margin-left: 120px;
+        margin-right: -24px;
+        margin-top: 3px;
+    }
+    .bi-chevron-down{
+        display: none;
+    }
+    .loginHide{
+        display: none;
+    }
+
 }

@@ -5,6 +5,7 @@ import { useState } from "react"
 import Parent from "./component/filterPage"
 import SelectedItem from "./component/selectItem"
 import HomeHeader from "./component/home/HomeHeader"
+import Hpage from "./component/home/hPage"
 
 
 function App() {
@@ -12,13 +13,14 @@ function App() {
 
   return (
     <>
-      <HomeHeader/>
-
+      {/* <HomeHeader/> */}
+      <Hpage />
       {/* <Header /> */}
       {/* <Parent initialData={data} /> */}
       {/* <SelectedItem /> */}
 
-      <Footer />
+      {/* <Footer /> */}
+      
     </>
   )
 }
