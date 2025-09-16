@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import headerPic from '../img/flip_header.svg';
-import './header.css';
+// import './header.css';
 
 function HomeHeader() {
     const [searchShow, setSearchShow] = useState(false)
