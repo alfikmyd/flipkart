@@ -223,41 +223,84 @@
 
 
 
-function ScrollableSimilar() {
-    const scrollRef = useRef(null);
+// function ScrollableSimilar() {
+//     const scrollRef = useRef(null);
 
-    const scroll = (direction) => {
-        if (scrollRef.current) {
-            const scrollAmount = 300; // Adjust as needed
-            scrollRef.current.scrollBy({
-                left: direction === "right" ? scrollAmount : -scrollAmount,
-                behavior: "smooth"
-            });
-        }
-    };
+//     const scroll = (direction) => {
+//         if (scrollRef.current) {
+//             const scrollAmount = 300; // Adjust as needed
+//             scrollRef.current.scrollBy({
+//                 left: direction === "right" ? scrollAmount : -scrollAmount,
+//                 behavior: "smooth"
+//             });
+//         }
+//     };
 
-    return (
-        <div style={{ display: "flex", alignItems: "center" }}>
-            <button onClick={() => scroll("left")}>←</button>
-            <div
-                ref={scrollRef}
-                style={{
-                    overflowX: "auto",
-                    whiteSpace: "nowrap",
-                    width: "600px"
-                }}
-            >
-                {/* Example items */}
-                <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 1</div>
-                <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 2</div>
-                <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 3</div>
-                <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 4</div>
-                <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 5</div>
-            </div>
-            <button onClick={() => scroll("right")}>→</button>
+//     return (
+//         <div style={{ display: "flex", alignItems: "center" }}>
+//             <button onClick={() => scroll("left")}>←</button>
+//             <div
+//                 ref={scrollRef}
+//                 style={{
+//                     overflowX: "auto",
+//                     whiteSpace: "nowrap",
+//                     width: "600px"
+//                 }}
+//             >
+//                 {/* Example items */}
+//                 <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 1</div>
+//                 <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 2</div>
+//                 <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 3</div>
+//                 <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 4</div>
+//                 <div style={{ display: "inline-block", width: 150, margin: 10, background: "#eee" }}>Item 5</div>
+//             </div>
+//             <button onClick={() => scroll("right")}>→</button>
+//         </div>
+//     );
+// }
+
+// export { ScrollableSimilar };
+
+
+
+
+
+
+import React from "react";
+
+const slideImage =[
+    {
+        url:"https"
+    },
+    {
+        url:"https://"
+    },
+    {
+        url:"https://"
+    }
+]
+
+const spanStyle ={
+    fontSize: "20",
+    background:"#efefef",
+    color:"#000000"
+}
+function ImageSlider() {
+    return(
+        <div className="slide-Container">
+            <Slide>
+                {slideImage.map((image,index) => {
+                    <div key={index}>
+                        <div style={{...divStyle, backgroundImage:`url(${image.url})`}}>
+                            <span style={spanStyle}>{image.caption}</span>
+                        </div>
+                    </div>
+                })}
+            </Slide>
         </div>
-    );
+    )
 }
 
-export { ScrollableSimilar };
+
+import the (i react-slideshow-image) in terminal``
 

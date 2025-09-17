@@ -3,9 +3,13 @@ import Category from "./category";
 import DealTrend from "./deal";
 import './header.css';
 import Scroll from "./offScroll";
-
+import Top from "./topProdct";
+import Violet from "./violetImage";
+import FourCol from "./fourMob";
 
 function Hpage() {
+    
+
     return (
         <>
             <HomeHeader />
@@ -13,8 +17,16 @@ function Hpage() {
                 <Category />
                 <Scroll />
                 <DealTrend/>
+                <Violet/>
+                <Top/>
+                <Violet/>
+                <FourCol />
             </div>
         </>
-    )
+    );
 }
 export default Hpage;
+
+
+
+
