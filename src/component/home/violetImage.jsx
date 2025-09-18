@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 
 
-function Violet() {
+function Violet({dataSource}) {
     const [violet,setViolet] = useState([]);
 
     useEffect(() => {
-        fetch("violet.json")
-            .then(res => res.json())
-            .then(data => setViolet(data));
+        fetch(dataSource)
+            .then((resp) => resp.json())
+            .then((data) => setViolet(data));
     })
 
     return(

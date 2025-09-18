@@ -1,0 +1,52 @@
+[
+    {
+        "id":1,
+        "fa":"More in Men's Top Wear",
+        "fb":"All",
+        "fc":"Men's T-Shirts",
+        "fd":"Men's Casual Shirts",
+        "fe":"Men's Formal Shirts",
+        "ff":"Men's Kurtas",
+        "fg":"Men's Ethnic Sets",
+        "fh":"Men's Blazers",
+        "fi":"Men's Raincoat",
+        "fj":"Men's Windcheaters",
+        "fk":"Men's Suit",
+        "fl":"Men's Fabrics",
+        "fm":"",
+        "fn":""
+    },
+    {
+        "id":2,
+        "fa":"More in Men's Bottom Wear",
+        "fb":"All",
+        "fc":"Men's Jeans",
+        "fd":"Men's Trousers",
+        "fe":"Men's Trackpants",
+        "ff":"Men's Shorts",
+        "fg":"Men's Cargos",
+        "fh":"Men's Threefourths",
+        "fj":"Men's Pyjamas & Loungepants",
+        "fk":"Men's Dhoti",
+        "fl":"Men's Ethnic Pyjama",
+        "fm":"",
+        "fn":""
+    },
+    {
+        "id":3,
+        "fa":"More in Women Ethnic",
+        "fb":"All",
+        "fc":"Women Sarees",
+        "fd":"Women Kurtas & Kurtis",
+        "fe":"Women Kurta Sets & Salwar Suits",
+        "ff":"Ethnic Dresses",
+        "fg":"Women Dress Materials",
+        "fh":"Women Gowns",
+        "fj":"Women Lehenga Choils",
+        "fk":"Women Leggings & Patialas",
+        "fl":"Women Palazzos & Shararas",
+        "fm":"Women Blouse",
+        "fn":"Women Dupatta"
+    }
+    
+]

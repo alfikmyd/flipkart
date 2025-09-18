@@ -121,7 +121,7 @@
 //             </div>
 //         </div>
 
-        
+
 
 
 
@@ -268,30 +268,30 @@
 
 import React from "react";
 
-const slideImage =[
+const slideImage = [
     {
-        url:"https"
+        url: "https"
     },
     {
-        url:"https://"
+        url: "https://"
     },
     {
-        url:"https://"
+        url: "https://"
     }
 ]
 
-const spanStyle ={
+const spanStyle = {
     fontSize: "20",
-    background:"#efefef",
-    color:"#000000"
+    background: "#efefef",
+    color: "#000000"
 }
 function ImageSlider() {
-    return(
+    return (
         <div className="slide-Container">
             <Slide>
-                {slideImage.map((image,index) => {
+                {slideImage.map((image, index) => {
                     <div key={index}>
-                        <div style={{...divStyle, backgroundImage:`url(${image.url})`}}>
+                        <div style={{ ...divStyle, backgroundImage: `url(${image.url})` }}>
                             <span style={spanStyle}>{image.caption}</span>
                         </div>
                     </div>
@@ -302,5 +302,44 @@ function ImageSlider() {
 }
 
 
-import the (i react-slideshow-image) in terminal``
+import the (i react - slideshow - image) in terminal``
 
+
+    //////////////////////////////////////////////////////
+
+
+
+    < div
+className = "categ fashion-categ"
+style = {{ cursor: "default", margin: "0px", marginLeft: "42px", position: "relative", zIndex: 10 }}
+onMouseEnter = {() => setSelect(true)}
+onMouseLeave = {() => setSelect(false)}
+                >
+    <a href="fashion" >
+        <img src="https://rukminim2.flixcart.com/fk-p-flap/64/64/image/ff559cb9d803d424.png?q=100" alt="fashion" />
+        <span>
+            Fashion
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
+                <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
+            </svg>
+        </span>
+    </a>
+{
+    select && (
+        <div
+            className="fashionDrop"
+            style={{
+                position: "absolute",
+                top: "100%",
+                left: 0,
+                background: "#fff",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+                zIndex: 100,
+                minWidth: "200px"
+            }}
+        >
+            <FaDrop />
+        </div>
+    )
+}
+                </div >

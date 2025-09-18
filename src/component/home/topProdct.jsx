@@ -1,21 +1,27 @@
 import { useEffect, useState } from "react";
 
 
-function Top() {
-    const [pro, setPro] = useState([]);
+function Top({dataSource,title}) {
+    const [prodct, setPro] = useState([]);
+
+    // useEffect(() => {
+    //     fetch("topProduct.json")
+    //         .then(res => res.json())
+    //         .then(data => setPro(data));
+    // })
 
     useEffect(() => {
-        fetch("topProduct.json")
-            .then(res => res.json())
-            .then(data => setPro(data));
-    })
+        fetch(dataSource)
+            .then((resp) => resp.json())
+            .then((data) => setPro(data));
+    },[dataSource]);
 
     return (
         <>
             <div id="top">
-                <span className="dealHead"> Top Products for you</span>
+                <span className="dealHead"> {title}</span>
                 <div className="topIt">
-                {pro.map((item, index) => (
+                {prodct.map((item, index) => (
                     <div key={index} className="topItems">
                         
                         <a href="top" style={{ textDecoration: "none", color: "#212121" }}>

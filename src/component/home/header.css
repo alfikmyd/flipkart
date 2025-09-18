@@ -112,7 +112,8 @@
     padding: 15px;
     font-size: 14px;
     line-height: 40px;
-    z-index: 10;
+    z-index: 5;
+    position: relative;
 }
 
 .searchHide img {
@@ -155,6 +156,7 @@
     text-align: left;
     box-shadow: 1px 1px 3px #cac7c7;
     font-size: 15px;
+    z-index: 10px;
 }
 
 .loginHide img {
@@ -200,6 +202,7 @@
     border-radius: 6px;
     box-shadow: 1px 1px 3px #dad8d8;
     font-size: 14px;
+    z-index: 10px;
 }
 
 .dropHide img {
@@ -214,81 +217,6 @@
     display: none;
 }
 
-@media (max-width: 1024px) {
-    .headerLogo {
-        margin-left: 15px;
-    }
-
-    #searchSpace {
-        margin-left: 10px;
-        width: 511px;
-    }
-
-    .headerLogin {
-        margin-left: 5px;
-    }
-
-    #headCart {
-        display: none;
-    }
-
-    .headerCart {
-        margin-left: -6px;
-        margin-top: 13px;
-    }
-
-    .headerSeller {
-        margin-left: 2px;
-        margin-top: 5px;
-    }
-
-    .dropShow {
-        margin-left: -20px;
-        margin-right: 6px;
-    }
-
-    #mobSetting {
-        display: none;
-    }
-
-    #mobHeadDown {
-        display: none;
-    }
-
-    #category {
-        margin-left: 16px;
-        margin-right: 16px;
-    }
-
-    #offSlider img {
-        width: 100%;
-    }
-
-    #offSlider {
-        margin-left: 0%;
-
-    }
-
-    #centerPart {
-        margin-left: 16px;
-        margin-right: 16px;
-    }
-
-    .categ a span {
-        max-width: fit-content;
-        min-width: fit-content;
-    }
-
-    #offDate {
-        width: 100%;
-    }
-
-    #offSlider {
-        margin-left: 16px;
-        margin-right: 16px;
-        width: 100%;
-    }
-}
 
 @media (max-width: 768px) {
 
@@ -418,7 +346,8 @@
     padding-left: 208px;
     padding-right: 208px;
     position: relative;
-    /* width: 84%; */
+    /* width: 100%; */
+    z-index: -1;
 }
 
 .categ a {
@@ -443,6 +372,7 @@
 
 .categ {
     margin: auto;
+  
 }
 
 .categ img {
@@ -514,6 +444,7 @@
     margin-right: 145px;
     margin-top: 16px;
     margin-bottom: 10px;
+    /* width: 100%; */
 }
 
 .dealImageSec {
@@ -529,7 +460,11 @@
     display: flex;
     font-size: 15px;
     cursor: pointer;
-    overflow-x: scroll;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+#dealItems::-webkit-scrollbar{
+    display: none;
 }
 
 .dImage img {
@@ -605,14 +540,19 @@
     margin-right: 145px;
     height: 318px;
     margin-bottom: 20px;
+    /* width: 100%; */
 }
 .topIt{
     display: flex;
     height: 230px;
     margin-top: 40px;
-    overflow-x: scroll;
+    overflow-x: auto;
+    scrollbar-width: none;
     gap: 90px;
     /* margin-left: 50px; */
+}
+.topIt::-webkit-scrollbar{
+    display: none;
 }
 .topImage img{
     height: 130px;
@@ -628,11 +568,195 @@
 
 #cols{
     margin-left: 160px;
-    margin-right: 360px;
-    margin-top: 15px;
-    display: block;
+    margin-right: 145px;
+    margin-top: 16px;
+    letter-spacing: .3px;
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 .fColItem{
     display: flex;
     flex-direction: column;
+    font-size: 18px;
+    border: 1px solid  #e9e8e8;
+    padding: 10px;
+    width: 100%;
+    gap: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 4px;
+    margin-left: -3px;
+}
+.fColSpan{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: left;
+}
+.fourCol{
+    display: flex;
+    flex-direction: column;
+    /* margin-right: 10px; */
+    /* margin-right: 10px; */
+    background-color: white;
+    padding: 18px;
+}
+.fCol{
+    display: flex;
+    flex-flow: wrap;
+    flex: 1 1 0%;
+    gap: 10px;
+    margin-right: -7px;
+    margin-left: -3px;
+}
+.fColHead span{
+    font-size: 22px;
+    font-family: "bold";
+}
+.fColHead{
+    justify-content: space-between;
+    cursor: pointer;
+    margin: 0;
+    align-items: center;
+    height: 60px;
+    padding-top: 10px;
+}
+.fColHead button{
+    margin-left: 46%;
+    background-color: #0964f7;
+    border: none;
+    width: 25px;
+    height: 25px;
+    color: rgb(255, 255, 255);
+    font-family: "bold";
+    border-radius: 50%;
+}
+.colImage{
+    /* margin-left: 20px; */
+    cursor: pointer;
+    width: 132%;
+    height: 678px;
+}
+.colImage img{
+    margin: 0px;
+    height: 679px;
+    width: 100%;
+}
+.flight{
+    margin-left: 160px;
+    width: 100%;
+}
+
+footer{
+    margin-top: 20px;
+    background-color: #212121;
+    text-align: left;
+    align-items: start;
+}
+
+
+.categ { position: relative; display: inline-block; }
+.fashionDrop {
+  min-width: 320px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  border-radius: 6px;
+  padding: 12px;
+  z-index: 9999;
+  display: flex;
+  gap: 16px;
+  pointer-events: auto; /* make sure hover works */
+}
+.fashColOne span { cursor: pointer; }
+.fashColOne span:hover { background: rgba(0,0,0,0.03); }
+
+.categoryC{
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: "regular";
+    }
+    body{
+        margin: auto;
+        padding: auto;
+    }
+    .headerLogo {
+        margin-left: 15px;
+    }
+
+    #searchSpace {
+        margin-left: 10px;
+        width: 511px;
+    }
+
+    .headerLogin {
+        margin-left: 5px;
+    }
+
+    #headCart {
+        display: none;
+    }
+
+    .headerCart {
+        margin-left: -6px;
+        margin-top: 13px;
+    }
+
+    .headerSeller {
+        margin-left: 2px;
+        margin-top: 5px;
+    }
+
+    .dropShow {
+        margin-left: -20px;
+        margin-right: 6px;
+    }
+
+    #mobSetting {
+        display: none;
+    }
+
+    #mobHeadDown {
+        display: none;
+    }
+
+    #category {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    #offSlider img {
+        width: 100%;
+    }
+
+    #offSlider {
+        margin-left: 0%;
+
+    }
+
+    #centerPart {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+
+    .categ a span {
+        max-width: fit-content;
+        min-width: fit-content;
+    }
+
+    #offDate {
+        width: 100%;
+    }
+
+    #offSlider {
+        margin-left: 16px;
+        margin-right: 16px;
+        width: 100%;
+    }
 }

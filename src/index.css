@@ -668,6 +668,7 @@ footer a{
   padding-right: 160px;
   border-bottom: 1px solid #878787;
   padding-bottom: 40px;
+  
 }
 .footAbout,.footCompany,.footHelp,.footPolicy{
   display: flex;
