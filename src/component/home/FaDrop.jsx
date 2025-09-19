@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+import { Col } from "react-bootstrap";
 
 function FaDrop() {
     const [fashionData, setFashionData] = useState([]);
-    const [activeData, setActiveData] = useState(null);
+        const [content, setContent] = useState([]);
+
+    const [activeId, setActiveId] = useState(null);
 
     useEffect(() => {
         fetch('/FashionDrop.json') // Make sure FashionDrop.json is in the public folder
@@ -10,42 +13,79 @@ function FaDrop() {
             .then(data => setFashionData(data));
     }, []);
 
-    const handleHover = (id) => {
-        const item = fashionData.find(f => f.id === id);
-        setActiveData(item || null);
+    const getCategory = (id) => {
+        const found = content.find((cat) => cat.id === id);
+        if (!found) return { heading: "", items: [] };
+
+        const { fa, id: _, ...rest } = found;
+
+        return {
+            heading: fa,
+            items: Object.values(rest).filter(
+                (val) => typeof val === "string" && isNaN(val)
+            ),
+        };
     };
 
     return (
-        <div id="faDrop">
+        <>
             <div className="fashColOne">
-                <span onMouseEnter={() => handleHover(1)}>Men's Top Wear</span>
-                <span onMouseEnter={() => handleHover(2)}>Men's Bottom Wear</span>
-                <span onMouseEnter={() => handleHover(3)}>Women Ethnic</span>
-                <span onMouseEnter={() => handleHover(4)}>Men Footwear</span>
-                <span onMouseEnter={() => handleHover(5)}>Women Footwear</span>
-                <span onMouseEnter={() => handleHover(6)}>Watches and Accessories</span>
-                <span onMouseEnter={() => handleHover(7)}>Women Western</span>
-                <span onMouseEnter={() => handleHover(8)}>Bags, Suitcases & Luggage</span>
-                <span onMouseEnter={() => handleHover(9)}>Kids</span>
-                <span onMouseEnter={() => handleHover(10)}>Essentials</span>
-                <span onMouseEnter={() => handleHover(11)}>Winter</span>
+                <span onMouseOver={() => setActiveId(1)} >Men's Top Wear<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor" className="bi bi-chevron-right sv" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg>
+                </span>
+                <span onMouseOver={() => setActiveId(2)} >Men's Bottom Wear<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor" className="bi bi-chevron-right sv" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg></span>
+                <span onMouseOver={() => setActiveId(3)} >Women Ethnic<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor" className="bi bi-chevron-right sv" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg></span>
+                <span onMouseOver={() => setActiveId(1)} >Men Footwear<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor" className="bi bi-chevron-right sv" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg></span>
+                <span onMouseOver={() => setActiveId(2)} >Women Footwear<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor" className="bi bi-chevron-right sv" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg></span>
+                <span onMouseOver={() => setActiveId(3)} >Watches and Accessories<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor" className="bi bi-chevron-right sv" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg></span>
+                <span onMouseOver={() => setActiveId(1)} >Women Western<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor" className="bi bi-chevron-right sv" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg></span>
+                <span onMouseOver={() => setActiveId(2)} >Bags, Suitcases & Luggage<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor" className="bi bi-chevron-right sv" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg></span>
+                <span onMouseOver={() => setActiveId(3)} >Kids<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor" className="bi bi-chevron-right sv" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg></span>
+                <span onMouseOver={() => setActiveId(1)} >Essentials<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor" className="bi bi-chevron-right sv" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg></span>
+                <span onMouseOver={() => setActiveId(2)} >Winter<svg xmlns="http://www.w3.org/2000/svg" width="14" height="12" fill="currentColor" className="bi bi-chevron-right sv" viewBox="0 0 16 16">
+                    <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
+                </svg></span>
             </div>
 
-            <div className="fashColTwo">
-                {activeData && (
-                    <div>
-                        <h4>{activeData.fa}</h4>
+
+            <div className="fashColTwo" >
+                {activeId && (
+                    // <ul>
+                    //     {getItems(activeId).map((item,index) => (
+                    //         <li key={index}>{item}</li>
+                    //     ))}
+                    // </ul>
+                    <>
+                        <h4>{getCategory(activeId).heading}</h4>
                         <ul>
-                            {Object.entries(activeData)
-                                .filter(([key, value]) => key !== "id" && key !== "fa" && value !== "")
-                                .map(([key, value]) => (
-                                    <li key={key}>{value}</li>
-                                ))}
+                            {getCategory(activeId).items.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
                         </ul>
-                    </div>
+                    </>
+
                 )}
             </div>
-        </div>
+        </>
     );
 }
 

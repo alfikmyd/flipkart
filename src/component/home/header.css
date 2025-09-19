@@ -334,23 +334,25 @@
 } */
 
 
-#category {
+#contain {
     display: flex;
     flex-direction: row;
     background-color: white;
     margin-left: 160px;
-    margin-right: 160px;
+    margin-right: 145px;
     margin-top: 8px;
-    height: 127px;
+    height: 126px;
     /* padding-right: 9.6%; */
     padding-left: 208px;
     padding-right: 208px;
-    position: relative;
+    /* position: relative; */
     /* width: 100%; */
     z-index: -1;
+    padding-top: 32px;
+    cursor: pointer;
 }
 
-.categ a {
+.con a{
     display: flex;
     flex-direction: column;
     color: #212121;
@@ -359,23 +361,19 @@
     position: relative;
     font-family: "bold";
     letter-spacing: .4px;
-    /* max-width: max-content;
-    min-width: min-content; */
     text-align: center;
-    /* margin: auto; */
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.categ a span {
+.con a span {
     max-width: max-content;
     min-width: max-content;
 }
 
-.categ {
-    margin: auto;
-  
-}
 
-.categ img {
+.con img {
     padding-bottom: 12px;
     margin-top: -16px;
 }
@@ -402,15 +400,21 @@
 } */
 
 
+
+
 #offSlider {
     background-color: white;
     /* width: 80%; */
     margin-left: 160px;
-    display: flex;
-    margin-right: 160px;
+    /* display: block; */
+    margin-right: 145px;
     margin-top: 16px;
     height: 289px;
     box-shadow: 1px 1px 3px #f0f5ff;
+    overflow: hidden;
+    position: relative;
+    z-index: -1;
+    cursor: pointer;
 }
 
 #offSlider img {
@@ -418,8 +422,55 @@
     margin: 0px;
     margin-top: -18px;
     cursor: pointer;
-    height: 265px;
+    height: 283px;
 }
+
+.sliderImage {
+    display: flex;
+    position: relative;
+}
+
+.sImage {
+    width: 100%;
+    /* border-radius: 10px; */
+    transition: opacity 0.9s ease-in-out;
+    opacity: 1;
+}
+.sImage.fadeOut{
+    opacity: 0;
+}
+
+.sliderImage button {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    height: 88px;
+    width: 50px;
+}
+
+
+.slideDot {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.sDots {
+    height: 4px;
+    /* width: 13px; */
+    margin: 0 5px;
+    border-radius: 26px;
+    display: inline-block;
+    cursor: default;
+    transition: all 0.9s ease-in-out;
+}
+
 
 #offDate {
     cursor: pointer;
@@ -434,9 +485,6 @@
     width: 100%;
     height: 231px;
 }
-
-
-
 
 #dealTrend {
     display: flex;
@@ -455,6 +503,21 @@
     padding: 19px;
     height: 319px;
 }
+.dealImageSec button{
+    background-color: white;
+    height: 80px;
+    width: 60px;
+    border-radius: 5px;
+    margin-top: 100px;
+    border: none;
+}
+.dealImageSec .prev{
+    box-shadow: 1px 2px 2px #e0dfdf;
+}
+.dealImageSec .next{
+    box-shadow: -1px 0px 3px #e0dfdf;
+    margin-right: -19px;
+}
 
 #dealItems {
     display: flex;
@@ -463,7 +526,8 @@
     overflow-x: auto;
     scrollbar-width: none;
 }
-#dealItems::-webkit-scrollbar{
+
+#dealItems::-webkit-scrollbar {
     display: none;
 }
 
@@ -496,42 +560,47 @@
 
 .dealImage {
     width: 100px;
-    height: 150px;    
+    height: 150px;
 }
-.dealSvg{
+
+.dealSvg {
     display: none;
 }
-.dealPrice{
+
+.dealPrice {
     font-weight: bold;
 }
 
 
-#violet{
-   margin-left: 160px;
-   margin-right: 145px;
-   margin-top: 11px;
-   background-color: white;
-   height: 283px;
+#violet {
+    margin-left: 160px;
+    margin-right: 145px;
+    margin-top: 11px;
+    background-color: white;
+    height: 283px;
 }
-.viol{
+
+.viol {
     display: flex;
     width: 100%;
 
 }
-.violetImage{
-   
+
+.violetImage {
+
     margin-left: 4px;
     margin-right: 6px;
-    
+
 }
-.violetImage img{
+
+.violetImage img {
     width: 524px;
     height: 283px;
     margin: 0px;
     cursor: pointer;
 }
 
-#top{
+#top {
     display: block;
     background-color: white;
     margin-top: 13px;
@@ -542,7 +611,8 @@
     margin-bottom: 20px;
     /* width: 100%; */
 }
-.topIt{
+
+.topIt {
     display: flex;
     height: 230px;
     margin-top: 40px;
@@ -551,22 +621,26 @@
     gap: 90px;
     /* margin-left: 50px; */
 }
-.topIt::-webkit-scrollbar{
+
+.topIt::-webkit-scrollbar {
     display: none;
 }
-.topImage img{
+
+.topImage img {
     height: 130px;
     width: 150px;
 }
-.topItemName{
+
+.topItemName {
     margin-top: 20px;
 }
-.topItems{
+
+.topItems {
     margin-left: 35px;
 }
 
 
-#cols{
+#cols {
     margin-left: 160px;
     margin-right: 145px;
     margin-top: 16px;
@@ -576,11 +650,12 @@
     justify-content: space-between;
     margin-bottom: 30px;
 }
-.fColItem{
+
+.fColItem {
     display: flex;
     flex-direction: column;
     font-size: 18px;
-    border: 1px solid  #e9e8e8;
+    border: 1px solid #e9e8e8;
     padding: 10px;
     width: 100%;
     gap: 12px;
@@ -589,13 +664,15 @@
     margin-right: 4px;
     margin-left: -3px;
 }
-.fColSpan{
+
+.fColSpan {
     display: flex;
     flex-direction: column;
     text-align: left;
     justify-content: left;
 }
-.fourCol{
+
+.fourCol {
     display: flex;
     flex-direction: column;
     /* margin-right: 10px; */
@@ -603,7 +680,8 @@
     background-color: white;
     padding: 18px;
 }
-.fCol{
+
+.fCol {
     display: flex;
     flex-flow: wrap;
     flex: 1 1 0%;
@@ -611,11 +689,13 @@
     margin-right: -7px;
     margin-left: -3px;
 }
-.fColHead span{
+
+.fColHead span {
     font-size: 22px;
     font-family: "bold";
 }
-.fColHead{
+
+.fColHead {
     justify-content: space-between;
     cursor: pointer;
     margin: 0;
@@ -623,7 +703,8 @@
     height: 60px;
     padding-top: 10px;
 }
-.fColHead button{
+
+.fColHead button {
     margin-left: 46%;
     background-color: #0964f7;
     border: none;
@@ -633,59 +714,139 @@
     font-family: "bold";
     border-radius: 50%;
 }
-.colImage{
+
+.colImage {
     /* margin-left: 20px; */
     cursor: pointer;
     width: 132%;
     height: 678px;
 }
-.colImage img{
+
+.colImage img {
     margin: 0px;
     height: 679px;
     width: 100%;
 }
-.flight{
+
+.flight {
     margin-left: 160px;
     width: 100%;
 }
 
-footer{
+footer {
     margin-top: 20px;
     background-color: #212121;
     text-align: left;
     align-items: start;
+    font-family: "regular";
 }
 
 
-.categ { position: relative; display: inline-block; }
+.categ {
+    position: relative;
+    display: inline-block;
+}
+
 .fashionDrop {
-  min-width: 320px;
-  background: #fff;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-  border-radius: 6px;
-  padding: 12px;
-  z-index: 9999;
-  display: flex;
-  gap: 16px;
-  pointer-events: auto; /* make sure hover works */
+    min-width: 320px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    /* padding: 12px; */
+    z-index: 9999;
+    display: flex;
+    pointer-events: auto;
+    height: auto;
+    line-height: 40px;
+    font-size: 13px;
+    margin-left: -10.7%;
+    margin-top: 6px;
 }
-.fashColOne span { cursor: pointer; }
-.fashColOne span:hover { background: rgba(0,0,0,0.03); }
+.fashionDrop li {
+    list-style: none;
+}
 
-.categoryC{
+#faDrop{
+    margin-left: 0;
+    display: flex;
+}
+.fashColOne{
+    margin-left: 0px;
+    border-radius: 6px;
+}
+.fashColOne span{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    cursor: pointer;
+    margin: 0px;
+    width: 240px;
+    /* margin-left: -17px; */
+    padding-left:20px;
+}
+.fashColOne span:hover {
+    background: #ebeff7;
+}
+.sv{
+    display: none;
+    margin-top: 11px;
+    margin-right: 7px;
+}
+.fashColOne span:hover .sv{
+    display: flex;
+}
+.fashColTwo{
+    width: 240px;
+    margin-left: -10;
+    box-shadow: -2px 2px 9px #cccccc;
+    line-height: 40px;
+    padding-left: 15px;
+}
+
+.categoryC {
     cursor: pointer;
 }
 
+.slide-inner {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.slide-inner img {
+    width: 100%;
+
+}
+.electroDrop{
+    min-width: 320px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-radius: 10px;
+    z-index: 9999;
+    display: flex;
+    pointer-events: auto;
+    height: auto;
+    line-height: 40px;
+    font-size: 13px;
+    margin-left: -10%;
+    margin-top: 6px;
+}
+.electroDrop li{
+    list-style: none;
+}
+
+
 @media (max-width: 1024px) {
-    *{
+    * {
         margin: 0;
         padding: 0;
         font-family: "regular";
     }
-    body{
+
+    body {
         margin: auto;
         padding: auto;
     }
+
     .headerLogo {
         margin-left: 15px;
     }
