@@ -11,24 +11,15 @@ function DealTrend() {
             .then(data => setDeals(data));
     }, []);
 
-    // const prev=  () => {
-    //     setDe((prev) => (prev - 1 + de.length) % de.length);
-    // };
-    // const next = () => {
-    //     setDe((prev) => (prev + 1 )% de.length);
-    // };
+    const windowSize = 8;
+    const visibleDeals = deals.slice(index, index + windowSize);
 
     const prev = () => {
-        if (index > 0) {
-            setIndex(index - 1);
-        }
+        setIndex((prev) => Math.max(prev - 2, 0));
     };
     const next = () => {
-        if (index < deals.length - 1) {
-            setIndex(index + 1);
-        }
+        setIndex((prev) => Math.min(prev + 2, deals.length - windowSize));
     };
-
     
     return (
         <>
@@ -46,10 +37,9 @@ function DealTrend() {
                             </button>
                         )}
                         <div id="dealItems">
-                            {deals.map((item, index) => (
-                                <div key={index} className="dealEachItem">
-
-                                    <a href="#" style={{ textDecoration: "none", color: "#212121" }}>
+                            {visibleDeals.map((item,idx) => (
+                                <div key={idx} className="dealEachItem">
+                                     <a href="#" style={{ textDecoration: "none", color: "#212121" }}>
                                         <div className="dealImage">
                                             <img src={item.dealImg} alt="fans" />
                                         </div>
@@ -65,12 +55,12 @@ function DealTrend() {
                                         </div>
                                     </a>
                                 </div>
-
                             ))}
-
                         </div>
-                        {index < deals.length -1 && (
-                            <button className="next" onClick={next} disabled={index === deals.length - 1}>
+
+                      
+                        {index < deals.length -windowSize && (
+                            <button className="next" onClick={next} disabled={index === deals.length - windowSize}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
                                     <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
                                 </svg>

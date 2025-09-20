@@ -29,10 +29,12 @@ function FourCol(dataSource) {
 
                     <div className="fCol">
                         {mob.map((item, index) => (
-                            <div key={index} style={{ width: "237px" }}>
+                            <div className="fColImage" key={index}>
 
                                 <div className="fColItem">
-                                    <img src={item.mobImage} alt="" />
+                                    <div className="fcolI">
+                                        <img src={item.mobImage} alt="" />
+                                    </div>
                                     <div className="fColSpan">
                                         <span>{item.mobText}</span>
                                         <span style={{ color: "#388c3c", fontWeight: "bold" }}>{item.mobOff}</span>
@@ -44,7 +46,7 @@ function FourCol(dataSource) {
                 </div>
 
                 <div className="colImage">
-                    <img  src="https://rukminim1.flixcart.com/www/1070/720/promos/26/09/2023/ed27f892-1bc6-462f-805b-953f5add4f6a.jpg?q=80" alt="" />
+                    <img src="https://rukminim1.flixcart.com/www/1070/720/promos/26/09/2023/ed27f892-1bc6-462f-805b-953f5add4f6a.jpg?q=80" alt="" />
                 </div>
             </div>
         </>

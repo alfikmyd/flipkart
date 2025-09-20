@@ -17,7 +17,7 @@ function Scroll() {
     useEffect(() => {
         const interval = setInterval(() => {
             setIndex((prev) => (prev + 1) % images.length);
-        }, 4000);
+        }, 2000);
         return () => clearInterval(interval);
     }, []);
 
@@ -34,7 +34,7 @@ function Scroll() {
             <div id="offSlider">
 
                 <div className="sliderImage">
-                    <button style={{ left: "-10px" }} onClick={prevSlide}>
+                    <button className="pr" onClick={prevSlide}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" className="bi bi-chevron-left" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
                         </svg>
@@ -43,7 +43,7 @@ function Scroll() {
                     <img className="sImage" src={images[index]} alt="slider" />
 
 
-                    <button style={{ right: "-10px" }} onClick={nextSlide}>
+                    <button className="nx" onClick={nextSlide}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
                         </svg>
@@ -55,16 +55,12 @@ function Scroll() {
                         <span className="sDots" key={i} style={{ background: i === index ? "black" : "#cec9c9ff",
                             width : i === index ? "48px" : "12px"
                          }}
-                            // onClick={() => setIndex(i)}
+                            
                         ></span>
                     ))}
                 </div>
 
-                {/* <div className="sliderDot">
-                    <span>-</span>
-                    <span>-</span>
-                    <span>-</span>
-                </div> */}
+                
 
             </div>
 

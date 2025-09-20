@@ -13,6 +13,7 @@ function Hpage() {
 
     return (
         <>
+            <div id="root">
             <HomeHeader />
             <div id="centerPart">
                 <Category />
@@ -30,10 +31,10 @@ function Hpage() {
                 <Violet dataSource={'./Violet3.json'} />
                 <Footer  />
             </div>
+            </div>
         </>
     );
 }
 export default Hpage;
-
 
 

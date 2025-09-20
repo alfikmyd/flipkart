@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import '../home/header.css';
 import FaDrop from "./FaDrop";
-import { set } from "mongoose";
+import { Link } from "react-router-dom";
+import Parent from "../filterPage";
+
 
 
 function Category() {
@@ -19,14 +21,6 @@ function Category() {
             .then(data => setContent(data));
     }, []);
 
-    // const getItems = (id) => {
-    //     const found = content.find(cat => cat.id === id);
-    //     if(!found) return [];
-
-    //     return Object.values(found).filter(
-    //         (val,idx) => idx > 0 && val !== ""
-    //     );
-    // };
 
     const getCategory = (id) => {
         const found = content.find((cat) => cat.id === id);
@@ -43,7 +37,6 @@ function Category() {
     };
 
 
-
     return (
         <>
             <div id="contain">
@@ -54,6 +47,7 @@ function Category() {
                         <span>Minutes</span>
                     </a>
                 </div>
+                <Link to="/laptops">
                 <div className="con" style={{ margin: "0px", marginLeft: "46px" }}>
                     <a href="mob">
                         <img src="https://rukminim1.flixcart.com/fk-p-flap/64/64/image/5f2ee7f883cdb774.png?q=100" alt="mobile" />
@@ -61,6 +55,7 @@ function Category() {
                         <span>Mobiles & Tablets</span>
                     </a>
                 </div>
+                </Link>
 
 
                 <div className="categoryC"

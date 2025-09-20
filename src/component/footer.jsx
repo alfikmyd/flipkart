@@ -64,6 +64,8 @@ function Footer() {
                         ))}
                     </div>
 
+                
+
                     <div className="footPolicy">
                         <h6>CONSUMER POLICY</h6>
                         {policy.map((item) => (
