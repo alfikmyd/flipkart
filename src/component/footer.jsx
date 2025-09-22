@@ -43,24 +43,25 @@ function Footer() {
         <>
             <footer>
                 <div id="foot">
+                    {/* <div className="footInner"> */}
                     <div className="footAbout">
                         <h6>ABOUT</h6>
-                        {about.map((item) => (
-                            <a href="/">{item.label}</a>
+                        {about.map((item,index) => (
+                            <a href="/" key={index}>{item.label}</a>
                         ))}
                     </div>
 
                     <div className="footCompany">
                         <h6>GROUP COMPANIES</h6>
-                        {company.map((item) => (
-                            <a href="/">{item.label}</a>
+                        {company.map((item,index) => (
+                            <a href="/" key={index}>{item.label}</a>
                         ))}
                     </div>
 
                     <div className="footHelp">
                         <h6>HELP</h6>
-                        {help.map((item) => (
-                            <a href="/">{item.label}</a>
+                        {help.map((item, index) => (
+                            <a href="/" key={index}>{item.label}</a>
                         ))}
                     </div>
 
@@ -68,15 +69,15 @@ function Footer() {
 
                     <div className="footPolicy">
                         <h6>CONSUMER POLICY</h6>
-                        {policy.map((item) => (
-                            <a href="/">{item.label}</a>
+                        {policy.map((item, index) => (
+                            <a href="/" key={index}>{item.label}</a>
                         ))}
                     </div>
 
                     <div className="footMail">
                         <h6>Mail Us:</h6>
-                        {mail.map((item) => (
-                            <span>{item.label}</span>
+                        {mail.map((item, index) => (
+                            <span key={index}>{item.label}</span>
                         ))}
 
                         <div className="footSocial" style={{cursor:"pointer"}}>
@@ -114,14 +115,15 @@ function Footer() {
                         </div>
                     </div>
 
-                    <div className="footAdrs" style={{ marginLeft: "-120px" }}>
+                    <div className="footAdrs">
                         <h6>Registered Office Address: </h6>
-                        {mail.map((items) => (
-                            <span>{items.label}</span>
+                        {mail.map((items, index) => (
+                            <span key={index}>{items.label}</span>
                         ))}
                         <span>CIN : U51109KA2012PTC066107</span>
                         <span>Telephone: <a href="#">044-45614700</a> / <a href="#">044-67415800</a></span>
                     </div>
+                    {/* </div> */}
                 </div>
 
                 <div id="footLast">
@@ -193,7 +195,7 @@ function Footer() {
                             <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512" />
                         </svg> 2007 - 2025 Flipkart.com 
                     </div>
-                    <div>
+                    <div className="footLastImg">
                         <img src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/payment-method_69e7ec.svg" />
                     </div>
                 </div>

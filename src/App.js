@@ -2,31 +2,29 @@ import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
 import Header from "./component/header"
 import Footer from "./component/footer"
 // import data from "./component/data.json"
-import { useState } from "react"
+import { useState,useEffect } from "react"
 import Parent from "./component/filterPage"
 import SelectedItem from "./component/selectItem"
-import HomeHeader from "./component/home/HomeHeader"
 import Hpage from "./component/home/hPage"
-import data from "./component/data.json"
 
 
 function App() {
-  // const product = data;
+  const [data,setData] = useState([]);
+  
+  useEffect(() => {
+    fetch("./data.json")
+      .then((res) => res.json())
+      .then((json) =>setData(json))
+      .catch((err) => console.error("Failed"));
+  }, []);
 
   return (
     <>
-      {/* <HomeHeader/> */}
-      {/* <Hpage /> */}
-      {/* <Header /> */}
-      {/* <Parent initialData={data} /> */}
-      {/* <SelectedItem /> */}
-
-      {/* <Footer /> */}
-
       <Router>
         <Routes>
           <Route path="/" element={<Hpage/>}/>
           <Route path="/laptops" element={<Parent initialData={data} />} />
+          <Route path="/item" element={<SelectedItem/>} />
         </Routes>
       </Router>
       

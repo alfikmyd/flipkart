@@ -6,10 +6,10 @@
   font-family: regular;
   src: url('font/Inter-Regular.woff2');
 }
-@font-face{
+/* @font-face{
   font-family: regularTwo;
   src: url('font/Inter-Regular\ \(1\).woff2');
-}
+} */
 @font-face {
   font-family: bold;
   src: url('font/Inter-SemiBold.woff2');
@@ -592,8 +592,9 @@ input:active{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: 35px;
 }
-.items{
+#productPart .items{
   display: flex;
   border-bottom: 1px solid #e2e0e0;
   padding-top: 30px;
@@ -601,10 +602,10 @@ input:active{
   cursor: pointer;
   padding-bottom: 42px;
 }
-.col-one{
+#productPart .col-one{
   display: flex;
 }
-.col-two button{
+#productPart .col-two button{
   color: white;
   background-color: rgb(3, 145, 3);
   height: 20px;
@@ -617,18 +618,18 @@ input:active{
   min-width: max-content;
   cursor: pointer;
 }
-.col-two{
+#productPart .col-two{
   font-size: 14px;
   margin-top: -18px;
   margin-left: 15px;
   line-height: 15px;
   max-width: 678px;
 }
-.col-one img{
+#productPart .col-one img{
   width: 200px;
   margin-top: 15px;
 }
-.details p{
+#productPart .details p{
   color: #212121;
   font-size: 13px;
 }
@@ -651,7 +652,7 @@ input:active{
 }
 
 footer{
-  background-color: #021433;
+  background-color: #1b70fa;
   /* margin-top: 30px; */
   margin-bottom: 0px;
 }
@@ -659,6 +660,7 @@ footer a{
   font-size: 12px;
   color: white;
   text-decoration: none;
+  
 }
 #foot{
   display: flex;
@@ -668,12 +670,13 @@ footer a{
   padding-right: 160px;
   border-bottom: 1px solid #878787;
   padding-bottom: 40px;
-  
+
 }
 .footAbout,.footCompany,.footHelp,.footPolicy{
   display: flex;
   flex-direction: column;
   line-height: 23px;
+  align-items: left;
 }
 #foot h6 {
   color: #878787;
@@ -692,10 +695,17 @@ footer a{
   color: #001aff;
   font-weight: bold;
 }
+.footAdrs{
+  margin-left: -120px;
+}
 .footMail{
   border-left: 1px solid #696868;
   padding-left: 25px;
 }
+#foot div{
+  align-items: left;
+}
+
 #footLast{
   display: flex;
   justify-content: space-between;

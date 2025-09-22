@@ -1,14 +1,16 @@
 import React from "react";
-// import data from "./data.json";
 
 function Product({proProps}) {
+    const products = Array.isArray(proProps) ? proProps : []
     
     if(!Array.isArray(proProps)){
+        console.log("proprops: " ,proProps);
         return( 
-        <div>no</div>
+        <div>no product</div>
          
     )
     }
+
 
     return (
         <>
@@ -44,10 +46,11 @@ function Product({proProps}) {
 
                 <div id="productPart">
                     {proProps.map((item, index) => (
-                        <div key={index} className="items">
+                        // <div key={index} className="items">
+                        <div key={item.id || index} className="items">
                             <div className="col-one">
                                 <div style={{ display: "flex", flexDirection: "column" }}>
-                                    <img src={item.img} alt={item.name} />
+                                    <img src={item.img || "placeholder.png"} alt={item.name} />
                                     <label style={{ fontSize: "13px", marginTop: "38px" }}><input type="checkbox" value="compare" style={{ marginRight: "10px" }} />Add to Compare</label>
                                 </div>
                                 <svg style={{ marginTop: "-1px", marginLeft: "-4px" }} xmlns="http://www.w3.org/2000/svg" width="16" height="14" fill="#d6d6d6ff" className="bi bi-heart-fill" viewBox="0 0 16 16">

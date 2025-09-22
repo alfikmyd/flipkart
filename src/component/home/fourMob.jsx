@@ -3,18 +3,19 @@ import { useEffect, useState } from "react";
 
 function FourCol(dataSource) {
     const [mob, setMob] = useState([]);
-
-    // useEffect(() => {
-    //     fetch(dataSource)
-    //         .then(res => res.json())
-    //         .then(data => setMob(data));
-    // });
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
     useEffect(() => {
         fetch('./topMob.json')
             .then(res => res.json())
             .then(data => setMob(data));
     });
+
+    useEffect(() => {
+        const handleResize = () => setIsMobile(window.innerWidth < 768);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
     return (
         <>
@@ -32,8 +33,11 @@ function FourCol(dataSource) {
                             <div className="fColImage" key={index}>
 
                                 <div className="fColItem">
-                                    <div className="fcolI">
-                                        <img src={item.mobImage} alt="" />
+                                    <div className="fcolI" >
+                                        
+                                        <img src={item.mobImage} alt="" 
+                                            style={isMobile && item.id === 1 ? {height: "127px", width: "60px"} : undefined}
+                                        />
                                     </div>
                                     <div className="fColSpan">
                                         <span>{item.mobText}</span>

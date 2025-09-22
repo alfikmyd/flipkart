@@ -1,8 +1,6 @@
-// import React from "react";
 import { useEffect, useState } from "react";
 import assurePic from "./img/assured.png";
-// import data from "./data.json"
-// import Parent from "./parent";
+
 
 
 function FiltLeft({setFilterValue}) {
