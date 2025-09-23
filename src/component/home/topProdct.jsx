@@ -42,12 +42,14 @@ function Top({ dataSource, title }) {
                             <div key={index} className="topItems">
 
                                 <a href="top" style={{ textDecoration: "none", color: "#212121" }}>
-                                    <div className="topImage">
-                                        <img src={item.topImage} alt="" />
-                                    </div>
-                                    <div className="topItemName" style={{ display: "flex", flexDirection: "column" }}>
-                                        <span className="dealName" style={{ maxWidth: "max-content", minWidth: "max-content" }}>{item.topItem}</span>
-                                        <span className="dealPrice">{item.topOff}</span>
+                                    <div className="toIt">
+                                        <div className="topImage">
+                                            <img src={item.topImage} alt="" />
+                                        </div>
+                                        <div className="topItemName" style={{ display: "flex", flexDirection: "column" }}>
+                                            <span className="dealName" style={{ maxWidth: "max-content", minWidth: "max-content" }}>{item.topItem}</span>
+                                            <span className="dealPrice">{item.topOff}</span>
+                                        </div>
                                     </div>
                                     <div className="dealSvg">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="15" height="14" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">

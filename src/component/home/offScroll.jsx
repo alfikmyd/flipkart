@@ -28,6 +28,7 @@ function Scroll() {
         setIndex((prev) => (prev + 1) % images.length);
     };
 
+
     return (
 
         <>

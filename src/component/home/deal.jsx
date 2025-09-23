@@ -20,7 +20,7 @@ function DealTrend() {
     const next = () => {
         setIndex((prev) => Math.min(prev + 2, deals.length - windowSize));
     };
-    
+
     return (
         <>
             <div id="dealTrend">
@@ -30,22 +30,24 @@ function DealTrend() {
 
                     <div style={{ display: "flex" }}>
                         {index > 0 && (
-                            <button className="prev" style={{marginLeft:"-19px"}} onClick={prev} disabled={index === deals.length - 1} >
+                            <button className="prev" style={{ marginLeft: "-19px" }} onClick={prev} disabled={index === deals.length - 1} >
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" className="bi bi-chevron-left" viewBox="0 0 16 16">
                                     <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
                                 </svg>
                             </button>
                         )}
                         <div id="dealItems">
-                            {visibleDeals.map((item,idx) => (
+                            {visibleDeals.map((item, idx) => (
                                 <div key={idx} className="dealEachItem">
-                                     <a href="#" style={{ textDecoration: "none", color: "#212121" }}>
-                                        <div className="dealImage">
-                                            <img src={item.dealImg} alt="fans" />
-                                        </div>
-                                        <div className="dealItemName" style={{ display: "flex", flexDirection: "column" }}>
-                                            <span className="dealName" style={{ maxWidth: "max_content" }}>{item.dealItem}</span>
-                                            <span className="dealPrice">{item.dealPrice}</span>
+                                    <a href="#" style={{ textDecoration: "none", color: "#212121" }}>
+                                        <div className="deIt">
+                                            <div className="dealImage">
+                                                <img src={item.dealImg} alt="fans" />
+                                            </div>
+                                            <div className="dealItemName" style={{ display: "flex", flexDirection: "column" }}>
+                                                <span className="dealName" style={{ maxWidth: "max_content" }}>{item.dealItem}</span>
+                                                <span className="dealPrice">{item.dealPrice}</span>
+                                            </div>
                                         </div>
 
                                         <div className="dealSvg">
@@ -58,8 +60,8 @@ function DealTrend() {
                             ))}
                         </div>
 
-                      
-                        {index < deals.length -windowSize && (
+
+                        {index < deals.length - windowSize && (
                             <button className="next" onClick={next} disabled={index === deals.length - windowSize}>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
                                     <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />

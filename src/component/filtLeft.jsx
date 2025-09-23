@@ -79,7 +79,7 @@ function FiltLeft({setFilterValue}) {
         })
     }
 
-
+    
     const type = [
         { label: "Gaming Laptop", value: "Gaming Laptop" },
         { label: "2 in 1 Laptop", value: "2 in 1 Laptop" },
