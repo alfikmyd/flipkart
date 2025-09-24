@@ -34,20 +34,24 @@ header{
   position: fixed;
   display: flex;
   overflow-x: hidden;
-  z-index: 1000;
-  /* position: absolute; */
+  z-index: 9999;
   overflow-y: auto;
+  padding-left: 268px;
+  padding-top: 11px;
+  padding-right: 232px;
+  font-family: "regular";
 }
 
 .logo{
   display: flex;
   flex-direction: column;
-  margin-left: 20.3%;
-  margin-top: 10px;
+  /* margin-left: 20%;
+  margin-top: 11px; */
   cursor: pointer;
+  margin-right: 0;
 }
 .logo img{
-  width: 78px;
+  width: 75px;
   height: 20px;
 }
 .logo a{
@@ -70,16 +74,20 @@ header{
 }
 .exportLogo{
   color: white;
+  letter-spacing: .4px;
 }
 #search{
   display: block;
   background-color: white;
-  width: 29.4%;
+  width: 567px;
   height: 36px;
-  margin-top: 10px;
-  margin-left: 10px;
+  /* margin-top: 10px;
+  margin-left: -115px; */
   box-shadow: 1px 2px 2px rgb(44, 50, 141);
   min-width: 305px;
+  border-radius: 2px;
+  margin-right: 0;
+  margin-left: 10px;
 }
 .searchInput input:active{
   background-color: white;
@@ -88,9 +96,6 @@ header{
   display: flex;
   background-color: white;
   margin-top: 8px;
-}
-.searchInput input{
-  cursor: text;
 }
 
 .searchInput svg{
@@ -107,11 +112,12 @@ header{
   border: none;
   width: 80%;
   letter-spacing: .4px;
+  cursor: pointer;
 }
 
 #login{
   margin-left: 37px;
-  margin-top: 12px;
+  margin-top: 1px;
   cursor: pointer;
 }
 #login button{
@@ -128,18 +134,19 @@ header{
 #header-links{
   display: flex;
   color: white;
-  margin-left: 40px;
-  margin-top: 20px;
+  margin-left: -88px;
+  margin-top:8px;
   font-weight: bold;
   letter-spacing: .3px;
-  font-size: 15px;
+  font-size: 16px;
   cursor: pointer;
 }
+
 .moreLink{
   margin-left: 40px;
 }
 #cartLink{
-  margin-left: 44px;
+  margin-left: 40px;
 }
 #carLink span{
   padding-left: 8px;
@@ -155,7 +162,9 @@ header{
   cursor: pointer;
   padding-bottom: 15px;
   box-shadow: 1px 1px 7px rgb(116, 114, 114);
-  z-index: 40px;
+  z-index: 999;
+  position: fixed;
+  width: 567px;
 }
 #headerSearch svg{
   color: #878787;
@@ -188,9 +197,9 @@ header{
   box-shadow: 1px 1px 3px rgb(165, 164, 164);
   font-size: 14px;
   line-height: 51px;
-  z-index: 1000;
-  /* overflow-y: auto; */
-  position: absolute;
+  z-index: 999;
+  position: fixed;
+  /* overflow-x: hidden; */
 }
 .moreDrop{
   display: block;
@@ -202,8 +211,8 @@ header{
   margin-left: -60px;
   margin-top: 19px;
   line-height: 50px;
-  z-index: 1000;
-  position: absolute;
+  z-index: 999;
+  position: fixed;
   /* overflow-y: auto; */
 }
 .moreDrop svg{
@@ -225,14 +234,14 @@ nav{
   font-size: 13px;
   font-weight: bold;
   width: auto;
-  /* overflow-x: hidden; */
-  z-index: 1;
+  /* z-index: -1; */
 }
 #headNav{
   margin-left: 15.5%;
   cursor: pointer;
   margin-top: 10px;
   min-width: max-content;
+  /* position: relative; */
 }
 
 
@@ -240,15 +249,18 @@ nav{
   display: flex;
   flex-direction: row;
   background-color: white;
-  margin-left: -1250px;
+  margin-left: -1460px;
   margin-top: 39px;
   /* width: 350%; */
   box-shadow: 1px 1px 3px #878787;
   width: 1280px;
-  height: 200%;
+  /* height: 200%; */
+  position: fixed;
+  z-index: 999;
 }
 #child{
   margin-top: 16px;
+  /* position: fixed; */
 }
 .gray{
   display: flex;
@@ -270,15 +282,28 @@ nav{
   font-weight: 400;
 }
 
+#cent{
+  /* background-color: #001aff; */
+  margin: auto;
+  height: 100%;
+}
+
 #left{
-  margin-top: 65px;
   margin-left: 6.3%;
   position: absolute;
+  z-index: 0;
   background-color: white;
   width: 270px;
   display: block;
   box-shadow: 0px 1px 6px  #dddddd;
+  height: auto;
 }
+#left label{
+  line-height: 33px;
+  margin: 0;
+  font-size: 13px;
+}
+
 #filter{
   margin-top: 20px;
   padding-left: 17px;
@@ -556,15 +581,15 @@ input:active{
 #right{
   margin-top: 65px;
   margin-left: 402px;
-  /* margin-left: 21%; */
   background-color: white;
   height: auto;
   /* width: 100%; */
   box-shadow: 1px 1px 3px #dddd;
   width: 72.6%;
   padding-top: 17px;
-  /* padding-left: 15px; */
+  z-index: 0;
 }
+
 #path{
   font-size: 11px;
   letter-spacing: .3px;
@@ -652,15 +677,16 @@ input:active{
 }
 
 footer{
-  background-color: #1b70fa;
+  background-color: #2874f0;
   /* margin-top: 30px; */
   margin-bottom: 0px;
+  
 }
 footer a{
   font-size: 12px;
   color: white;
   text-decoration: none;
-  
+  text-align: start;
 }
 #foot{
   display: flex;

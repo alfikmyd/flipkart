@@ -3,7 +3,7 @@ import assurePic from "./img/assured.png";
 
 
 
-function FiltLeft({setFilterValue}) {
+function FiltLeft({setFilterValue,filterValue}) {
     const [container,setContainer] = useState({});
     const [hide,setHide] = useState(false);
 
@@ -11,10 +11,7 @@ function FiltLeft({setFilterValue}) {
         setFilterValue(container);
     }, [container,setFilterValue]);
 
-
-
-    // const [container, setContainer] = useState({});
-    // const [hide, setHide] = useState(false);
+   
     const [typeHide, setTypeHide] = useState(false);
     const [prosHide, setProsHide] = useState(false);
     const [genHide, setGenHide] = useState(false);
@@ -79,6 +76,13 @@ function FiltLeft({setFilterValue}) {
         })
     }
 
+    const handleChange = (key, value) => {
+        setFilterValue((prev) => ({
+            ...prev,
+            [key]: prev[key] === value ? "" : value,
+        }));
+    };
+
     
     const type = [
         { label: "Gaming Laptop", value: "Gaming Laptop" },
@@ -87,6 +91,7 @@ function FiltLeft({setFilterValue}) {
         { label: "Chromebook", value: "Chromebook" },
         { label: "Creator Laptop", value: "Creator Laptop" }
     ];
+
 
     const processor = [
         { label: "Core i5", value: "Core i5" },
@@ -201,7 +206,6 @@ function FiltLeft({setFilterValue}) {
     ];
 
 
-
     return (
         <>
             <div id="left">
@@ -298,13 +302,21 @@ function FiltLeft({setFilterValue}) {
                         </svg>
                     </div>
                     {hide && (
+
+                        
                         <div className="checkBrand">
-                            {/* {container.brand && container.brand.length > 0 && ( */}
-                            {container.brand?.length > 0 && ( 
+                            {container.brand && container.brand.length > 0 && (
+                            // {container.brand?.length > 0 && ( 
                                 <span className="brandClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("brand")}>
                                     <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all</span>
                             )}
-                            <label id="hp" htmlFor="hp"><input type="checkbox" value="HP" checked={container.brand?.includes("HP") || false} onChange={() => handleCheckbox("brand", "HP")} /> HP</label>
+                            <label id="hp" htmlFor="hp"><input type="checkbox" value="HP" checked={container.brand?.includes("HP") || false}
+                             onChange={() => {
+                                handleCheckbox("brand", "HP");
+                                
+                             }} />
+                              HP
+                             </label>
                             <label id="asus" htmlFor="asus"><input type="checkbox" value="ASUS" checked={container.brand?.includes("ASUS") || false} onChange={() => handleCheckbox("brand", "ASUS")} /> ASUS</label>
                             <label id="lenovo" htmlFor="lenovo"><input type="checkbox" value="Lenovo" checked={container.brand?.includes("Lenovo") || false} onChange={() => handleCheckbox("brand", "Lenovo")} /> Lenovo</label>
                             <label id="dell" htmlFor="dell"><input type="checkbox" value="DELL" checked={container.brand?.includes("DELL") || false} onChange={() => handleCheckbox("brand", "DELL")} /> DELL</label>
@@ -312,7 +324,6 @@ function FiltLeft({setFilterValue}) {
                         </div>
                     )}
                 </div>
-
 
 
                 <div id="type">
@@ -329,10 +340,18 @@ function FiltLeft({setFilterValue}) {
                                 <div className="typeClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("type")}>
                                     <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all</div>
                             )}
-                            {type.map((item) => (
+                            {/* {type.map((item) => (
                                 <label key={item.label} className={item.label}>
                                     <input type="checkbox" value={item.value} checked={container.type?.includes(item.value) || false} onChange={() => handleCheckbox("type", item.value)} />
                                     {item.label}
+                                </label>
+                            ))} */}
+                            {type.map((t) => (
+                                <label key={t.value}>
+                                    <input type="checkbox" checked={container.type?.includes(t.value) || false}
+                                        onChange={() => handleCheckbox("type", t.value)}
+                                    />
+                                    {t.label}
                                 </label>
                             ))}
                         </div>
@@ -883,7 +902,6 @@ function FiltLeft({setFilterValue}) {
 }
 
 export default FiltLeft;
-
 
 
 

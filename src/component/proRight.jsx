@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function Product({proProps}) {
-    const products = Array.isArray(proProps) ? proProps : []
+function Product({products}) {
     
-    if(!Array.isArray(proProps)){
-        console.log("proprops: " ,proProps);
-        return( 
-        <div>no product</div>
-         
-    )
+    const [display, setDisplay] = useState([]);
+
+    useEffect(() => {
+        setDisplay(products || []);
+    },[products]);
+
+    if(!display || display.length === 0){
+        return <p>No Products found</p>;
     }
 
 
@@ -45,9 +46,11 @@ function Product({proProps}) {
                 </div>
 
                 <div id="productPart">
-                    {proProps.map((item, index) => (
-                        // <div key={index} className="items">
-                        <div key={item.id || index} className="items">
+                    {/* {pr.map((item,index) => (
+                        <div key={index} className="items"> */}
+
+                    {display.map((item, index) => (
+                         <div key={item.id || index} className="items">
                             <div className="col-one">
                                 <div style={{ display: "flex", flexDirection: "column" }}>
                                     <img src={item.img || "placeholder.png"} alt={item.name} />
@@ -102,8 +105,5 @@ function Product({proProps}) {
     );
 }
 export default Product;
-
-
-
 
 

@@ -1,88 +1,41 @@
-// import { useMemo,useState } from "react";
-// import FiltLeft from "./filtLeft";
-// import Product from "./proRight";
-// import Footer from "./footer";
-// import Header from "./header";
-// import '../../src/index.css';
-
-// function Parent({initialData = []}){
-//     const [filterValue, setFilterValue] = useState("");
-
-//     const products = useMemo(
-//         () => (Array.isArray(initialData) ? initialData : []),
-//         [initialData]
-//     );
-//     // const filteredProducts = useMemo(() => {
-//     //     if(!filterValue) return products;
-//     //     return products.filter(
-//     //         (p) =>
-//     //         (p.name && p.name.toLowerCase().includes(filterValue.toLowerCase())) || 
-//     //         (p.value && p.value.toLowerCase().includes(filterValue.toLowerCase()))
-//     //     );
-//     // }, [products, filterValue]);
-    
-//     const filteredProducts = useMemo(() => {
-//         if(!filterValue) return products;
-
-//         return products.filter((p) =>
-//             p.name.toLowerCase().includes(String(filterValue).toLowerCase())
-//         );
-//     }, [filterValue, products]);
-
-//     return(
-//         <>
-//             <Header />
-//             <FiltLeft filtProps={filteredProducts} setFilterValue={setFilterValue} />
-//             <Product proProps={filteredProducts} setFilterValue={setFilterValue} />
-//             <Footer  />
-//         </>
-//     );
-// }
-// export default Parent;
-
-
-
-
-
-import { useMemo,useState,useEffect } from "react";
+import { useMemo, useState, useEffect } from "react";
 import Footer from "./footer";
 import Header from "./header";
 import '../../src/index.css';
 import FiltLeft from "./filtLeft";
 import Product from "./proRight";
 
-function Parent(){
-    const [filterValue,setFilterValue] = useState("");
+function Parent() {
+    const [filterValue, setFilterValue] = useState({});
     const [productData, setProductData] = useState([]);
 
     useEffect(() => {
         fetch("/data.json")
             .then((res) => res.json())
-            // .then((data) => setProductData(Array.isArray(data) ? data : []))
-            .then((data) => {
-                console.log("Fetched json : ", data);
-                setProductData(Array.isArray(data) ? data : []);
-            })
-            .catch((err) => console.error("failed :" ,err));
+            .then((data) => setProductData(Array.isArray(data) ? data : []))
+            .catch((err) => console.error("failed :", err));
     }, []);
 
+
+
     const filteredProducts = useMemo(() => {
-        if (!filterValue) return productData;
-
         return productData.filter((p) =>
-            p.name?.toLowerCase().includes(String(filterValue).toLowerCase())
+            Object.entries(filterValue).every(([key, values]) => {
+                if (!Array.isArray(values) || values.length === 0) return true;
+                return values.some((val) =>
+                    (p[key] || "").toLowerCase().includes(val.toLowerCase())
+                );
+            })
         );
-    }, [filterValue, productData]);
+    }, [productData, filterValue]);
 
-    useEffect(() => {
-        console.log("Filtere product : ", filteredProducts);
-    },[filteredProducts]);
-
-    return(
+    return (
         <>
             <Header />
-            <FiltLeft filtProps={filteredProducts} setFilterValue={setFilterValue} />
-            <Product proProps={filteredProducts} />
+            <div id="cent">
+                <FiltLeft filterValue={filterValue} setFilterValue={setFilterValue} />
+                <Product products={filteredProducts} />
+            </div>
             <Footer />
         </>
     )

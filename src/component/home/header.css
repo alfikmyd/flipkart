@@ -640,6 +640,8 @@ footer {
     text-align: left;
     align-items: start;
     font-family: "regular";
+    /* background-color: #0964f7; */
+    /* z-index: 0; */
 }
 .footAdrs{
     margin-left: -120px;
