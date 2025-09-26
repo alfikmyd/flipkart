@@ -6,6 +6,7 @@ import { useState,useEffect } from "react"
 import Parent from "./component/filterPage"
 import SelectedItem from "./component/selectItem"
 import Hpage from "./component/home/hPage"
+import Mobile from "./component/mobile/mobile";
 
 
 function App() {
@@ -20,13 +21,15 @@ function App() {
 
   return (
     <>
-      <Router>
+      {/* <Router>
         <Routes>
           <Route path="/" element={<Hpage/>}/>
           <Route path="/laptops" element={<Parent initialData={data} />} />
           <Route path="/item" element={<SelectedItem/>} />
         </Routes>
-      </Router>
+      </Router> */}
+
+      <Mobile />
       
     </>
   )

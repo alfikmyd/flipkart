@@ -1,0 +1,139 @@
+@font-face{
+    font-family: "italic";
+    src: url("../../font/Inter-Italic.woff2");
+}
+@font-face{
+    font-family: "regular";
+    src: url("../../font/Inter-Regular.woff2");
+}
+@font-face{
+    font-family: "bold";
+    src: url("../../font/Inter-SemiBold.woff2");
+}
+@font-face{
+    font-family: "boldItalic";
+    src: url("../../font/Inter-SemiBoldItalic.woff2");
+}
+/* body{
+    background-color: white;
+} */
+
+#mobileHeader{
+    background-color: white;
+    display: block;
+}
+#mobHead{
+    display: flex;
+    justify-content: space-between;
+    height: 53px;
+    border-bottom: 1px solid #d4d4d4;
+    padding-top: 16px;
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 25px;
+    letter-spacing: .5px;
+}
+#mobHead img{
+    width: 23px;
+    height: 23px;
+}
+.headLeft{
+    display: flex;
+    justify-content: left;
+    gap: 15px;
+    width: 590px;
+    min-width: auto;
+    max-width: auto;
+}
+.headRight{
+    display: flex;
+    justify-content: right;
+    gap: 21px;
+    width: 178px;
+    min-width: auto;
+    max-width: auto;
+}
+.filtSort{
+    display: flex;
+    height: 47px;
+    border-bottom: 1px solid #d4d4d4;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13.5px;
+    font-weight: bold;
+    position: relative ;
+}
+.mobSort{
+    width: 100%;
+    text-align: center;
+    border-right: 1px solid #d4d4d4;    
+}
+.mobFilt{
+    width: 100%;
+    text-align: center;
+}
+.topSale{
+    display: flex;
+    width: 227px;
+    font-size: 11px;
+    padding: 8px 0px 8px 15px;
+}
+.topSale img{
+    width: 32px;
+    height: 32px;
+}
+.topS, .topIntel{
+    border: 1px solid #d4d4d4;
+    display: flex;
+    border-radius: 5px;
+    padding: 3px 4px 0px 4px; 
+    /* justify-content: space-between; */
+    align-items: center;
+    text-align: start;
+}
+.topS{
+    width: 109px;
+    justify-content: space-between;
+}
+.topIntel{
+    width: 79.8px;
+    margin-left: 8px;
+}
+.topS span, .topIntel span{
+    margin-left: 8px;
+}
+#mainImage{
+    overflow-x: hidden;
+}
+#mainImage img{
+    width: 1024px;
+    height: 455px;
+    min-width: auto;
+    max-width: auto;
+}
+.mob-items{
+    background-color: white;
+    margin-top: -5px;
+    padding-top: 10px;
+    line-height: 30px;
+}
+.mobItemMain{
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    padding-left: 6px;
+}
+.mobFirst img{
+    width: 96px;
+    height: 65px;
+}
+.mobSecond{
+    width: 866px;
+    height: 149px;
+    /* line-height: 30px; */
+}
+.brandHead{
+    font-size: 14px;
+    min-width: auto;
+    cursor: pointer;
+}

@@ -29,14 +29,14 @@ body{
 header{
   background-color: blue;
   margin: 0;
-  height: 55px;
+  height: 56px;
   width: 100%;
   position: fixed;
   display: flex;
   overflow-x: hidden;
   z-index: 9999;
   overflow-y: auto;
-  padding-left: 268px;
+  padding-left: 273px;
   padding-top: 11px;
   padding-right: 232px;
   font-family: "regular";
@@ -83,11 +83,11 @@ header{
   height: 36px;
   /* margin-top: 10px;
   margin-left: -115px; */
-  box-shadow: 1px 2px 2px rgb(44, 50, 141);
+  box-shadow: 1px 1px 3px rgb(44, 50, 141);
   min-width: 305px;
   border-radius: 2px;
   margin-right: 0;
-  margin-left: 10px;
+  margin-left: -96px;
 }
 .searchInput input:active{
   background-color: white;
@@ -214,6 +214,7 @@ header{
   z-index: 999;
   position: fixed;
   /* overflow-y: auto; */
+  box-shadow: 1px 1px 3px rgb(165, 164, 164);
 }
 .moreDrop svg{
   color: #2784f0;
@@ -259,7 +260,7 @@ nav{
   z-index: 999;
 }
 #child{
-  margin-top: 16px;
+  margin-top: 1px;
   /* position: fixed; */
 }
 .gray{
@@ -290,6 +291,10 @@ nav{
   padding-left: 121px;
   margin-right: 120px;
 }
+
+/* Link{
+  text-decoration: none;
+} */
 
 #left{
   /* margin-left: 6.3%; */

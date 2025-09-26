@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import logoPic from "./img/flip-logo.png";
 import plusPic from "./img/plus.png";
 import zonePic from "./img/plus-blue.png";
@@ -6,6 +7,7 @@ import orderPic from './img/order-img.png';
 import giftPic from './img/giftCard.png';
 import advPic from "./img/advertise.png";
 import Links from "./navLinks";
+
 
 function Header() {
     const [showFocus, setShowFocus] = useState(false);
@@ -32,6 +34,7 @@ function Header() {
     return (
         <>
             <header>
+                <Link to={"/"} style={{textDecoration: "none"}}>
                 <div className="logo">
                     <img src={logoPic} alt="flip" />
                     <a href="#">
@@ -39,6 +42,7 @@ function Header() {
                         <span className="plusLogo"> Plus <img src={plusPic} alt="plus" /></span>
                     </a>
                 </div>
+                </Link>
 
                 <div id="search">
                     <div className="searchInput">
