@@ -1,0 +1,29 @@
+[
+    {
+        "processorName": "Core Ultra 5"
+    },
+    {
+        "processorName": "Core i3"
+    },
+    {
+        "processorName": "Core i7"
+    },
+    {
+        "processorName": "Core i5"
+    },
+    {
+        "processorName":"Core i9"
+    },
+    {
+        "processorName":"Ryzen 5 Quad Core"
+    },
+    {
+        "processorName": "Core Ultra 7"
+    },
+    {
+        "processorName":"Core Ultra 9"
+    },
+    {
+        "processorName": "Ryzen 7 Quad Core"
+    }
+]

@@ -115,25 +115,280 @@
     background-color: white;
     margin-top: -5px;
     padding-top: 10px;
-    line-height: 30px;
+    line-height: 29px;
+    padding-bottom: 1px;
 }
 .mobItemMain{
     display: flex;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     padding-left: 6px;
 }
 .mobFirst img{
     width: 96px;
     height: 65px;
+    margin: auto;
 }
 .mobSecond{
     width: 866px;
     height: 149px;
     /* line-height: 30px; */
+    margin-left: 12px;
 }
 .brandHead{
     font-size: 14px;
     min-width: auto;
     cursor: pointer;
 }
+.rateStar svg{
+    color: #008c00;
+    margin-right: 2px;
+}
+
+.mobSizes{
+    font-size: 12px;
+    color: #717478;
+    display: flex;
+    gap: 10px;
+    padding-left: 13px;
+}
+.mobSizes span{
+    border: 1px solid #d4d4d4;
+    padding: 0px 8px;
+    height: 28px;
+    letter-spacing: 0px;
+    text-align: center;
+    border-radius: 3px;
+}
+.mobSngl{
+    margin-bottom: 17px;
+    display: block;
+    
+}
+.mobBrandName{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow:  1px 3px 3px  #d8dada;
+    width: 96px;
+    height: 156px;
+    align-items: left;
+    border-radius: 4px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+.mobB{
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+}
+#mobBrands, #procViolet{
+    padding-left: 16px;
+    padding: 13px;
+    background-color: #f4efff;
+}
+
+.mobBrandName img{
+    width: 96px;
+    height: 100px;
+}
+#mobBrands .mobBrandName span{
+    font-size: 14px;
+    font-family: "Roboto Medium", Roboto-Medium, "Droid Sans", HelveticaNeue-Medium, "Helvetica Neue Medium", sans-serif-medium ;
+    padding: 10px;
+}
+#mobBrands span, #procViolet span{
+    font-size: 16px;
+    font-family: "Roboto Medium", Roboto-Medium, "Droid Sans", HelveticaNeue-Medium, "Helvetica Neue Medium", sans-serif-medium;
+}
+
+.mobProsName{
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+}
+.prosEach{
+    background-color: white;
+    width: auto;
+    height: 32px;
+    box-shadow: 1px 1px 3px #d4d4d4;
+    text-align: center;
+    max-width: max-content;
+    min-width: max-content;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 5px;
+    border-radius: 50px;
+    /* overflow-x: scroll; */
+    margin-top: 15px;
+    margin-bottom: 18px;
+}
+#procViolet .prosEach span{
+    font-size: 14px;
+    font-family: "Roboto Medium", Roboto-Medium, "Droid Sans", HelveticaNeue-Medium, "Helvetica Neue Medium", sans-serif-medium;   
+}
+
+#mobScroll{
+    background-image: url("https://rukminim1.flixcart.com/fk-p-flap/1669/242/image/Mask%20Group-2.png?q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    margin-right: 0;
+    height: 242px;
+}
+
+#hpImage{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    z-index: 2;
+}
+.hpImgOne{
+    margin: 0;
+    display: block;
+    
+}
+.hpImg{
+    display: flex;
+    flex-direction: column;
+    width: 172px;
+    height: 218px;
+    margin: 0;
+    align-items: center;
+    line-height: 25px;
+}
+.hpImg img{
+    width: 104px;
+    height: 104px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.hpAd{
+    background-color: #edeeee;
+    font-size: 11px;
+    padding: 2px;
+    border-radius: 3px;
+    
+}
+.hpImgTwo .hpAd{
+    margin-left: 152px;
+}
+
+
+#hpItems{
+    z-index: 1;
+    position: relative;
+    width: 1024px;
+    height: 218px;
+    overflow-x: auto;
+    flex-direction: row;
+    background-color: rgba(0,0,0,0.00);
+    overflow-y: hidden;
+
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    padding: 10px 0;
+}
+.hpEach{
+    width: 148px;
+    height: 218px;
+    background-color: white;
+    box-shadow: 0px 1px 3px #e2e2e2;
+    border-radius: 6px;
+    display: block;
+
+    flex: 0 0 auto;
+    border: 1ps solid #e0e0e0;
+    text-align: center;
+    padding: 10px;
+    transition: transform 0.2s;
+}
+.hpEach:hover{
+    transform:  scale(1.05);
+}
+#hpItems::-webkit-scrollbar{
+    display: none;
+}
+
+.hpEach img{
+    width: 130px;
+    height: 100px;
+}
+.hpProducts{
+    display: flex;
+    gap: 10px;
+    width: 780px;
+    height: 218px;
+    align-items: stretch;
+    background-color: rgba(0,0,0,0.00);
+    flex-basis: auto;
+    z-index: 0;
+}
+.hpEach span{
+    font-size: 12px;
+}
+
+.hpRate{
+    background-color: #026e02;
+    width: 40px;
+    height: 20px;
+    color: white;
+    text-align: center;
+    border-radius: 3px;
+}
+
+#mobScroll{
+    transform: translate(0px 0px);
+    align-items: stretch;
+    position: absolute;
+    z-index: 0;
+}
+.hpPr{
+    align-items: center;
+    flex-direction: row;
+}
+
+.adImage{
+    width: 100%;
+}
+.adImage img{
+    height: 296px;
+    width: 1024px;
+}
+
+.sortSelect{
+    margin-top: 60px;
+    z-index: 9999;
+    position: relative;
+    
+}
+/* .sortopt{
+    display: flex;
+    flex-direction: column;
+}
+
+.mobSort{
+    z-index: 9999;
+    position: fixed;
+    margin: 0;
+} */
+
+
+/* .mbSort{
+    z-index: 999;
+    position: absolute;
+}
+.srt{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+.srt .sortFilt{
+    display: flex;
+    flex-direction: column;
+}
+.srt .sortFilt span{
+    margin-left: 0;
+} */
