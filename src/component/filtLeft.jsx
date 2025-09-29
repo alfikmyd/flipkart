@@ -56,21 +56,6 @@ function FiltLeft({setFilterValue,filterValue}) {
     };
 
 
-    // const handleRemoveItem = (section, value) => {
-    //     setContainer((prev) => {
-    //         const updated = { ...prev };
-    //         if (Array.isArray(updated[section])) {
-    //             updated[section] = updated[section].filter(
-    //                 (item) => (typeof item === "object" ? item.value : item) !== value
-    //             );
-    //             if (updated[section].length === 0) {
-    //                 delete updated[section];
-    //             }
-    //         }
-    //         return updated;
-    //     });
-    // };
-
     const handleRemoveItem = (section, value) => {
         if(section === "price"){
             selectedPrice({min: 0, max: Infinity});
@@ -96,13 +81,6 @@ function FiltLeft({setFilterValue,filterValue}) {
         setSelectedPrice({min: 0, max: Infinity});
     };
 
-    // const clearItem = (section) => {
-    //     setContainer((prev) => {
-    //         const selected = { ...prev };
-    //         delete selected[section];
-    //         return selected;
-    //     })
-    // }
 
     const clearItem = (section) => {
         if(section === "price"){
@@ -117,21 +95,6 @@ function FiltLeft({setFilterValue,filterValue}) {
         }
     };
 
-
-    // const handleChange = (key, value) => {
-    //     setFilterValue((prev) => ({
-    //         ...prev,
-    //         [key]: prev[key] === value ? "" : value,
-    //     }));
-    // };
-
-//    const handlePriceChange = (key, value) => {
-//         let parsed = value === "Min" ? 0 : value === "Max" ? Infinity : parseInt(value.replace("₹", ""));
-//         setSelectedPrice((prev) => ({
-//             ...prev,
-//             [key]: parsed
-//         }));
-//     };
 
     const handlePriceChange = (key, value) => {
         let numValue;
@@ -982,6 +945,9 @@ function FiltLeft({setFilterValue,filterValue}) {
                 </div>
 
             </div>
+
+
+
 
         </>
     )
