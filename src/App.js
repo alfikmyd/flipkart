@@ -7,6 +7,7 @@ import Parent from "./component/filterPage"
 import SelectedItem from "./component/selectItem"
 import Hpage from "./component/home/hPage"
 import Mobile from "./component/mobile/mobile";
+import Filt from "./component/mobile/MobFilter";
 
 
 function App() {
@@ -29,7 +30,8 @@ function App() {
         </Routes>
       </Router> */}
 
-      <Mobile />
+      {/* <Mobile /> */}
+      <Filt />
       
     </>
   )
