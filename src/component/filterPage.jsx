@@ -5,12 +5,21 @@ import Header from "./header";
 import '../../src/index.css';
 import FiltLeft from "./filtLeft";
 import Product from "./proRight";
+import Mobile from "./mobile/mobile";
 
 function Parent({ initialData = [] }) {
     const [filterValue, setFilterValue] = useState({ min: 0, max: Infinity });
     const [productData, setProductData] = useState(Array.isArray(initialData) ? initialData : []);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 1440);
 
-    // Fetch data from JSON file once
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 1440);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     useEffect(() => {
         fetch("/data.json")
             .then((res) => res.json())
@@ -37,15 +46,23 @@ function Parent({ initialData = [] }) {
     }, [productData, filterValue]);
 
     return (
+
         <>
-            <Header />
-            <div id="cent">
-                <FiltLeft filterValue={filterValue} setFilterValue={setFilterValue} />
-                <Product products={filteredProducts} />
-            </div>
-            <Footer />
+            {isMobile ? (
+                <Mobile />
+            ) : (
+                <>
+                    <Header />
+                    <div id="cent">
+                        <FiltLeft filterValue={filterValue} setFilterValue={setFilterValue} />
+                        <Product products={filteredProducts} />
+                    </div></>
+            )}
         </>
     );
 }
 
 export default Parent;
+
+
+

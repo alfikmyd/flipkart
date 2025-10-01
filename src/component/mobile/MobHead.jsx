@@ -1,7 +1,8 @@
 import { useMemo, useState } from "react";
 import Sort from "../sort";
 import MobSort from "./MobSort";
-
+import Filt from "./MobFilter";
+import { Link } from "react-router-dom";
 
 function MobHead({prod = []}) {
     const [sort, setSort] = useState(false);
@@ -74,9 +75,13 @@ function MobHead({prod = []}) {
                             <MobSort sortSelect={sortSelect} setSortSelect={setSortSelect} />
                         )}
                     </div>
+                    <div style={{width:"100%"}}>
+                    <Link to={"/filter" } style={{textDecoration:"none", color:"black"}} >
                     <div className="mobFilt">
                         <svg width="20" height="20" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" strokeLinecap="round" strokeLinejoin="round" strokeWidth="12" d="M148 172H40M216 172h-28"></path><circle cx="168" cy="172" r="20" fill="none" stroke="#111112" strokeLinecap="round" strokeLinejoin="round" strokeWidth="12"></circle><path fill="none" stroke="#111112" strokeLinecap="round" strokeLinejoin="round" strokeWidth="12" d="M84 84H40M216 84h-92"></path><circle cx="104" cy="84" r="20" fill="none" stroke="#111112" strokeLinecap="round" strokeLinejoin="round" strokeWidth="12"></circle></svg>
                         <span style={{ marginLeft: "6px", marginBottom: "-5px" }}>Filter</span>
+                    </div>
+                    </Link>
                     </div>
                 </div>
 
