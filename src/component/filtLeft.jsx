@@ -1,20 +1,25 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import assurePic from "./img/assured.png";
 
 
 
-function FiltLeft({setFilterValue,filterValue}) {
-    const [container,setContainer] = useState({});
-    const [hide,setHide] = useState(false);
+function FiltLeft({ setFilterValue, filterValue }) {
+    const [container, setContainer] = useState({});
+    const [hide, setHide] = useState(false);
 
-    const [selectedPrice, setSelectedPrice] = useState({min : 0, max: Infinity});
+    const [selectedPrice, setSelectedPrice] = useState({ min: 0, max: Infinity });
 
+    const priceSteps = [0, 20000, 40000, 50000, 60000, 75000, Infinity]
+    const stepWidth = 100 / (priceSteps.length - 1);
+    const [sliderPos, setSliderPos] = useState({ minIndex: 0, maxIndex: priceSteps.length - 1 });
+
+    const sliderRef = useRef(null)
     // useEffect(() => {
     //     setFilterValue(container);
     // }, [container,setFilterValue]);
 
     useEffect(() => {
-        setFilterValue({...container, min: selectedPrice.min, max: selectedPrice.max});
+        setFilterValue({ ...container, min: selectedPrice.min, max: selectedPrice.max });
     }, [container, selectedPrice, setFilterValue]);
 
 
@@ -42,32 +47,32 @@ function FiltLeft({setFilterValue,filterValue}) {
     const [gstHide, setGstHide] = useState(false);
     const [offerHide, setOfferHide] = useState(false);
 
-    
+
     const handleCheckbox = (section, value) => {
         setContainer((prev) => {
             const current = Array.isArray(prev[section]) ? prev[section] : [];
-            if(current.includes(value)){
-                return { ...prev, [section]: current.filter((v) => v !== value)};
+            if (current.includes(value)) {
+                return { ...prev, [section]: current.filter((v) => v !== value) };
             }
             else {
-                return {...prev, [section]: [...current, value]};
+                return { ...prev, [section]: [...current, value] };
             }
         });
     };
 
 
     const handleRemoveItem = (section, value) => {
-        if(section === "price"){
-            selectedPrice({min: 0, max: Infinity});
+        if (section === "price") {
+            selectedPrice({ min: 0, max: Infinity });
         }
-        else{
+        else {
             setContainer((prev) => {
-                const updated = {...prev};
-                if(Array.isArray(updated[section])){
+                const updated = { ...prev };
+                if (Array.isArray(updated[section])) {
                     updated[section] = updated[section].filter(
                         (item) => (typeof item === "object" ? item.value : item) !== value
                     );
-                    if(updated[section].length === 0){
+                    if (updated[section].length === 0) {
                         delete updated[section];
                     }
                 }
@@ -78,17 +83,17 @@ function FiltLeft({setFilterValue,filterValue}) {
 
     const clearBtnAll = () => {
         setContainer({});
-        setSelectedPrice({min: 0, max: Infinity});
+        setSelectedPrice({ min: 0, max: Infinity });
     };
 
 
     const clearItem = (section) => {
-        if(section === "price"){
-            setSelectedPrice({min: 0,max: Infinity});
+        if (section === "price") {
+            setSelectedPrice({ min: 0, max: Infinity });
         }
-        else{
+        else {
             setContainer((prev) => {
-                const selected = {...prev};
+                const selected = { ...prev };
                 delete selected[section];
                 return selected;
             });
@@ -96,20 +101,115 @@ function FiltLeft({setFilterValue,filterValue}) {
     };
 
 
-    const handlePriceChange = (key, value) => {
-        let numValue;
-        if(value === "Min") numValue = 0;
-        else if (value === "Max") numValue = Infinity;
-        else numValue = parseInt(value.replace("₹",""));
+    // const handlePriceChange = (key, value) => {
+    //     let numValue;
+    //     if(value === "Min") numValue = 0;
+    //     else if (value === "Max") numValue = Infinity;
+    //     else numValue = parseInt(value.replace("₹",""));
 
-        setSelectedPrice((prev) => ({
+    //     setSelectedPrice((prev) => ({
+    //         ...prev,
+    //         [key]: numValue,
+    //     }));
+    // };
+
+    const findClosestIndex = (num) => {
+        let closest = 0;
+        let minDiff = Infinity;
+        priceSteps.forEach((p, i) => {
+            const diff = Math.abs(p - num);
+            if (diff < minDiff) {
+                minDiff = diff;
+                closest = i;
+            }
+        });
+        return closest;
+    }
+
+    const handlePriceChange = (key, value) => {
+        // let numValue;
+        // if (value === "Min") numValue = 0;
+        // else if (value === "Max") numValue = Infinity;
+        // else numValue = parseInt(value.replace("₹", ""));
+
+        // setSelectedPrice((prev) => ({
+        //     ...prev,
+        //     [key]: numValue,
+        // }));
+
+        let numValue = value === "Min" ? 0 : value === "Max" ? Infinity : parseInt(value.replace("₹", ""));
+
+        const closestIndex = priceSteps.reduce((acc, p, i) =>
+            Math.abs(p - numValue) < Math.abs(priceSteps[acc] - numValue) ? i : acc, 0);
+
+
+        setSelectedPrice(prev => ({
             ...prev,
-            [key]: numValue,
+            [key]: numValue
+        }));
+
+        // const closestIndex = priceSteps.reduce((acc, p, i) => {
+        //     return Math.abs(p - numValue) < Math.abs(priceSteps[acc] - numValue) ? i : acc;
+        // }, 0);
+        setSliderPos(prev => ({
+            ...prev,
+            [key + "Index"]: closestIndex
+        }));
+
+        const index = findClosestIndex(numValue);
+        setSliderPos((prev) => ({
+            ...prev,
+            [key === "min" ? "minIndex" : "maxIndex"]: index
+        }));
+    };
+
+
+    const startDragging = (e, type) => {
+        e.preventDefault();
+        const sliderRect = sliderRef.current.getBoundingClientRect();
+        const stepPixelWidth = sliderRect.width / (priceSteps.length - 1);
+        const maxIndex = 6; // max index allowed
+        const minIndex = 0
+
+        const onMouseMove = (moveEvent) => {
+            let newIndex = Math.round((moveEvent.clientX - sliderRect.left) / stepPixelWidth);
+
+            // Clamp the index
+            if (newIndex > maxIndex) newIndex = maxIndex;
+            if(newIndex < minIndex) newIndex = minIndex;
+            if (type === "min" && newIndex > sliderPos.maxIndex) newIndex = sliderPos.maxIndex;
+            if (type === "max" && newIndex < sliderPos.minIndex) newIndex = sliderPos.minIndex;
+
+            setSliderPos(prev => ({ ...prev, [type + "Index"]: newIndex }));
+            setSelectedPrice(prev => ({ ...prev, [type]: priceSteps[newIndex] }));
+        };
+
+        const onMouseUp = () => {
+            window.removeEventListener("mousemove", onMouseMove);
+            window.removeEventListener("mouseup", onMouseUp);
+        };
+
+        window.addEventListener("mousemove", onMouseMove);
+        window.addEventListener("mouseup", onMouseUp);
+    };
+
+
+    const handleSliderMove = (type, newIndex) => {
+        if (type === "min" && newIndex > sliderPos.maxIndex) newIndex = sliderPos.maxIndex;
+        if (type === "max" && newIndex < sliderPos.minIndex) newIndex = sliderPos.minIndex;
+
+        setSliderPos(prev => ({
+            ...prev,
+            [type + "Index"]: newIndex
+        }));
+        setSelectedPrice(prev => ({
+            ...prev,
+            [type]: priceSteps[newIndex]
         }));
     };
 
     const priceLabel = () => {
-        if(selectedPrice.min === 0 && selectedPrice.max === Infinity) return null;
+        if (selectedPrice.min === 0 && selectedPrice.max === Infinity) return null;
         let minLabel = selectedPrice.min === 0 ? "Min" : `₹${selectedPrice.min}`;
         let maxLabel = selectedPrice.max === Infinity ? "Max" : `₹${selectedPrice.max}`;
         return `${minLabel} - ${maxLabel}`;
@@ -157,7 +257,7 @@ function FiltLeft({setFilterValue,filterValue}) {
     ];
     const os = [
         { label: "Windows 11 Home", value: "Windows 11 Home" },
-        
+
         { label: "Windows 11", value: "Windows 11" },
         { label: "Chrome", value: "Chrome" },
         { label: "Mac OS", value: "Mac OS" }
@@ -237,6 +337,7 @@ function FiltLeft({setFilterValue,filterValue}) {
     ];
 
 
+
     return (
         <>
             <div id="left">
@@ -245,17 +346,17 @@ function FiltLeft({setFilterValue,filterValue}) {
                         <span>Filters</span>
                         {/* {Object.keys(container).length > 0  */}
                         {(
-                            Object.keys(container).length > 0 || ! (selectedPrice.min === 0 && selectedPrice.max === Infinity)
+                            Object.keys(container).length > 0 || !(selectedPrice.min === 0 && selectedPrice.max === Infinity)
                         ) && (
-                            <span className="mainClear" onClick={clearBtnAll}>CLEAR ALL</span>
-                        )}
+                                <span className="mainClear" onClick={clearBtnAll}>CLEAR ALL</span>
+                            )}
                     </div>
                     <div className="itemSelected">
 
                         {priceLabel() && (
                             <span key="price"
                                 onClick={() => clearItem("price")}
-                                style={{cursor:"pointer", marginRight:"8px"}}
+                                style={{ cursor: "pointer", marginRight: "8px" }}
                             >x {priceLabel()}</span>
                         )}
 
@@ -274,7 +375,7 @@ function FiltLeft({setFilterValue,filterValue}) {
                 </div>
 
                 <div id="category">
-                    <span style={{ fontSize: "11px", fontWeight: "600",marginLeft:"0px" }}>CATEGORIES</span>
+                    <span style={{ fontSize: "11px", fontWeight: "600", marginLeft: "0px" }}>CATEGORIES</span>
                     <a style={{ fontSize: "13px", color: "#6e6d6dff" }} href="laptop.com"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor" className="bi bi-chevron-left" viewBox="0 0 16 16">
                         <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
                     </svg> Computers</a>
@@ -283,20 +384,30 @@ function FiltLeft({setFilterValue,filterValue}) {
 
                 <div id="price">
                     <span style={{ fontSize: "12px", fontWeight: "bold" }}>PRICE</span>
-                    <div className="priceBack" style={{ height: "100%", position: "relative", bottom: "-6px", display: "flex", marginTop: "1px",marginLeft:"0px" }}>
-                        <div id="ga" style={{ height: "18.75px", width: "39.4px", backgroundColor: "#e0e0e0", marginTop: "7px",marginLeft:"0px",marginRight:"0" }}></div>
-                        <div id="gb" style={{ height: "25px", width: "39.4px", backgroundColor: "#e0e0e0", marginRight:"0px",marginLeft:"0" }}></div>
-                        <div id="gc" style={{ height: "25px", width: "39.4px", backgroundColor: "#e0e0e0", marginLeft:"0px",marginRight:"0px" }}></div>
-                        <div id="gd" style={{ height: "25px", width: "39.4px", backgroundColor: "#e0e0e0", marginLeft:"0px",marginRight:"0px" }}></div>
-                        <div id="ge" style={{ height: "25px", width: "39.4px", backgroundColor: "#e0e0e0", marginLeft:"0px",marginRight:"0px" }}></div>
-                        <div id="gf" style={{ height: "25px", width: "39.4px", backgroundColor: "#e0e0e0", marginLeft:"0px",marginRight:"0px" }}></div>
+                    <div className="priceBack" style={{ height: "100%", position: "relative", bottom: "-6px", display: "flex", marginTop: "1px", marginLeft: "0px" }}>
+                        <div id="ga" style={{ height: "18.75px", width: "39.4px", backgroundColor: "#e0e0e0", marginTop: "7px", marginLeft: "0px", marginRight: "0" }}></div>
+                        <div id="gb" style={{ height: "25px", width: "39.4px", backgroundColor: "#e0e0e0", marginRight: "0px", marginLeft: "0" }}></div>
+                        <div id="gc" style={{ height: "25px", width: "39.4px", backgroundColor: "#e0e0e0", marginLeft: "0px", marginRight: "0px" }}></div>
+                        <div id="gd" style={{ height: "25px", width: "39.4px", backgroundColor: "#e0e0e0", marginLeft: "0px", marginRight: "0px" }}></div>
+                        <div id="ge" style={{ height: "25px", width: "39.4px", backgroundColor: "#e0e0e0", marginLeft: "0px", marginRight: "0px" }}></div>
+                        <div id="gf" style={{ height: "25px", width: "39.4px", backgroundColor: "#e0e0e0", marginLeft: "0px", marginRight: "0px" }}></div>
                     </div>
-                    <div className="priceRange" style={{ paddingRight: "17px" }}>
+                    <div className="priceRange" style={{ paddingRight: "17px" }} ref={sliderRef}>
                         <div className="priceRangeLine">
-                            <div id="leftRound"></div>
-                            <div id="rightRound"></div>
+                            <div id="leftRound" style={{ left: `${sliderPos.minIndex * stepWidth}%` }}
+                                onMouseDown={(e) => startDragging(e, "min")}
+                            ></div>
+                            <div id="rightRound" style={{ left: `${sliderPos.maxIndex * stepWidth}%` }}
+                                onMouseDown={(e) => startDragging(e, "max")}
+                            ></div>
                             <div id="constLine"></div>
-                            <div id="blueLine"></div>
+                            <div id="blueLine" style={{
+                                // left: `${sliderPos.minIndex * stepWidth}%`,
+                                // width: `${(sliderPos.maxIndex - sliderPos.minIndex) * stepWidth}%`
+
+                                left: `${(sliderPos.minIndex / (priceSteps.length - 1)) * 100}%`,
+                                width:`${((sliderPos.maxIndex - sliderPos.minIndex) / (priceSteps.length - 1)) * 100}%`
+                            }}></div>
                         </div>
                         <div className="priceDot">
                             <div id="dota" style={{ display: "flex", textAlign: "left", userSelect: "none", color: "#c2c2c2", fontSize: "20px" }}>.</div>
@@ -312,8 +423,8 @@ function FiltLeft({setFilterValue,filterValue}) {
                     <div id="priceSelect">
                         <div className="minPrice">
                             <select name="min" value={selectedPrice.min === undefined || selectedPrice.min === 0
-                    ? "Min"
-                    : `₹${selectedPrice.min}`} onChange={(e) => handlePriceChange("min", e.target.value)} >
+                                ? "Min"
+                                : `₹${selectedPrice.min}`} onChange={(e) => handlePriceChange("min", e.target.value)} >
                                 <option value="Min">Min</option>
                                 <option value="₹20000">₹20000</option>
                                 <option value="₹40000">₹40000</option>
@@ -324,9 +435,9 @@ function FiltLeft({setFilterValue,filterValue}) {
                         </div>
                         <div id="to">to</div>
                         <div className="maxPrice">
-                            <select name="max" value={ selectedPrice.max === undefined || selectedPrice.max === Infinity
-                    ? "Max"
-                    : `₹${selectedPrice.max}`} onChange={(e) => handlePriceChange("max", e.target.value)}>
+                            <select name="max" value={selectedPrice.max === undefined || selectedPrice.max === Infinity
+                                ? "Max"
+                                : `₹${selectedPrice.max}`} onChange={(e) => handlePriceChange("max", e.target.value)}>
                                 <option value="₹20000">₹20000</option>
                                 <option value="₹40000">₹40000</option>
                                 <option value="₹50000">₹50000</option>
@@ -338,7 +449,7 @@ function FiltLeft({setFilterValue,filterValue}) {
                     </div>
 
                 </div>
-                
+
                 <div id="brand">
                     <div className="brandHead" style={{ cursor: "pointer" }} onClick={() => setHide(prev => !prev)}>
                         <span style={{ fontSize: "12px", fontWeight: "bold", marginLeft: "18px" }}>BRAND</span>
@@ -348,24 +459,24 @@ function FiltLeft({setFilterValue,filterValue}) {
                     </div>
                     {hide && (
 
-                        
+
                         <div className="checkBrand">
                             {container.brand && container.brand.length > 0 && (
-                            // {container.brand?.length > 0 && ( 
+                                // {container.brand?.length > 0 && ( 
                                 <span className="brandClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("brand")}>
-                                <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all</span>
+                                    <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all</span>
                             )}
                             <label id="hp" htmlFor="hp"><input type="checkbox" value="HP" checked={container.brand?.includes("HP") || false}
-                             onChange={() => {
-                                handleCheckbox("brand", "HP");
-                                
-                             }} />
-                              HP
-                             </label>
+                                onChange={() => {
+                                    handleCheckbox("brand", "HP");
+
+                                }} />
+                                HP
+                            </label>
                             <label id="asus" htmlFor="asus"><input type="checkbox" value="ASUS" checked={container.brand?.includes("ASUS") || false} onChange={() => handleCheckbox("brand", "ASUS")} /> ASUS</label>
                             <label id="lenovo" htmlFor="lenovo"><input type="checkbox" value="Lenovo" checked={container.brand?.includes("Lenovo") || false} onChange={() => handleCheckbox("brand", "Lenovo")} /> Lenovo</label>
                             <label id="dell" htmlFor="dell"><input type="checkbox" value="DELL" checked={container.brand?.includes("DELL") || false} onChange={() => handleCheckbox("brand", "DELL")} /> DELL</label>
-                            <span style={{ fontSize: "12px", color: "#2c7af8ff", marginTop: "10px", fontWeight: "bold", marginLeft:"0px" }}>19 MORE</span>
+                            <span style={{ fontSize: "12px", color: "#2c7af8ff", marginTop: "10px", fontWeight: "bold", marginLeft: "0px" }}>19 MORE</span>
                         </div>
                     )}
                 </div>
@@ -429,7 +540,7 @@ function FiltLeft({setFilterValue,filterValue}) {
                     )}
                 </div>
 
-                
+
                 <div id="ramCap">
                     <div className="ramHead" onClick={() => setRamHide(prev => !prev)}>
                         <span>RAM CAPACITY</span>
@@ -871,7 +982,7 @@ function FiltLeft({setFilterValue,filterValue}) {
                     )}
                 </div>
 
-                
+
 
                 <div id="assure">
                     <div className="assureCheck" style={{ display: "flex", flexDirection: "row" }}>

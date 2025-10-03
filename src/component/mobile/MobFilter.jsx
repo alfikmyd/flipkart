@@ -10,20 +10,34 @@ function Filt({product =[]}) {
 
     const navigate = useNavigate();
 
-    const applyFilters = () => {
+    // const applyFilters = () => {
+    //     let filtered = product;
+
+    //     Object.keys(checkedItems).forEach((filterType => {
+    //         const selected = Object.keys(checkedItems[filterType]).filter(
+    //             (key) => checkedItems[filterType][key]
+    //         );
+    //         if(selected.length > 0){
+    //             filtered = filtered.filter((p) => selected.includes(p[filterType]));
+    //         }
+    //     }));
+
+    //     navigate("/product", {state: {filteredProducts: filtered}});
+    // };
+
+    const applyFilters =() =>{
         let filtered = product;
+        Object.entries(checkedItems).forEach(([filterType, values]) => {
+            const selected = Object.keys(values).filter((key) => values[key]);
 
-        Object.keys(checkedItems).forEach((filterType => {
-            const selected = Object.keys(checkedItems[filterType]).filter(
-                (key) => checkedItems[filterType][key]
-            );
-            if(selected.length > 0){
-                filtered = filtered.filter((p) => selected.includes(p[filterType]));
+            if(selected.length > 0 ){
+                filtered = filtered.filter((item) => 
+                    selected.some((value) => item[filterType] === value)
+                );
             }
-        }));
-
-        navigate("/product", {state: {filteredProducts: filtered}});
-    };
+        });
+        navigate("/product", { state: {filteredProducts: filtered}});
+    }
 
 
     const price = [

@@ -14,9 +14,10 @@
     font-family: "boldItalic";
     src: url("../../font/Inter-SemiBoldItalic.woff2");
 }
-/* body{
-    background-color: white;
-} */
+body{
+    margin: 0;
+    width: 100%;
+}
 
 #mobileHeader{
     background-color: white;
@@ -84,7 +85,19 @@
     width: 227px;
     font-size: 11px;
     padding: 8px 0px 8px 15px;
+
+    /* animation: topSlide 1s ease-out ; */
 }
+@keyframes topSlide{
+    from{
+        transform: translateX(800%);
+
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
 .topSale img{
     width: 32px;
     height: 32px;
@@ -97,14 +110,18 @@
     /* justify-content: space-between; */
     align-items: center;
     text-align: start;
+
 }
 .topS{
     width: 109px;
     justify-content: space-between;
+    animation: topSlide 1s ease-out;
 }
 .topIntel{
     width: 79.8px;
     margin-left: 8px;
+
+    animation: topSlide 1s ease-out;
 }
 .topS span, .topIntel span{
     margin-left: 8px;
@@ -135,6 +152,7 @@
     width: 96px;
     height: 65px;
     margin: auto;
+    margin-top: 50px;
 }
 .mobSecond{
     width: 866px;
@@ -188,6 +206,10 @@
     display: flex;
     gap: 10px;
     overflow-x: scroll;
+    scrollbar-width: none;
+}
+.mobB::-webkit-scrollbar{
+    display: none;
 }
 #mobBrands, #procViolet{
     padding-left: 16px;
@@ -213,6 +235,10 @@
     display: flex;
     gap: 10px;
     overflow-x: scroll;
+    scrollbar-width: none;
+}
+.mobProsName::-webkit-scrollbar{
+    display: none;
 }
 .prosEach{
     background-color: white;
@@ -390,13 +416,12 @@
 
 .adImage{
     width: 100%;
+    overflow-x: hidden;
 }
 .adImage img{
     height: 296px;
     width: 1024px;
 }
-
-
 
 
 #mobSort{
@@ -561,3 +586,109 @@
     font-family: Roboto Medium,Roboto-Medium,Droid Sans,HelveticaNeue-Medium,Helvetica Neue Medium,sans-serif-medium;
 }
 
+
+@media screen and (max-width:768px) {
+    body {
+        width: 100%;
+    }
+    #mainImage img{
+        width: 768px;
+        height: 341px;
+    }
+    .adImage img{
+        width: 768px;
+        height: 222px;
+    }
+    .hpProducts{
+        margin-left: 265px;
+    }
+    .mobSizes{
+        margin-top: 40px;
+    }
+    #mobSort{
+        height: 1000px;
+        margin-top: 0;
+        width: 768px;
+    }
+    .mSort{
+        margin-top: 261px;
+        width: 768px;
+    }
+
+    .mSort .mbSortSelect {
+        width: 768px;
+    }
+
+    .mobFilters{
+        height: 930px;
+    }
+    .mobFiltHead{
+    padding-bottom: 10px;
+    }
+  
+}
+
+@media screen and (max-width: 425px){
+    body{
+        width: 100%;
+    }
+    .hpProducts{
+        margin-left: 610px;
+    }
+    #mobScroll{
+        width: 100%;
+    }
+    #mainImage img{
+        width: 425px;
+        height: 189px;
+    }
+    .adImage img{
+        height: 123px;
+        width: 425px;
+    }
+    .mob-items{
+        padding-bottom: 10px;
+    }
+    .mobSizes{
+        padding-bottom: 10px;
+        margin-top: 70px;
+        flex-wrap: wrap;
+    }
+    .mobFilters{
+        height: 606px;
+        width: 425px;
+        /* position: fixed; */
+    }
+    #mobFooter{
+        /* margin-top: 617px; */
+        width: 425px;
+        overflow: hidden;
+    }
+    .mobFiltHead{
+        width: 142px;
+        margin-right: 0px;
+    }
+    .mobFiltHead div span{
+        max-width: 100px;
+    }
+    .mobFiltHead div{
+        width: 141px;
+    }
+    #rightFilter{
+        margin-right: 0px;
+        width: 282px;
+    }
+    #mobSort{
+        height: 700px;
+    }
+    .mSort{
+        margin-top: 3px;
+    }
+    #smallFilt{
+        overflow-y: hidden;
+        margin-bottom: 0px;
+        white-space:none;
+        width: 425px;
+    }
+    
+}

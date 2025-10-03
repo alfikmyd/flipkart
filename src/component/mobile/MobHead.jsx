@@ -41,13 +41,18 @@ function MobHead({prod = []}) {
             <div id="mobileHeader">
                 <div id="mobHead">
                     <div className="headLeft">
+                        <Link to={"/"} >
                         <div style={{ marginTop: "-2px" }}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
                             <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
                         </svg></div>
+                        </Link>
+                        <Link to={"/"}>
                         <div style={{ width: "23px", marginLeft: "-3px" }}>
                             <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/logo_lite-ea579c.png" alt="flipkart" />
                         </div>
-                        <div style={{ marginLeft: "-3px" }}><span>laptop</span></div>
+                        </Link>
+                        
+                        <div style={{ marginLeft: "-3px" }}><span>Laptops</span></div>
                     </div>
 
                     <div className="headRight">
