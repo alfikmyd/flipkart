@@ -12,6 +12,7 @@ function FiltLeft({ setFilterValue, filterValue }) {
     const priceSteps = [0, 20000, 40000, 50000, 60000, 75000, Infinity]
     const stepWidth = 100 / (priceSteps.length - 1);
     const [sliderPos, setSliderPos] = useState({ minIndex: 0, maxIndex: priceSteps.length - 1 });
+    const [dragging, setDragging] = useState(null);
 
     const sliderRef = useRef(null)
     // useEffect(() => {
@@ -84,12 +85,14 @@ function FiltLeft({ setFilterValue, filterValue }) {
     const clearBtnAll = () => {
         setContainer({});
         setSelectedPrice({ min: 0, max: Infinity });
+        setSliderPos({minIndex: 0, maxIndex: priceSteps.length - 1});
     };
 
 
     const clearItem = (section) => {
         if (section === "price") {
             setSelectedPrice({ min: 0, max: Infinity });
+            setSliderPos({minIndex: 0, maxIndex: priceSteps.length - 1})
         }
         else {
             setContainer((prev) => {
@@ -100,113 +103,183 @@ function FiltLeft({ setFilterValue, filterValue }) {
         }
     };
 
-
-    // const handlePriceChange = (key, value) => {
-    //     let numValue;
-    //     if(value === "Min") numValue = 0;
-    //     else if (value === "Max") numValue = Infinity;
-    //     else numValue = parseInt(value.replace("₹",""));
-
-    //     setSelectedPrice((prev) => ({
-    //         ...prev,
-    //         [key]: numValue,
-    //     }));
-    // };
-
     const findClosestIndex = (num) => {
         let closest = 0;
         let minDiff = Infinity;
         priceSteps.forEach((p, i) => {
             const diff = Math.abs(p - num);
-            if (diff < minDiff) {
+            if(diff < minDiff){
                 minDiff = diff;
                 closest = i;
             }
         });
         return closest;
-    }
+    };
+
 
     const handlePriceChange = (key, value) => {
-        // let numValue;
-        // if (value === "Min") numValue = 0;
-        // else if (value === "Max") numValue = Infinity;
-        // else numValue = parseInt(value.replace("₹", ""));
-
-        // setSelectedPrice((prev) => ({
-        //     ...prev,
-        //     [key]: numValue,
-        // }));
 
         let numValue = value === "Min" ? 0 : value === "Max" ? Infinity : parseInt(value.replace("₹", ""));
 
-        const closestIndex = priceSteps.reduce((acc, p, i) =>
-            Math.abs(p - numValue) < Math.abs(priceSteps[acc] - numValue) ? i : acc, 0);
+        // const closestIndex = priceSteps.reduce((acc, p, i) =>
+        //     Math.abs(p - numValue) < Math.abs(priceSteps[acc] - numValue) ? i : acc, 0);
+        const index = findClosestIndex(numValue);
 
 
-        setSelectedPrice(prev => ({
+        setSelectedPrice((prev) => ({
             ...prev,
             [key]: numValue
         }));
 
-        // const closestIndex = priceSteps.reduce((acc, p, i) => {
-        //     return Math.abs(p - numValue) < Math.abs(priceSteps[acc] - numValue) ? i : acc;
-        // }, 0);
-        setSliderPos(prev => ({
-            ...prev,
-            [key + "Index"]: closestIndex
-        }));
-
-        const index = findClosestIndex(numValue);
+        
+        // setSliderPos((prev) => ({
+        //     ...prev,
+        //     [key + "Index"]: closestIndex
+        // }));
         setSliderPos((prev) => ({
             ...prev,
-            [key === "min" ? "minIndex" : "maxIndex"]: index
+            [key === "min" ? "minIndex" : "maxIndex"] : index
         }));
+
+        // const index = findClosestIndex(numValue);
+        // setSliderPos((prev) => ({
+        //     ...prev,
+        //     [key === "min" ? "minIndex" : "maxIndex"]: index
+        // }));
     };
 
+
+    // const startDragging = (e, type) => {
+    //     e.preventDefault();
+    //     const sliderRect = sliderRef.current.getBoundingClientRect();
+    //     const stepPixelWidth = sliderRect.width / (priceSteps.length - 1);
+    //     const maxIndex = 6; // max index allowed
+    //     const minIndex = 0
+
+    //     const onMouseMove = (moveEvent) => {
+    //         let newIndex = Math.round((moveEvent.clientX - sliderRect.left) / stepPixelWidth);
+
+    //         // Clamp the index
+    //         if (newIndex > maxIndex) newIndex = maxIndex;
+    //         if(newIndex < minIndex) newIndex = minIndex;
+    //         if (type === "min" && newIndex > sliderPos.maxIndex) newIndex = sliderPos.maxIndex;
+    //         if (type === "max" && newIndex < sliderPos.minIndex) newIndex = sliderPos.minIndex;
+
+    //         setSliderPos(prev => ({ ...prev, [type + "Index"]: newIndex }));
+    //         setSelectedPrice(prev => ({ ...prev, [type]: priceSteps[newIndex] }));
+    //     };
+
+    //     const onMouseUp = () => {
+    //         window.removeEventListener("mousemove", onMouseMove);
+    //         window.removeEventListener("mouseup", onMouseUp);
+    //     };
+
+    //     window.addEventListener("mousemove", onMouseMove);
+    //     window.addEventListener("mouseup", onMouseUp);
+    // };
 
     const startDragging = (e, type) => {
         e.preventDefault();
-        const sliderRect = sliderRef.current.getBoundingClientRect();
-        const stepPixelWidth = sliderRect.width / (priceSteps.length - 1);
-        const maxIndex = 6; // max index allowed
-        const minIndex = 0
+        setDragging(type);
 
-        const onMouseMove = (moveEvent) => {
-            let newIndex = Math.round((moveEvent.clientX - sliderRect.left) / stepPixelWidth);
-
-            // Clamp the index
-            if (newIndex > maxIndex) newIndex = maxIndex;
-            if(newIndex < minIndex) newIndex = minIndex;
-            if (type === "min" && newIndex > sliderPos.maxIndex) newIndex = sliderPos.maxIndex;
-            if (type === "max" && newIndex < sliderPos.minIndex) newIndex = sliderPos.minIndex;
-
-            setSliderPos(prev => ({ ...prev, [type + "Index"]: newIndex }));
-            setSelectedPrice(prev => ({ ...prev, [type]: priceSteps[newIndex] }));
-        };
-
-        const onMouseUp = () => {
-            window.removeEventListener("mousemove", onMouseMove);
-            window.removeEventListener("mouseup", onMouseUp);
-        };
-
-        window.addEventListener("mousemove", onMouseMove);
-        window.addEventListener("mouseup", onMouseUp);
     };
 
+    const handleMove =(clientX) => {
+        if(!dragging || !sliderRef.current) return;
 
-    const handleSliderMove = (type, newIndex) => {
-        if (type === "min" && newIndex > sliderPos.maxIndex) newIndex = sliderPos.maxIndex;
-        if (type === "max" && newIndex < sliderPos.minIndex) newIndex = sliderPos.minIndex;
+        const rect = sliderRef.current.getBoundingClientRect();
+        const mouseX = clientX - rect.left;
+        let index = Math.round((mouseX / rect.width) * (priceSteps.length - 1));
+        index = Math.max(0, Math.min(priceSteps.length - 1, index));
 
-        setSliderPos(prev => ({
-            ...prev,
-            [type + "Index"]: newIndex
-        }));
-        setSelectedPrice(prev => ({
-            ...prev,
-            [type]: priceSteps[newIndex]
-        }));
+        setSliderPos((prev) => {
+            let newPos;
+            if(dragging === "min"){
+                newPos = {...prev, minIndex: Math.min(index, prev.maxIndex - 1)};
+            }
+            else{
+                newPos = {...prev, maxIndex: Math.max(index, prev.minIndex + 1)};
+            }
+            setSelectedPrice({
+                min: priceSteps[newPos.minIndex],
+                max: priceSteps[newPos.maxIndex]
+            });
+            return newPos;
+        });
     };
+
+    const handleMouseMove = (e) => handleMove(e.clientX);
+    const handleTouchMove = (e) => handleMove(e.touches[0].clientX);
+
+    const stopDragging =() => setDragging(null);
+
+    useEffect(() => {
+        window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("mouseup", stopDragging);
+        window.addEventListener("touchmove",handleTouchMove);
+        window.addEventListener("touchend", stopDragging);
+
+        return () => {
+            window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("mouseup",stopDragging);
+            window.removeEventListener("touchmove",handleTouchMove);
+            window.removeEventListener("touchend", stopDragging);
+        };
+    }, [dragging]);
+
+
+     
+
+    // const handleSliderMove = (type, newIndex) => {
+    //     let newIndex = index
+    //     if (type === "min" && newIndex >= sliderPos.maxIndex) newIndex = sliderPos.maxIndex -1;
+    //     if (type === "max" && newIndex <= sliderPos.minIndex) newIndex = sliderPos.minIndex + 1;
+
+    //     setSliderPos(prev => ({
+    //         ...prev,
+    //         [type + "Index"]: newIndex
+    //     }));
+    //     setSelectedPrice(prev => ({
+    //         ...prev,
+    //         [type]: priceSteps[newIndex]
+    //     }));
+    // };
+
+    const handleSliderMove = (type, index) => {
+    let newIndex = index;
+
+    if (type === "min" && newIndex >= sliderPos.maxIndex) {
+        newIndex = sliderPos.maxIndex - 1;
+    }
+    if (type === "max" && newIndex <= sliderPos.minIndex) {
+        newIndex = sliderPos.minIndex + 1;
+    }
+
+    setSliderPos((prev) => {
+        return type === "min"
+            ? { ...prev, minIndex: newIndex }
+            : { ...prev, maxIndex: newIndex };
+    });
+
+    setSelectedPrice({
+        min: priceSteps[type === "min" ? newIndex : sliderPos.minIndex],
+        max: priceSteps[type === "max" ? newIndex : sliderPos.maxIndex],
+    });
+
+};
+
+    const blueLineStyle = {
+        position: "absolute",
+        height: "5px",
+        background: "#2874f0",
+        borderRadius: "1px",
+        top: "2px",
+        left: `${sliderPos.minIndex * stepWidth}%`,
+        width: `${(sliderPos.maxIndex - sliderPos.minIndex) * stepWidth}%`,
+        zIndex: 1,
+        transition: dragging ? "none" : "left 0.2s, width 0.2s"
+    };
+
 
     const priceLabel = () => {
         if (selectedPrice.min === 0 && selectedPrice.max === Infinity) return null;
@@ -337,7 +410,6 @@ function FiltLeft({ setFilterValue, filterValue }) {
     ];
 
 
-
     return (
         <>
             <div id="left">
@@ -394,20 +466,16 @@ function FiltLeft({ setFilterValue, filterValue }) {
                     </div>
                     <div className="priceRange" style={{ paddingRight: "17px" }} ref={sliderRef}>
                         <div className="priceRangeLine">
-                            <div id="leftRound" style={{ left: `${sliderPos.minIndex * stepWidth}%` }}
+                            <div id="leftRound" style={{ left: `${sliderPos.minIndex * stepWidth}%`, position:"absolute", zIndex: 2, cursor:"pointer" }}
                                 onMouseDown={(e) => startDragging(e, "min")}
+                                onTouchStart={(e) => {e.preventDefault(); setDragging("min");}}
                             ></div>
-                            <div id="rightRound" style={{ left: `${sliderPos.maxIndex * stepWidth}%` }}
+                            <div id="rightRound" style={{ left: `${sliderPos.maxIndex * stepWidth}%`, position:"absolute", zIndex:2, cursor: "pointer" }}
                                 onMouseDown={(e) => startDragging(e, "max")}
+                                onTouchStart={(e) => {e.preventDefault(); setDragging("max");}}
                             ></div>
-                            <div id="constLine"></div>
-                            <div id="blueLine" style={{
-                                // left: `${sliderPos.minIndex * stepWidth}%`,
-                                // width: `${(sliderPos.maxIndex - sliderPos.minIndex) * stepWidth}%`
-
-                                left: `${(sliderPos.minIndex / (priceSteps.length - 1)) * 100}%`,
-                                width:`${((sliderPos.maxIndex - sliderPos.minIndex) / (priceSteps.length - 1)) * 100}%`
-                            }}></div>
+                            <div id="constLine" style={{zIndex: 0}}></div>
+                            <div id="blueLine" style={blueLineStyle} ></div>
                         </div>
                         <div className="priceDot">
                             <div id="dota" style={{ display: "flex", textAlign: "left", userSelect: "none", color: "#c2c2c2", fontSize: "20px" }}>.</div>
@@ -419,6 +487,7 @@ function FiltLeft({ setFilterValue, filterValue }) {
                             <div id="dotg" style={{ display: "flex", textAlign: "left", userSelect: "none", color: "#c2c2c2", fontSize: "20px" }}>.</div>
                         </div>
                     </div>
+
 
                     <div id="priceSelect">
                         <div className="minPrice">

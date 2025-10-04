@@ -1,3 +1,4 @@
+import Header from "./header";
 import Similar from "./suggestItem";
 
 
@@ -5,6 +6,8 @@ function SelectedItem() {
 
     return (
         <>
+            <Header/>
+
             <div id="sepItem" style={{ backgroundColor: "white", marginTop: "58px", marginLeft: "14.1%", marginRight: "14.1%", letterSpacing: ".3px" }}>
                 <div id="iDetail">
                     <div id="iLeft">
@@ -38,7 +41,7 @@ function SelectedItem() {
 
                     <div id="iRight">
                         <div className="iPath">
-                            <div style={{ color: "#949191ff", fontSize: "11px" }}>
+                            <div style={{ color: "#949191ff", fontSize: "11px", display:"flex", maxWidth:"max-content", minWidth:'max-content' }}>
                                 <span>Home</span>
                                 <svg style={{ marginLeft: "6px" }} xmlns="http://www.w3.org/2000/svg" width="10" height="8" fill="currentColor" className="bi bi-chevron-right" viewBox="0 0 16 16">
                                     <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
@@ -58,7 +61,7 @@ function SelectedItem() {
                                 <span>Laptop Intel...</span>
 
                             </div>
-                            <div style={{ display: "flex", gap: "10px", marginLeft: "37%", marginTop: "-16px" }}>
+                            <div style={{ display: "flex", gap: "10px", marginLeft: "37%", marginTop: "-16px", flexDirection:"row", maxWidth:"max-content",minWidth:"max-content" }}>
                                 <label>
                                     <input type="checkbox" value="compare" /> Compare
                                 </label>
@@ -67,14 +70,14 @@ function SelectedItem() {
                             </div>
                         </div>
 
-                        <div className="ibrandDetail" style={{ marginTop: "-25px" }}>
+                        <div className="ibrandDetail" style={{ marginTop: "8px" }}>
                             <h3 style={{ fontWeight: "400", fontSize: "17.5px" }}>CHUWI Intel Celeron Dual Core 11th Gen N4020 - (8 GB/256 GB SSD/Windows 11 Home) HeroBook Pro Laptop (14.1 inch, Grey, 1.39 kg)</h3>
 
-                            <div className="ibrandButton" style={{ marginTop: "-18px" }}>
+                            <div className="ibrandButton" style={{ marginTop: "-3px" }}>
                                 <button style={{ cursor: "pointer", height: "18px" }}>3.7 *</button>
                                 <span style={{ color: "#878787", fontWeight: "bold", fontSize: "13px", marginTop: "-5px" }}>1,728 Ratings & 207 Reviews</span>
                             </div>
-                            <span style={{ color: "#388e3c", fontSize: "12px", fontWeight: "bold", marginTop: "-1px" }}>Specail price</span>
+                            <span style={{ color: "#388e3c", fontSize: "12px", fontWeight: "bold", marginTop: "-1px",marginLeft:"0" }}>Specail price</span>
 
                             <div className="iPrice">
                                 <span style={{ fontSize: "28px", fontWeight: "bold" }}>₹18,990</span>
@@ -82,11 +85,11 @@ function SelectedItem() {
                                 <span style={{ color: "#388e3c", fontSize: "16px", fontWeight: "bold" }}>45% off</span>
                                 <span className="i">i</span>
                             </div>
-                            <span style={{ marginTop: "-6px" }}>+ ₹59 Protect Promise Fee <a href="#">Learn more</a></span>
-                            <span style={{ marginTop: "-10px" }}>Secure delivery by 11 Sep, Thursday</span>
+                            <span style={{ marginTop: "-6px",marginLeft:"0" }}>+ ₹59 Protect Promise Fee <a href="#">Learn more</a></span>
+                            <span style={{ marginTop: "-10px", marginLeft:"0" }}>Secure delivery by 11 Sep, Thursday</span>
 
                             <div className="iOffers">
-                                <span style={{ fontSize: "16px", fontWeight: "bold" }}>Available offers</span>
+                                <span style={{ fontSize: "16px", fontWeight: "bold",marginLeft:"0" }}>Available offers</span>
                                 <div style={{ display: "flex", flexDirection: "column", lineHeight: "28px" }}>
                                     <span style={{ marginTop: "-6px" }}>
                                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" fill="currentColor" className="bi bi-tag-fill" viewBox="0 0 16 16">
@@ -130,8 +133,10 @@ function SelectedItem() {
                                 </div>
                             </div> */}
 
-                            <div className="iWarranty" style={{ display: "flex", marginTop: "10px" }}>
+                            <div className="iWarranty" style={{ display: "flex", marginTop: "10px",marginLeft:"0" }}>
+                                <div className="warImage">
                                 <img src="https://rukminim2.flixcart.com/image/160/160/cms-brand/5cfb5596ed0ba9eb03be5ce53b9eb3c7f0d54faf6c76e6f40897f55d08b6548c.png?q=90" alt="" />
+                                </div>
 
                                 <span>1 Year Onsite Warranty</span>
                                 <a href="#">Know More</a>
@@ -140,7 +145,7 @@ function SelectedItem() {
 
                             <div className="iDelivery">
                                 <span style={{ color: "#929191ff", fontWeight: "bold" }}>Delivery</span>
-                                <div className="delivAdrs">
+                                <div className="delivAdrs" >
                                     <label>
                                         <input type="text" placeholder="Enter Delivery Pincode" maxLength="6" />
                                         <a href="#">Check</a>
@@ -152,7 +157,7 @@ function SelectedItem() {
                                 </div>
                             </div>
 
-                            <div className="highlSection" style={{ display: "flex", marginTop: "8px" }}>
+                            <div className="highlSection" style={{ display: "flex", marginTop: "8px",marginLeft:"0px" }}>
                                 <div className="iHighlight" style={{ display: "flex" }}>
                                     <span style={{ color: "#878787", fontWeight: "bold" }}>Highlights</span>
                                     <ul>
@@ -172,11 +177,11 @@ function SelectedItem() {
                                 </div>
                             </div>
 
-                            <div className="iSeller" style={{ display: "flex" }}>
+                            <div className="iSeller" style={{ display: "flex",marginLeft:"0px" }}>
                                 <span style={{ color: "#878787", fontWeight: "bold" }}>Seller</span>
-                                <div style={{ display: "block", marginLeft: "75px" }}>
+                                <div style={{ display: "block", marginLeft: "80px", textAlign:"left" }}>
                                     <a href="#">TheElefANT <button>4.1 ★</button></a>
-                                    <ul style={{ color: "#a1a1a1ff", marginLeft: "-25px", marginTop: "7px" }}>
+                                    <ul style={{ color: "#a1a1a1ff", marginLeft: "14px", marginTop: "7px" }}>
                                         <li><span style={{ color: "black" }}>7 Days Brand Support <span className="sellerQues">?</span></span></li>
                                     </ul>
                                     <a style={{ marginTop: "-5px" }} href="sell">See other sellers</a>
@@ -349,7 +354,7 @@ function SelectedItem() {
 
                                 <div id="reviewStar" style={{ marginTop: "30px", display: "flex" }}>
                                     <div className="reviewRate" >
-                                        <div className="reviewHead">
+                                        <div className="reviewHead" style={{marginLeft:"0"}}>
                                             <span style={{ fontSize: "32px", color: "black" }}>3.7★</span>
                                             <span style={{ marginTop: "13px" }}>1,738 Ratings & </span>
                                             <span>209 Reviews</span>
@@ -460,7 +465,7 @@ function SelectedItem() {
                                     <img src="https://rukminim1.flixcart.com/blobio/178/178/imr/blobio-imr_83966b4b8e324fe2b6f34fe97330c1a5.jpg?q=90" alt="" />
                                 </div>
                                 <div className="cusName" >
-                                    <div>
+                                    <div style={{marginLeft:"0"}}>
                                         <span style={{ fontWeight: "bold" }}>Mohan Jigale</span>
                                         <span style={{ marginLeft: "7px" }}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="14" fill="currentColor" className="bi bi-check-circle-fill" viewBox="0 0 16 16">
@@ -492,7 +497,7 @@ function SelectedItem() {
                                     <img src="https://rukminim1.flixcart.com/blobio/178/178/imr/blobio-imr_19a7ceaca6044e48a6e7584eb6a54b5a.jpg?q=90" alt="...." />
                                 </div>
                                 <div className="cusName">
-                                    <div>
+                                    <div style={{marginLeft:"0px"}}>
                                         <span style={{ fontWeight: "bold" }}>MD Saddam Saddam</span>
                                         <span style={{ marginLeft: "7px" }}>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="14" fill="currentColor" className="bi bi-check-circle-fill" viewBox="0 0 16 16">
@@ -518,7 +523,7 @@ function SelectedItem() {
 
                             <div id="cmntLink">
                                 <a href="#">
-                                    <span>All 209 reviews </span>
+                                    <span style={{marginLeft:"0px"}}>All 209 reviews </span>
                                     <div style={{ color: "#878787", marginTop: "2px", marginRight: "1px" }}>+</div>
                                 </a>
                             </div>
@@ -529,13 +534,13 @@ function SelectedItem() {
                             <div className="quesHead">
                                 <span>Questions and Answers</span>
                                 <div className="searchQues">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                                     </svg>
                                 </div>
                             </div>
                             <div className="questions" >
-                                <div style={{ display: "flex", flexDirection: "column" }}>
+                                <div style={{ display: "flex", flexDirection: "column",marginLeft:"0px" }}>
                                     <span><b>Q: Can we use for trading??</b></span>
                                     <span style={{ marginTop: "10px" }}><b>A:</b> Yes</span>
                                     <span style={{ marginTop: "12px", color: "#878787", fontSize: "11px", fontWeight: "bold" }}>TheElefANT</span>
@@ -555,7 +560,7 @@ function SelectedItem() {
                             </div>
 
                             <div className="questions" >
-                                <div style={{ display: "flex", flexDirection: "column" }}>
+                                <div style={{ display: "flex", flexDirection: "column",marginLeft:"0px" }}>
                                     <span><b>Q: Can we play games</b></span>
                                     <span style={{ marginTop: "10px" }}><b>A:</b> Yes, you can play</span>
                                     <span style={{ marginTop: "12px", color: "#878787", fontSize: "11px", fontWeight: "bold" }}>TheElefANT</span>
@@ -575,7 +580,7 @@ function SelectedItem() {
                             </div>
 
                             <div className="questions" >
-                                <div style={{ display: "flex", flexDirection: "column" }}>
+                                <div style={{ display: "flex", flexDirection: "column", marginLeft:"0px" }}>
                                     <span><b>Q: Can we use for programing language</b></span>
                                     <span style={{ marginTop: "10px" }}><b>A:</b> Yes, of course you can use for programing languages software.</span>
                                     <span style={{ marginTop: "12px", color: "#878787", fontSize: "11px", fontWeight: "bold" }}>TheElefANT</span>
@@ -596,7 +601,7 @@ function SelectedItem() {
 
                             <div id="cmntLink">
                                 <a href="#">
-                                    <span>All questions </span>
+                                    <span style={{marginLeft:"0px"}}>All questions </span>
                                     <div style={{ color: "#878787", marginTop: "2px", marginRight: "1px" }}>+</div>
                                 </a>
                             </div>

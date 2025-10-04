@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React, { useMemo, useState } from "react";
 import Sort from "./sort";
-
+     
 function Product({ products = [] }) {
     const [hover, setHover] = useState(false);
     const [computer, setComputer] = useState(false);
@@ -70,6 +70,8 @@ function Product({ products = [] }) {
                 </div>
             </div>
 
+
+           <Link to={"/item"} style={{textDecoration:"none", color:"black"}}>
             <div id="productPart">
                 {sortedProducts.map((item, index) => (
                     <div key={item.id || index} className="items">
@@ -125,6 +127,7 @@ function Product({ products = [] }) {
                     </div>
                 ))}
             </div>
+            </Link>
         </div>
     );
 }

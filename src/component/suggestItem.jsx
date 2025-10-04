@@ -154,8 +154,8 @@ function Similar() {
 
                 <div id="lastPart">
                     <div className="lastHead">
-                        <span style={{color:"#878787"}}>Top Stories: </span>
-                        <span style={{color:"#555555ff",marginLeft:"3px",cursor:"pointer"}}>Brand Directory</span>
+                        <span style={{color:"#878787",marginLeft:"0px"}}>Top Stories: </span>
+                        <span style={{color:"#555555ff",marginLeft:"-90%",cursor:"pointer"}}>Brand Directory</span>
                     </div>
 
                     <div className="lastListItems">

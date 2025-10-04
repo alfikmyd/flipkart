@@ -314,3 +314,10 @@
 // export default Product;
 
 
+
+
+
+style={{
+                                left: `${(sliderPos.minIndex / (priceSteps.length - 1)) * 100}%`,
+                                width:`${((sliderPos.maxIndex - sliderPos.minIndex) / (priceSteps.length - 1)) * 100}%`
+                            }}

@@ -1024,15 +1024,25 @@ footer a{
   width: 66.6%;
   margin-top: 18px;
   margin-left: 40px;
+  
 }
 .iPath{
   display: flex;
+  flex-direction: row;
   font-size: 12px;
   cursor: pointer;
+  align-items: left;
+  justify-items: space-between;
+  gap: 100px;
+  margin-left: 0px;
+  max-width: max-content;
+  min-width: max-content;
 }
 .ibrandButton{
   display: flex;
   gap: 10px;
+  margin-left: 0;
+  
 }
 .ibrandButton button{
   background-color: #388e3c;
@@ -1046,6 +1056,7 @@ footer a{
   display: flex;
   gap: 10px;
   margin-top: -5px;
+  margin-left: 0;
 }
 .i{
   color: #afacac;
@@ -1056,9 +1067,11 @@ footer a{
   padding-top: px;
   padding-left: 3px;
   padding-right: 3px; */
-  width: 10px;
-  height: 20px;
-  padding-left: 7px;
+  width: 15px;
+  height: 18px;
+  padding-left: 5px;
+  padding-bottom: 10px;
+  align-items: center;
 }
 .ibrandDetail{
   display: flex;
@@ -1076,6 +1089,10 @@ footer a{
   font-size: 13px;
   margin-top: -6px;
   line-height: px;
+  margin-left: 0;
+}
+.iOffers span{
+  margin-left: 0;
 }
 .iOffers svg{
   color: #06bd0f;
@@ -1089,11 +1106,18 @@ footer a{
 
 .iWarranty img{
   width: 20px;
-  border: 1px solid #eeeded;
-  padding-top: 5px;
+  /* border: 1px solid #eeeded; */
+  /* padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 28px;
-  padding-right: 28px;
+  padding-right: 28px; */
+}
+.warImage{
+border: 1px solid #eeeded;
+padding-top: 5px;
+padding-bottom: 0px;
+padding-left: 20px;
+padding-right: 20px;
 }
 .iWarranty span{
   margin-left: 35px;
@@ -1106,6 +1130,7 @@ footer a{
   margin-top: 16px;
   cursor: text;
   letter-spacing: .3px;
+  margin-left: 0;
 }
 .delivAdrs{
   display: flex;
@@ -1113,11 +1138,12 @@ footer a{
   margin-left: 60px;
   margin-top: -13px;
   letter-spacing: .3px;
+
 }
 .delivAdrs input{
   width: auto;
 padding-left: 10px;
-font-weight: 600;
+font-weight: 500;
 font-size: 12px;
 border: none;
 outline: none;
@@ -1125,7 +1151,7 @@ background-color: none;
 border-bottom:2px solid #001aff;
 cursor: text;
 padding-bottom: 7px;
-
+height: 18px;
 }
 .delivAdrs input:active{
   background-color: white;
@@ -1133,7 +1159,7 @@ padding-bottom: 7px;
 .highlSection ul{
   color: #aaa8a8;
   margin-top: 0px;
-  margin-left: 20px;
+  margin-left: 30px;
   line-height: 27px;
 }
 .highlSection li span{
@@ -1170,6 +1196,7 @@ padding-bottom: 7px;
 }
 .iDescription{
   display: flex;
+  margin-left: 0;
 }
 
 #description{
@@ -1177,6 +1204,7 @@ padding-bottom: 7px;
   font-family: Arial, Helvetica, sans-serif;
   margin-right: 15px;
   margin-top: 72px;
+  /* margin-left: 0px; */
 }
 #description div{
   border: 1px solid #f1f1f1;
@@ -1199,6 +1227,7 @@ padding-bottom: 7px;
 #specification{
   margin-top: 24px;
   margin-right: 15px;
+  margin-left: 0;
 }
 #specification div{
   border: 1px solid #f1f1f1;
@@ -1310,11 +1339,12 @@ padding-bottom: 7px;
   display: block;
   margin-right: 15px;
   margin-top: 22px;
-  
+  margin-left: 0px;
 }
 #reviewHead span{
   font-size: 24px;
   font-weight: bold;
+  margin-left: 0;
 }
 #reviewHead button{
   background-color: white;
@@ -1456,13 +1486,14 @@ padding-bottom: 7px;
 #proImage img{
   width: 89px;
   height: 89px;
+  margin-left: 0;
 }
 #proImage{
   display: flex;
-  gap: 4px;
+  gap: -4px;
   cursor: pointer;
   margin-top: 13px;
-  margin-left: -1px;
+  /* margin-left: 0px; */
 }
 
 #rateComntOne,#rateComntTwo{
@@ -1471,10 +1502,12 @@ padding-bottom: 7px;
   padding: 25px;
   font-size: 13px;
   display: block;
+  margin-left: 0;
 }
 #rateComntOne img,#rateComntTwo img{
   width: 63px;
   height: 62px;
+  margin-left: 0px;
 }
 .cusName{
   font-size: 11px;
@@ -1482,6 +1515,7 @@ padding-bottom: 7px;
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  margin-left: 0px;
 }
 .cusLike{
   margin-right: 5px;
@@ -1510,16 +1544,20 @@ padding-bottom: 7px;
 #proQuery{
   margin-top: 24px;
   margin-right: 15px;
+  margin-left: 0px;
 }
 .quesHead{
   border: 1px solid #f1f1f1;
   display: flex;
   padding: 26px;
   justify-content: space-between;
+  margin-left: 0px;
+  gap: 440px;
 }
 .quesHead span{
   font-size: 20px;
   font-weight: bold;
+  margin-left: 0px;
 }
 .questions{
   border: 1px solid #f1f1f1;
@@ -1530,6 +1568,10 @@ padding-bottom: 7px;
   padding-bottom: 20px;
   padding-top: 21px;
   justify-content: space-between;
+  margin-left: 0;
+}
+.questions span{
+  margin-left: 0px;
 }
 .questions .cusLike{
   margin-top: 60px;
@@ -1556,8 +1598,11 @@ padding-bottom: 7px;
   padding: 30px;
   margin-right: 15px;
   white-space: nowrap;
-  overflow-x: auto;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  
 }
+
 .intrstScroll{
   display: flex;
   flex-direction: row;
@@ -1569,7 +1614,11 @@ padding-bottom: 7px;
   margin-top: 33px;
   cursor: pointer;
   margin-left: 11px;
-  /* overflow-x: scroll; */
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+#intrstItem::-webkit-scrollbar{
+ display: none;
 }
 .physicalItem{
   display: flex;
@@ -1613,6 +1662,7 @@ padding-bottom: 7px;
   margin-top: 20px;
   padding-top: 27px;
   padding-left: 20px;
+  padding-bottom: 15px;
   letter-spacing: -.1px;
   box-shadow: 0px 2px 4px #c2c1c1;
 }
@@ -1629,7 +1679,12 @@ padding-bottom: 7px;
   gap: 26px;
   margin-left: -3px;
   margin-top: 38px;
+  scrollbar-width: none;
 }
+.similarItems::-webkit-scrollbar{
+  display: none;
+}
+
 .similarItems img{
   width: 180px;
   align-items: bottom;
@@ -1676,6 +1731,7 @@ padding-bottom: 7px;
   margin-left: 269px;
   margin-right: 269px;
   box-shadow: 0px  2px 4px #b8b6b6;
+  padding-bottom: 15px;
 }
 .suggestPic{
   width: 200px;
@@ -1693,7 +1749,7 @@ padding-bottom: 7px;
   font-family: "regular";
   margin-top: 22px;
   cursor: pointer;
-  margin-left: 5px;
+  margin-left: 0px;
 }
 .suggestHead{
   border-bottom: 1px solid #e9e8e8;
@@ -1706,6 +1762,10 @@ padding-bottom: 7px;
   overflow-x: scroll;
   gap: 26px;
   margin-left: 20px;
+  scrollbar-width: none;
+}
+.suggestItems::-webkit-scrollbar{
+  display: none;
 }
 .suggestPic img{
   height: 150px;
@@ -1737,10 +1797,12 @@ padding-bottom: 7px;
   margin-right: 269px;
   margin-top: 42px;
   box-shadow: 0px 2px 4px #c2c2c2;
+  padding-bottom: 15px;
 }
 .viewHead span{
   font-size: 20px;
   font-family: "bold";
+  margin-left: 0;
 }
 .viewHead{
   display: flex;
@@ -1749,7 +1811,7 @@ padding-bottom: 7px;
   padding-left: 21px;
   border-bottom: 1px solid #e6e5e5;
   padding-bottom: 9px;
-
+  margin-left: 0px;
 }
 .viewHead button{
   background-color: #2874f0;
@@ -1782,6 +1844,7 @@ padding-bottom: 7px;
   display: flex;
   font-size: 13px;
   font-family: "bold";
+  margin-left: 0;
 }
 .accessHed{
   color: #949393;
@@ -1792,7 +1855,7 @@ padding-bottom: 7px;
   letter-spacing: .1px;
   font-family: "regular";
   max-width: 1830px;
-
+margin-left: 0px;
 }
 .lastListItems a{
   text-decoration: none;
