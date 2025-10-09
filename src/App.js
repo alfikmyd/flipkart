@@ -25,7 +25,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Hpage/>}/>
-          <Route path="/laptops" element={<Parent initialData={data} />} />
+          <Route path="/product" element={<Parent initialData={data} />} />
           <Route path="/item" element={<SelectedItem/>} />
           <Route path="/product" element={<Mobile />} />
           <Route path="/filter" element={<Filt />} />

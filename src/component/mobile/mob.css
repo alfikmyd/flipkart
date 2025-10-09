@@ -426,13 +426,14 @@ body{
 
 #mobSort{
     margin-top: -40px;
-    height: 700px;
+    height: auto;
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.589);
+    /* background-color: rgba(0, 0, 0, 0.589); */
     position: absolute;
     z-index: 99999;
     padding-top:432px;
     position: fixed;
+
 }
 .mSort{
     background-color: white;
@@ -459,16 +460,26 @@ body{
     font-family: Roboto Medium,Roboto-Medium,Droid Sans,HelveticaNeue-Medium,Helvetica Neue Medium,sans-serif-medium;;
     line-height: 36px;
     height: 60px;
-    width: 992px;
+    /* width: 992px; */
     font-weight: 500;
     
 }
 .mbSortSelect div{
     width: 1010px;
+    justify-content: space-evenly;
 }
 .mbSortSelect div input{
     width: 16px;
     height: 16px;
+}
+.mbSortSelect div .relevance{
+    padding-right: 922px;
+}
+.mbSortSelect .priceLow{
+    padding-right: 863px;
+}
+.mbSortSelect .new{
+    padding-right: 910px;
 }
 
 
@@ -587,6 +598,7 @@ body{
 }
 
 
+
 @media screen and (max-width:768px) {
     body {
         width: 100%;
@@ -606,24 +618,41 @@ body{
         margin-top: 40px;
     }
     #mobSort{
-        height: 1000px;
+        height: auto;
         margin-top: 0;
         width: 768px;
+        position: fixed;
     }
     .mSort{
-        margin-top: 261px;
+        margin-top: 30px;
         width: 768px;
+        height: auto;
     }
 
     .mSort .mbSortSelect {
         width: 768px;
+        height: auto;
+        margin-top: 0; 
+    }
+    .mbSortSelect div span{
+        padding-right: 30px;
     }
 
     .mobFilters{
-        height: 930px;
+        height: 670px;
     }
     .mobFiltHead{
     padding-bottom: 10px;
+    }
+
+    .mbSortSelect div .relevance{
+        padding-right: 665px;
+    }
+    .mbSortSelect .priceLow{
+        padding-right: 606px;
+    }
+    .mbSortSelect .new{
+        padding-right: 653px;
     }
   
 }
@@ -655,7 +684,7 @@ body{
         flex-wrap: wrap;
     }
     .mobFilters{
-        height: 606px;
+        height: 673px;
         width: 425px;
         /* position: fixed; */
     }
@@ -682,13 +711,22 @@ body{
         height: 700px;
     }
     .mSort{
-        margin-top: 3px;
+        margin-top: 30px;
     }
     #smallFilt{
         overflow-y: hidden;
         margin-bottom: 0px;
         white-space:none;
         width: 425px;
+    }
+    .mbSortSelect div .relevance{
+        padding-right: 325px;
+    }
+    .mbSortSelect .priceLow{
+        padding-right: 266px;
+    }
+    .mbSortSelect .new{
+        padding-right: 313px;
     }
     
 }

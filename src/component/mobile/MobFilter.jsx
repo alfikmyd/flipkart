@@ -1,11 +1,17 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Mobile from "./mobile";
 import { Link, useNavigate } from "react-router-dom";
 
-function Filt({product =[]}) {
+function Filt({product =[], setFilterValue, filterValue}) {
 
-    const [selectedFilter, setSelectedFilter] = useState(null)
+    const [selectedFilter, setSelectedFilter] = useState("price");
     const [checkedItems, setCheckedItems] = useState({});
+
+    useEffect(() => {
+        // if(setFilterValue){
+        //     setFilterValue({});
+        // }
+    },[]);
 
 
     const navigate = useNavigate();
@@ -22,24 +28,26 @@ function Filt({product =[]}) {
     //         }
     //     }));
 
-    //     navigate("/product", {state: {filteredProducts: filtered}});
+    //     // navigate("/product", {state: {filteredProducts: filtered}});
     // };
 
-    const applyFilters =() =>{
+    const applyFilters = () => {
         let filtered = product;
-        Object.entries(checkedItems).forEach(([filterType, values]) => {
-            const selected = Object.keys(values).filter((key) => values[key]);
 
-            if(selected.length > 0 ){
-                filtered = filtered.filter((item) => 
-                    selected.some((value) => item[filterType] === value)
-                );
+        Object.keys(checkedItems).forEach((filterType) => {
+            const selected = Object.keys(checkedItems[filterType]).filter(
+                (key) => checkedItems[filterType][key]
+            );
+            if(selected.length > 0){
+                filtered = filtered.filter((p) => selected.includes(p[filterType]));
+
             }
         });
-        navigate("/product", { state: {filteredProducts: filtered}});
-    }
+        if(setFilterValue) setFilterValue(filtered);
+        navigate(-1);
+    };
 
-
+    
     const price = [
         { label: "Rs. 20000 and Below" },
         { label: "Rs. 20000-Rs. 40000" },
@@ -131,6 +139,8 @@ function Filt({product =[]}) {
         { label: "Include Out of Stock" }
     ]
 
+
+  
     const handleCheck = (filterType, label, isChecked) => {
         setCheckedItems((prev) => ({
             ...prev,
@@ -147,6 +157,8 @@ function Filt({product =[]}) {
 
     const clearFilters = () => {
         setCheckedItems({});
+
+        if(setFilterValue) setFilterValue({});
     };
 
     const isChecked = (filterType, label) => {
@@ -159,9 +171,7 @@ function Filt({product =[]}) {
     }
 
 
-
     
-
     return (
         <>
             <div id="smallFilt">
@@ -182,6 +192,7 @@ function Filt({product =[]}) {
                     )}
 
                 </div>
+                
 
                 <div className="mobFilters">
                     <div className="mobFiltHead">
@@ -564,6 +575,8 @@ function Filt({product =[]}) {
                             </div>
                         )}
 
+                        
+
                         {selectedFilter === "features" && (
                             <div className="mobFeature">
                                 {features.map((f) => (
@@ -614,13 +627,13 @@ function Filt({product =[]}) {
                         <span style={{ fontSize: "12px", color: "#878778" }}>products found</span>
                     </div>
                     
-                    {/* <Link to={"/product"}> */}
                         <div className="mobFiltApply">
-                            {/* {anyChecked && ( */}
-                            <button onClick={applyFilters}>Apply</button>
-                             {/* )} */}
+                            {/* <button onClick={applyFilters}>Apply</button> */}
+                            <button onClick={() => {
+                                applyFilters();
+                                navigate(-1);
+                            }}> Apply</button>
                         </div>
-                    {/* </Link> */}
                    
                 </div>
 
@@ -631,4 +644,5 @@ function Filt({product =[]}) {
 
 
 export default Filt;
+
 

@@ -48,7 +48,7 @@ function Category() {
                         <span>Minutes</span>
                     </a>
                 </div>
-                <Link to="/laptops" style={{textDecoration:"none"}}>
+                <Link to="/product" style={{textDecoration:"none"}}>
                 <div className="con" style={{ margin: "0px", marginLeft: "46px" }}>
                     <a href="mob">
                         <img src="https://rukminim1.flixcart.com/fk-p-flap/64/64/image/5f2ee7f883cdb774.png?q=100" alt="mobile" />

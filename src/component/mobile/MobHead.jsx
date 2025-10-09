@@ -4,36 +4,41 @@ import MobSort from "./MobSort";
 import Filt from "./MobFilter";
 import { Link } from "react-router-dom";
 
-function MobHead({prod = []}) {
+function MobHead({ prod, sortSelect, setSortSelect }) {
     const [sort, setSort] = useState(false);
-    const [sortSelect, setSortSelect] = useState("relevance");
+
+    const [windColor, setWindColor] = useState(false);
+    const toggleSort = () => {
+        setWindColor((prev) => !prev);
+    };
 
     const sortPro = useMemo(() => {
         const proCopy = [...prod];
 
-        switch (sortSelect){
+        switch (sortSelect) {
             case "popularity":
-                return proCopy.sort((a,b) => b.popularity - a.popularity);
+                return proCopy.sort((a, b) => b.popularity - a.popularity);
             case "priceLow":
                 return proCopy.sort(
-                    (a,b) => parseInt(a.price.replace(/₹|,/g, ""))- parseInt(b.price.replace(/₹|,/g, ""))
+                    (a, b) => parseInt(a.price.replace(/₹|,/g, "")) - parseInt(b.price.replace(/₹|,/g, ""))
                 );
             case "priceHigh":
                 return proCopy.sort(
-                    (a,b) => parseInt(b.price.replace(/₹|,/g, "")) - parseInt(a.price.replace(/₹|,/g, ""))
+                    (a, b) => parseInt(b.price.replace(/₹|,/g, "")) - parseInt(a.price.replace(/₹|,/g, ""))
                 );
             case "newest":
                 return proCopy.sort(
-                    (a,b) => new Date(b.releaseDate) - new Date(a.releaseData)
+                    (a, b) => new Date(b.releaseDate) - new Date(a.releaseDate)
                 );
             default:
                 return proCopy;
         }
-    }, [prod,sortSelect]);
+    }, [prod, sortSelect]);
 
-    if(!sortPro || sortPro.length === 0){
+    if (!sortPro || sortPro.length === 0) {
         return <p>No products found</p>;
     }
+
 
 
     return (
@@ -42,16 +47,16 @@ function MobHead({prod = []}) {
                 <div id="mobHead">
                     <div className="headLeft">
                         <Link to={"/"} >
-                        <div style={{ marginTop: "-2px" }}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
-                            <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
-                        </svg></div>
+                            <div style={{ marginTop: "-2px" }}><svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                            </svg></div>
                         </Link>
                         <Link to={"/"}>
-                        <div style={{ width: "23px", marginLeft: "-3px" }}>
-                            <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/logo_lite-ea579c.png" alt="flipkart" />
-                        </div>
+                            <div style={{ width: "23px", marginLeft: "-3px" }}>
+                                <img src="https://static-assets-web.flixcart.com/batman-returns/batman-returns/p/images/logo_lite-ea579c.png" alt="flipkart" />
+                            </div>
                         </Link>
-                        
+
                         <div style={{ marginLeft: "-3px" }}><span>Laptops</span></div>
                     </div>
 
@@ -77,16 +82,24 @@ function MobHead({prod = []}) {
 
                         </div>
                         {sort && (
-                            <MobSort sortSelect={sortSelect} setSortSelect={setSortSelect} />
+                            <>
+                                <div style={{
+                                    position: "fixed", top: 0, left: 0,
+                                    width: "100%", height: "100%", background: "rgba(0, 0, 0, 0.66)", zIndex: 50,
+                                }} onClick={() => setSort(false)}></div>
+
+                                <MobSort sortSelect={sortSelect} setSortSelect={setSortSelect} />
+                            </>
                         )}
                     </div>
-                    <div style={{width:"100%"}}>
-                    <Link to={"/filter" } style={{textDecoration:"none", color:"black"}} >
-                    <div className="mobFilt">
-                        <svg width="20" height="20" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" strokeLinecap="round" strokeLinejoin="round" strokeWidth="12" d="M148 172H40M216 172h-28"></path><circle cx="168" cy="172" r="20" fill="none" stroke="#111112" strokeLinecap="round" strokeLinejoin="round" strokeWidth="12"></circle><path fill="none" stroke="#111112" strokeLinecap="round" strokeLinejoin="round" strokeWidth="12" d="M84 84H40M216 84h-92"></path><circle cx="104" cy="84" r="20" fill="none" stroke="#111112" strokeLinecap="round" strokeLinejoin="round" strokeWidth="12"></circle></svg>
-                        <span style={{ marginLeft: "6px", marginBottom: "-5px" }}>Filter</span>
-                    </div>
-                    </Link>
+
+                    <div style={{ width: "100%" }}>
+                        <Link to={"/filter"} style={{ textDecoration: "none", color: "black" }} >
+                            <div className="mobFilt">
+                                <svg width="20" height="20" viewBox="0 0 256 256"><path fill="none" d="M0 0h256v256H0z"></path><path fill="none" stroke="#111112" strokeLinecap="round" strokeLinejoin="round" strokeWidth="12" d="M148 172H40M216 172h-28"></path><circle cx="168" cy="172" r="20" fill="none" stroke="#111112" strokeLinecap="round" strokeLinejoin="round" strokeWidth="12"></circle><path fill="none" stroke="#111112" strokeLinecap="round" strokeLinejoin="round" strokeWidth="12" d="M84 84H40M216 84h-92"></path><circle cx="104" cy="84" r="20" fill="none" stroke="#111112" strokeLinecap="round" strokeLinejoin="round" strokeWidth="12"></circle></svg>
+                                <span style={{ marginLeft: "6px", marginBottom: "-5px" }}>Filter</span>
+                            </div>
+                        </Link>
                     </div>
                 </div>
 
