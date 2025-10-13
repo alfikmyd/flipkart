@@ -19,7 +19,7 @@ function FiltLeft({ setFilterValue, filterValue }) {
         setFilterValue({ ...container, min: selectedPrice.min, max: selectedPrice.max });
     }, [container, selectedPrice, setFilterValue]);
 
-    
+
 
     const [typeHide, setTypeHide] = useState(false);
     const [prosHide, setProsHide] = useState(false);
@@ -57,7 +57,7 @@ function FiltLeft({ setFilterValue, filterValue }) {
             }
         });
     };
- 
+
 
     const handleRemoveItem = (section, value) => {
         if (section === "price") {
@@ -82,14 +82,14 @@ function FiltLeft({ setFilterValue, filterValue }) {
     const clearBtnAll = () => {
         setContainer({});
         setSelectedPrice({ min: 0, max: Infinity });
-        setSliderPos({minIndex: 0, maxIndex: priceSteps.length - 1});
+        setSliderPos({ minIndex: 0, maxIndex: priceSteps.length - 1 });
     };
 
 
     const clearItem = (section) => {
         if (section === "price") {
             setSelectedPrice({ min: 0, max: Infinity });
-            setSliderPos({minIndex: 0, maxIndex: priceSteps.length - 1})
+            setSliderPos({ minIndex: 0, maxIndex: priceSteps.length - 1 })
         }
         else {
             setContainer((prev) => {
@@ -105,7 +105,7 @@ function FiltLeft({ setFilterValue, filterValue }) {
         let minDiff = Infinity;
         priceSteps.forEach((p, i) => {
             const diff = Math.abs(p - num);
-            if(diff < minDiff){
+            if (diff < minDiff) {
                 minDiff = diff;
                 closest = i;
             }
@@ -125,13 +125,13 @@ function FiltLeft({ setFilterValue, filterValue }) {
             [key]: numValue
         }));
 
-        
+
         setSliderPos((prev) => ({
             ...prev,
-            [key === "min" ? "minIndex" : "maxIndex"] : index
+            [key === "min" ? "minIndex" : "maxIndex"]: index
         }));
 
-        
+
     };
 
     const startDragging = (e, type) => {
@@ -140,8 +140,8 @@ function FiltLeft({ setFilterValue, filterValue }) {
 
     };
 
-    const handleMove =(clientX) => {
-        if(!dragging || !sliderRef.current) return;
+    const handleMove = (clientX) => {
+        if (!dragging || !sliderRef.current) return;
 
         const rect = sliderRef.current.getBoundingClientRect();
         const mouseX = clientX - rect.left;
@@ -150,11 +150,11 @@ function FiltLeft({ setFilterValue, filterValue }) {
 
         setSliderPos((prev) => {
             let newPos;
-            if(dragging === "min"){
-                newPos = {...prev, minIndex: Math.min(index, prev.maxIndex - 1)};
+            if (dragging === "min") {
+                newPos = { ...prev, minIndex: Math.min(index, prev.maxIndex - 1) };
             }
-            else{
-                newPos = {...prev, maxIndex: Math.max(index, prev.minIndex + 1)};
+            else {
+                newPos = { ...prev, maxIndex: Math.max(index, prev.minIndex + 1) };
             }
             setSelectedPrice({
                 min: priceSteps[newPos.minIndex],
@@ -167,45 +167,45 @@ function FiltLeft({ setFilterValue, filterValue }) {
     const handleMouseMove = (e) => handleMove(e.clientX);
     const handleTouchMove = (e) => handleMove(e.touches[0].clientX);
 
-    const stopDragging =() => setDragging(null);
+    const stopDragging = () => setDragging(null);
 
     useEffect(() => {
         window.addEventListener("mousemove", handleMouseMove);
         window.addEventListener("mouseup", stopDragging);
-        window.addEventListener("touchmove",handleTouchMove);
+        window.addEventListener("touchmove", handleTouchMove);
         window.addEventListener("touchend", stopDragging);
 
         return () => {
             window.removeEventListener("mousemove", handleMouseMove);
-            window.removeEventListener("mouseup",stopDragging);
-            window.removeEventListener("touchmove",handleTouchMove);
+            window.removeEventListener("mouseup", stopDragging);
+            window.removeEventListener("touchmove", handleTouchMove);
             window.removeEventListener("touchend", stopDragging);
         };
     }, [dragging]);
 
 
-    const handleSliderMove = (type, index) => {
-    let newIndex = index;
+    // const handleSliderMove = (type, index) => {
+    //     let newIndex = index;
 
-    if (type === "min" && newIndex >= sliderPos.maxIndex) {
-        newIndex = sliderPos.maxIndex - 1;
-    }
-    if (type === "max" && newIndex <= sliderPos.minIndex) {
-        newIndex = sliderPos.minIndex + 1;
-    }
+    //     if (type === "min" && newIndex >= sliderPos.maxIndex) {
+    //         newIndex = sliderPos.maxIndex - 1;
+    //     }
+    //     if (type === "max" && newIndex <= sliderPos.minIndex) {
+    //         newIndex = sliderPos.minIndex + 1;
+    //     }
 
-    setSliderPos((prev) => {
-        return type === "min"
-            ? { ...prev, minIndex: newIndex }
-            : { ...prev, maxIndex: newIndex };
-    });
+    //     setSliderPos((prev) => {
+    //         return type === "min"
+    //             ? { ...prev, minIndex: newIndex }
+    //             : { ...prev, maxIndex: newIndex };
+    //     });
 
-    setSelectedPrice({
-        min: priceSteps[type === "min" ? newIndex : sliderPos.minIndex],
-        max: priceSteps[type === "max" ? newIndex : sliderPos.maxIndex],
-    });
+    //     setSelectedPrice({
+    //         min: priceSteps[type === "min" ? newIndex : sliderPos.minIndex],
+    //         max: priceSteps[type === "max" ? newIndex : sliderPos.maxIndex],
+    //     });
 
-};
+    // };
 
     const blueLineStyle = {
         position: "absolute",
@@ -405,15 +405,15 @@ function FiltLeft({ setFilterValue, filterValue }) {
                     </div>
                     <div className="priceRange" style={{ paddingRight: "17px" }} ref={sliderRef}>
                         <div className="priceRangeLine">
-                            <div id="leftRound" style={{ left: `${sliderPos.minIndex * stepWidth}%`, position:"absolute", zIndex: 2, cursor:"pointer" }}
+                            <div id="leftRound" style={{ left: `${sliderPos.minIndex * stepWidth}%`, position: "absolute", zIndex: 2, cursor: "pointer" }}
                                 onMouseDown={(e) => startDragging(e, "min")}
-                                onTouchStart={(e) => {e.preventDefault(); setDragging("min");}}
+                                onTouchStart={(e) => { e.preventDefault(); setDragging("min"); }}
                             ></div>
-                            <div id="rightRound" style={{ left: `${sliderPos.maxIndex * stepWidth}%`, position:"absolute", zIndex:2, cursor: "pointer" }}
+                            <div id="rightRound" style={{ left: `${sliderPos.maxIndex * stepWidth}%`, position: "absolute", zIndex: 2, cursor: "pointer" }}
                                 onMouseDown={(e) => startDragging(e, "max")}
-                                onTouchStart={(e) => {e.preventDefault(); setDragging("max");}}
+                                onTouchStart={(e) => { e.preventDefault(); setDragging("max"); }}
                             ></div>
-                            <div id="constLine" style={{zIndex: 0}}></div>
+                            <div id="constLine" style={{ zIndex: 0 }}></div>
                             <div id="blueLine" style={blueLineStyle} ></div>
                         </div>
                         <div className="priceDot">

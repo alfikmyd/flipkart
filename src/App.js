@@ -1,7 +1,4 @@
 import {BrowserRouter as Router,Route,Routes} from "react-router-dom";
-import Header from "./component/header"
-import Footer from "./component/footer"
-// import data from "./component/data.json"
 import { useState,useEffect } from "react"
 import Parent from "./component/filterPage"
 import SelectedItem from "./component/selectItem"
