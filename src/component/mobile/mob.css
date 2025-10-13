@@ -561,7 +561,7 @@ body{
 
 #mobFooter{
     position: fixed;
-    z-index: 999;
+    z-index: 99;
     background-color: white;
     display: flex;
     justify-content: space-between;
@@ -597,6 +597,47 @@ body{
     font-family: Roboto Medium,Roboto-Medium,Droid Sans,HelveticaNeue-Medium,Helvetica Neue Medium,sans-serif-medium;
 }
 
+#clearPage{
+    position: absolute;
+    width:100%;
+    height: 30.8%;
+    align-items: center;
+    background-color: white;
+    z-index: 999;
+    margin-top: -181px;
+    /* padding-top: 50px; */
+    /* padding: 10px; */
+}
+.clearSelect{
+    /* margin-left: 12px; */
+    padding-top: 19px;
+}
+
+.clearHead{
+    font-family: Roboto Medium,Roboto-Medium,Droid Sans,HelveticaNeue-Medium,Helvetica Neue Medium,sans-serif-medium;
+    /* padding: 13px; */
+    padding-bottom: 13px;
+    padding-left: 12px;
+    border-bottom: 1px solid #e7e5e5;
+}
+.clearOpt{
+    padding-left: 12px;
+    padding-top: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.clearAllItem{
+    margin-top: 20px;
+    padding-left: 12px;
+    gap: 10px;
+}
+.clearAllItem button{
+    width: 360px;
+    height: 50px;
+    border: 1px solid #eaeaea;
+    background-color: white;
+    /* box-shadow: 1px 1px 3px #878787; */
+}
 
 
 @media screen and (max-width:768px) {
