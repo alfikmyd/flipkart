@@ -184,28 +184,28 @@ function FiltLeft({ setFilterValue, filterValue }) {
     }, [dragging]);
 
 
-    // const handleSliderMove = (type, index) => {
-    //     let newIndex = index;
+    const handleSliderMove = (type, index) => {
+        let newIndex = index;
 
-    //     if (type === "min" && newIndex >= sliderPos.maxIndex) {
-    //         newIndex = sliderPos.maxIndex - 1;
-    //     }
-    //     if (type === "max" && newIndex <= sliderPos.minIndex) {
-    //         newIndex = sliderPos.minIndex + 1;
-    //     }
+        if (type === "min" && newIndex >= sliderPos.maxIndex) {
+            newIndex = sliderPos.maxIndex - 1;
+        }
+        if (type === "max" && newIndex <= sliderPos.minIndex) {
+            newIndex = sliderPos.minIndex + 1;
+        }
 
-    //     setSliderPos((prev) => {
-    //         return type === "min"
-    //             ? { ...prev, minIndex: newIndex }
-    //             : { ...prev, maxIndex: newIndex };
-    //     });
+        setSliderPos((prev) => {
+            return type === "min"
+                ? { ...prev, minIndex: newIndex }
+                : { ...prev, maxIndex: newIndex };
+        });
 
-    //     setSelectedPrice({
-    //         min: priceSteps[type === "min" ? newIndex : sliderPos.minIndex],
-    //         max: priceSteps[type === "max" ? newIndex : sliderPos.maxIndex],
-    //     });
+        setSelectedPrice({
+            min: priceSteps[type === "min" ? newIndex : sliderPos.minIndex],
+            max: priceSteps[type === "max" ? newIndex : sliderPos.maxIndex],
+        });
 
-    // };
+    };
 
     const blueLineStyle = {
         position: "absolute",

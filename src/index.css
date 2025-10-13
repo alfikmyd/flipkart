@@ -699,6 +699,7 @@ input:active{
   font-family: "bold";
   margin-left: 10px;
   font-size: 12px;
+  margin-bottom: 10px;
 }
 #productPart .col-one img{
   width: 200px;
@@ -753,9 +754,11 @@ input:active{
 }
 
 footer{
-  background-color: #2874f0;
+  background-color: #283954;
   /* margin-top: 30px; */
   margin-bottom: 0px;
+  width: 120%;
+  margin-left: -125px;
   
 }
 footer a{

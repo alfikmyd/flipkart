@@ -5,6 +5,7 @@ import FiltLeft from "./filtLeft";
 import Product from "./proRight";
 import Mobile from "./mobile/mobile";
 import '../../src/index.css';
+import Footer from "./footer";
 
 function Parent({ initialData = [] }) {
   const [filterValue, setFilterValue] = useState({ min: 0, max: Infinity });
@@ -63,6 +64,7 @@ function Parent({ initialData = [] }) {
               setFilterValue={setFilterValue} 
             />
             <Product products={filteredProducts} />
+            <Footer/>
           </div>
         </>
       )}
