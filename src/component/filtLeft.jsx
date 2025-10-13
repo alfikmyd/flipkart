@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import assurePic from "./img/assured.png";
 
 
-
 function FiltLeft({ setFilterValue, filterValue }) {
     const [container, setContainer] = useState({});
     const [hide, setHide] = useState(false);
@@ -15,14 +14,12 @@ function FiltLeft({ setFilterValue, filterValue }) {
     const [dragging, setDragging] = useState(null);
 
     const sliderRef = useRef(null)
-    // useEffect(() => {
-    //     setFilterValue(container);
-    // }, [container,setFilterValue]);
 
     useEffect(() => {
         setFilterValue({ ...container, min: selectedPrice.min, max: selectedPrice.max });
     }, [container, selectedPrice, setFilterValue]);
 
+    
 
     const [typeHide, setTypeHide] = useState(false);
     const [prosHide, setProsHide] = useState(false);
@@ -60,7 +57,7 @@ function FiltLeft({ setFilterValue, filterValue }) {
             }
         });
     };
-
+ 
 
     const handleRemoveItem = (section, value) => {
         if (section === "price") {
@@ -121,10 +118,7 @@ function FiltLeft({ setFilterValue, filterValue }) {
 
         let numValue = value === "Min" ? 0 : value === "Max" ? Infinity : parseInt(value.replace("₹", ""));
 
-        // const closestIndex = priceSteps.reduce((acc, p, i) =>
-        //     Math.abs(p - numValue) < Math.abs(priceSteps[acc] - numValue) ? i : acc, 0);
         const index = findClosestIndex(numValue);
-
 
         setSelectedPrice((prev) => ({
             ...prev,
@@ -132,51 +126,13 @@ function FiltLeft({ setFilterValue, filterValue }) {
         }));
 
         
-        // setSliderPos((prev) => ({
-        //     ...prev,
-        //     [key + "Index"]: closestIndex
-        // }));
         setSliderPos((prev) => ({
             ...prev,
             [key === "min" ? "minIndex" : "maxIndex"] : index
         }));
 
-        // const index = findClosestIndex(numValue);
-        // setSliderPos((prev) => ({
-        //     ...prev,
-        //     [key === "min" ? "minIndex" : "maxIndex"]: index
-        // }));
+        
     };
-
-
-    // const startDragging = (e, type) => {
-    //     e.preventDefault();
-    //     const sliderRect = sliderRef.current.getBoundingClientRect();
-    //     const stepPixelWidth = sliderRect.width / (priceSteps.length - 1);
-    //     const maxIndex = 6; // max index allowed
-    //     const minIndex = 0
-
-    //     const onMouseMove = (moveEvent) => {
-    //         let newIndex = Math.round((moveEvent.clientX - sliderRect.left) / stepPixelWidth);
-
-    //         // Clamp the index
-    //         if (newIndex > maxIndex) newIndex = maxIndex;
-    //         if(newIndex < minIndex) newIndex = minIndex;
-    //         if (type === "min" && newIndex > sliderPos.maxIndex) newIndex = sliderPos.maxIndex;
-    //         if (type === "max" && newIndex < sliderPos.minIndex) newIndex = sliderPos.minIndex;
-
-    //         setSliderPos(prev => ({ ...prev, [type + "Index"]: newIndex }));
-    //         setSelectedPrice(prev => ({ ...prev, [type]: priceSteps[newIndex] }));
-    //     };
-
-    //     const onMouseUp = () => {
-    //         window.removeEventListener("mousemove", onMouseMove);
-    //         window.removeEventListener("mouseup", onMouseUp);
-    //     };
-
-    //     window.addEventListener("mousemove", onMouseMove);
-    //     window.addEventListener("mouseup", onMouseUp);
-    // };
 
     const startDragging = (e, type) => {
         e.preventDefault();
@@ -227,23 +183,6 @@ function FiltLeft({ setFilterValue, filterValue }) {
         };
     }, [dragging]);
 
-
-     
-
-    // const handleSliderMove = (type, newIndex) => {
-    //     let newIndex = index
-    //     if (type === "min" && newIndex >= sliderPos.maxIndex) newIndex = sliderPos.maxIndex -1;
-    //     if (type === "max" && newIndex <= sliderPos.minIndex) newIndex = sliderPos.minIndex + 1;
-
-    //     setSliderPos(prev => ({
-    //         ...prev,
-    //         [type + "Index"]: newIndex
-    //     }));
-    //     setSelectedPrice(prev => ({
-    //         ...prev,
-    //         [type]: priceSteps[newIndex]
-    //     }));
-    // };
 
     const handleSliderMove = (type, index) => {
     let newIndex = index;

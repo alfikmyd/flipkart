@@ -52,7 +52,7 @@ function Parent({ initialData = [] }) {
         <Mobile
           initialData={productData}
           filterValue={filterValue}
-          // setFilterValue={setFilterValue}
+          setFilterValue={setFilterValue}
         />
       ) : (
         <>
@@ -60,7 +60,7 @@ function Parent({ initialData = [] }) {
           <div id="cent">
             <FiltLeft
               filterValue={filterValue}
-              setFilterValue={setFilterValue} // pass properly
+              setFilterValue={setFilterValue} 
             />
             <Product products={filteredProducts} />
           </div>
