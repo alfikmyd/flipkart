@@ -1,6 +1,4 @@
 
-
-
 import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
@@ -81,7 +79,6 @@ function Filt({ setFilterValue }) {
         setCheckedItems({});
         setFilterValue && setFilterValue({});
     };
-
 
 
     const price = [
@@ -244,29 +241,60 @@ function Filt({ setFilterValue }) {
             <div id="clearPage">
                 <div className="clearSelect">
                     <div className="clearHead">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                        <svg onClick={() => setClear(false)} xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
                             <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
                         </svg>
-                        <span style={{fontSize:"16px"}}>Clear Filters</span>
+                        <span style={{fontSize:"16px", marginLeft:"15px"}}>Clear Filters</span>
                     </div>
 
                     <div className="clearOpt">
                         <span>Clear Filters</span>
                         <span>Would you like to clear the following filters?</span>
 
-                        <label>
-
-                            {Object.keys(checkedItems)
+                        {/* {Object.keys(checkedItems).filter(key => checkedItems[key]).length > 0 ? (
+                            Object.keys(checkedItems)
                                 .filter(key => checkedItems[key])
-                                .join("\n" || "None")
-                            }
+                                .map((key, idx) => (
+                                    <label key={idx} style={{display:"block"}}>
+                                        <input type="checkbox"
+                                            checked={true}
+                                            onChange={() => setCheckedItems(prev => ({
+                                                ...prev,
+                                                [key]: false
+                                            }))}
+                                        />
+                                        {key}
+                                    </label>
+                                ))
+                        ): (
+                            <p></p>
+                        )} */}
 
-                        </label>
+                        {Object.keys(checkedItems).map((filterType) => {
+                            const hasSelected = Object.values(checkedItems[filterType] || {}).some(Boolean)
+                            if(!hasSelected) return null;
+
+                            return(
+                                <label key={filterType} style={{display:"block"}}>
+                                    <input type="checkbox"
+                                    checked={true}
+                                    onChange={() => setCheckedItems((prev) => ({
+                                        ...prev,
+                                        [filterType]: {},
+                                    }))}
+                                    />
+                                    {filterType}
+                                </label>
+                            );
+                        })}
                     </div>
+ 
+                   
 
                     <div className="clearAllItem">
-                        <button onClick={() => navigate()}>Cancel</button>
-                        <button style={{marginLeft:"20px",backgroundColor:"#2874f0",color:"white"}} onClick={clearFilters}>Clear</button>
+                        <button onClick={() => setClear(false)}>Cancel</button>
+                        <button style={{marginLeft:"20px",backgroundColor:"#2874f0",color:"white"}} 
+                            onClick={() =>{clearFilters(); setClear(false)}}>Clear</button>
                     </div>
                 </div>
             </div>
@@ -276,7 +304,6 @@ function Filt({ setFilterValue }) {
     );
 }
 export default Filt;
-
 
 
 

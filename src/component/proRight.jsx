@@ -9,7 +9,7 @@ function Product({ products = [] }) {
     const [sortOption, setSortOption] = useState("relevance");
 
     const sortedProducts = useMemo(() => {
-        const productsCopy = [...products];
+        const productsCopy = [...products]
 
         switch (sortOption) {
             case "popularity":
@@ -32,12 +32,14 @@ function Product({ products = [] }) {
                 );
             default:
                 return productsCopy;
-        }
+        } 
     }, [products, sortOption]);
 
     if (!sortedProducts || sortedProducts.length === 0) {
         return <p>No products found</p>;
     }
+
+    console.log("product prop: ", products);
 
     return (
         <div id="right">

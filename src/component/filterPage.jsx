@@ -29,13 +29,11 @@ function Parent({ initialData = [] }) {
     }
   }, [productData]);
 
-  // Filtered products
   const filteredProducts = useMemo(() => {
     return productData.filter((p) => {
       const priceNum = parseInt((p.price || "0").toString().replace(/[^\d]/g, ""));
       if (priceNum < (filterValue.min ?? 0) || priceNum > (filterValue.max ?? Infinity)) return false;
 
-      // Filter other keys dynamically
       for (const [key, values] of Object.entries(filterValue)) {
         if (key === "min" || key === "max") continue;
         if (Array.isArray(values) && values.length > 0) {
@@ -46,6 +44,10 @@ function Parent({ initialData = [] }) {
       return true;
     });
   }, [productData, filterValue]);
+
+
+
+  console.log("fil pro: ",filterValue)
 
   return (
     <>
@@ -64,8 +66,9 @@ function Parent({ initialData = [] }) {
               setFilterValue={setFilterValue} 
             />
             <Product products={filteredProducts} />
-            <Footer/>
+            
           </div>
+          <Footer />
         </>
       )}
     </>

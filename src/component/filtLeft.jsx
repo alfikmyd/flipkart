@@ -237,37 +237,37 @@ function FiltLeft({ setFilterValue, filterValue }) {
     ];
 
 
-    const processor = [
+    const pros = [
         { label: "Core i5", value: "Core i5" },
         { label: "Core i3", value: "Core i3" },
         { label: "Core i7", value: "Core i7" },
         { label: "Core i9", value: "Core i9" },
     ];
-    const generation = [
+    const proGen = [
         { label: "13th Gen", value: "13th Gen" },
         { label: "12th Gen", value: "12th Gen" },
         { label: "11th Gen", value: "11th Gen" },
         { label: "10th Gen", value: "10th Gen" },
     ];
-    const ram = [
+    const ramCapa = [
         { label: "8 GB", value: "8GB" },
         { label: '16 GB', value: "16 GB" },
         { label: '32 GB', value: "32 GB" },
         { label: "6 GB", value: "6 GB" },
     ];
-    const ssd = [
+    const ssdCapa = [
         { label: "512 GB", value: "512 GB" },
         { label: "256 GB", value: "256 GB" },
         { label: "1 TB", value: "1 TB" },
         { label: "128 GB", value: "128 GB" }
     ];
-    const scrnSize = [
+    const screen = [
         { label: "Below 12 inch", value: "Below 12 inch" },
         { label: "14 inch - 14.9 inch", value: "14 inch - 14.9 inch" },
         { label: "15 inch - 15.9 inch", value: '15 inch - 15.9 inch' },
         { label: "Above 20 inch", value: "Above 20 inch" }
     ];
-    const os = [
+    const operating = [
         { label: "Windows 11 Home", value: "Windows 11 Home" },
 
         { label: "Windows 11", value: "Windows 11" },
@@ -336,7 +336,7 @@ function FiltLeft({ setFilterValue, filterValue }) {
         { label: "30% or More", value: "30% or More" },
         { label: "20% or More", value: "20% or More" }
     ];
-    const rate = [
+    const ratings = [
         { label: "4★ & above", value: "4★ & above" },
         { label: "3★ & above", vlaue: "3★ & above" },
         { label: "2★ & above", value: "2★ & above" },
@@ -469,21 +469,21 @@ function FiltLeft({ setFilterValue, filterValue }) {
 
 
                         <div className="checkBrand">
-                            {container.brand && container.brand.length > 0 && (
+                            {container.name && container.name.length > 0 && (
                                 // {container.brand?.length > 0 && ( 
-                                <span className="brandClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("brand")}>
-                                    <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all</span>
+                                <div className="brandClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("name")}>
+                                    <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all</div>
                             )}
-                            <label id="hp" htmlFor="hp"><input type="checkbox" value="HP" checked={container.brand?.includes("HP") || false}
+                            <label id="hp" htmlFor="hp"><input type="checkbox" value="HP" checked={container.name?.includes("HP") || false}
                                 onChange={() => {
-                                    handleCheckbox("brand", "HP");
+                                    handleCheckbox("name", "HP");
 
                                 }} />
                                 HP
                             </label>
-                            <label id="asus" htmlFor="asus"><input type="checkbox" value="ASUS" checked={container.brand?.includes("ASUS") || false} onChange={() => handleCheckbox("brand", "ASUS")} /> ASUS</label>
-                            <label id="lenovo" htmlFor="lenovo"><input type="checkbox" value="Lenovo" checked={container.brand?.includes("Lenovo") || false} onChange={() => handleCheckbox("brand", "Lenovo")} /> Lenovo</label>
-                            <label id="dell" htmlFor="dell"><input type="checkbox" value="DELL" checked={container.brand?.includes("DELL") || false} onChange={() => handleCheckbox("brand", "DELL")} /> DELL</label>
+                            <label id="asus" htmlFor="asus"><input type="checkbox" value="ASUS" checked={container.name?.includes("ASUS") || false} onChange={() => handleCheckbox("name", "ASUS")} /> ASUS</label>
+                            <label id="lenovo" htmlFor="lenovo"><input type="checkbox" value="Lenovo" checked={container.name?.includes("Lenovo") || false} onChange={() => handleCheckbox("name", "Lenovo")} /> Lenovo</label>
+                            <label id="dell" htmlFor="dell"><input type="checkbox" value="DELL" checked={container.name?.includes("DELL") || false} onChange={() => handleCheckbox("name", "DELL")} /> DELL</label>
                             <span style={{ fontSize: "12px", color: "#2c7af8ff", marginTop: "10px", fontWeight: "bold", marginLeft: "0px" }}>19 MORE</span>
                         </div>
                     )}
@@ -532,15 +532,15 @@ function FiltLeft({ setFilterValue, filterValue }) {
 
                     {prosHide && (
                         <div className="checkProcessor">
-                            {container.processor && container.processor.length > 0 && (
-                                <div className="procesorClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("processor")}>
+                            {container.pros && container.pros.length > 0 && (
+                                <div className="procesorClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("pros")}>
                                     <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all
                                 </div>
                             )}
 
-                            {processor.map((item) => (
+                            {pros.map((item) => (
                                 <label key={item.label} className={item.label}>
-                                    <input type="checkbox" value={item.value} checked={container.processor?.includes(item.value) || false} onChange={() => handleCheckbox("processor", item.value)} />
+                                    <input type="checkbox" value={item.value} checked={container.pros?.includes(item.value) || false} onChange={() => handleCheckbox("pros", item.value)} />
                                     {item.label}
                                 </label>
                             ))}
@@ -559,14 +559,14 @@ function FiltLeft({ setFilterValue, filterValue }) {
 
                     {ramHide && (
                         <div className="checkRam">
-                            {container.ram && container.ram.length > 0 && (
-                                <div className="ramClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("ram")}>
+                            {container.ramCapa && container.ramCapa.length > 0 && (
+                                <div className="ramClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("ramCapa")}>
                                     <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all
                                 </div>
                             )}
-                            {ram.map((item) => (
+                            {ramCapa.map((item) => (
                                 <label key={item.label} className={item.label}>
-                                    <input type="checkbox" value={item.value} checked={container.ram?.includes(item.value) || false} onChange={() => handleCheckbox("ram", item.value)} /> {item.value}
+                                    <input type="checkbox" value={item.value} checked={container.ramCapa?.includes(item.value) || false} onChange={() => handleCheckbox("ramCapa", item.value)} /> {item.value}
                                 </label>
                             ))}
                         </div>
@@ -583,14 +583,14 @@ function FiltLeft({ setFilterValue, filterValue }) {
 
                     {ssdHide && (
                         <div className="checkSsd">
-                            {container.ssd && container.ssd.length > 0 && (
-                                <div className="ssdClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("ssd")}>
+                            {container.ssdCapa && container.ssdCapa.length > 0 && (
+                                <div className="ssdClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("ssdCapa")}>
                                     <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all
                                 </div>
                             )}
-                            {ssd.map((item) => (
+                            {ssdCapa.map((item) => (
                                 <label key={item.label} className={item.label}>
-                                    <input type="checkbox" value={item.value} checked={container.ssd?.includes(item.value) || false} onChange={() => handleCheckbox("ssd", item.value)} /> {item.value}
+                                    <input type="checkbox" value={item.value} checked={container.ssdCapa?.includes(item.value) || false} onChange={() => handleCheckbox("ssdCapa", item.value)} /> {item.value}
                                 </label>
                             ))}
                         </div>
@@ -607,14 +607,14 @@ function FiltLeft({ setFilterValue, filterValue }) {
 
                     {sizeHide && (
                         <div className="checkSize">
-                            {container.scrnSize && container.scrnSize.length > 0 && (
-                                <div className="sizeClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("scrnSize")}>
+                            {container.screen && container.screen.length > 0 && (
+                                <div className="sizeClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("screen")}>
                                     <span style={{ backgroundColor: '#dddd', color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all
                                 </div>
                             )}
-                            {scrnSize.map((item) => (
+                            {screen.map((item) => (
                                 <label key={item.label} className={item.label}>
-                                    <input type="checkbox" value={item.value} checked={container.scrnSize?.includes(item.value) || false} onChange={() => handleCheckbox("scrnSize", item.value)} /> {item.value}
+                                    <input type="checkbox" value={item.value} checked={container.screen?.includes(item.value) || false} onChange={() => handleCheckbox("screen", item.value)} /> {item.value}
                                 </label>
                             ))}
                         </div>
@@ -631,14 +631,14 @@ function FiltLeft({ setFilterValue, filterValue }) {
 
                     {osHide && (
                         <div className="checkOs">
-                            {container.os && container.os.length > 0 && (
-                                <div className="osClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("os")}>
+                            {container.operating && container.operating.length > 0 && (
+                                <div className="osClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("operating")}>
                                     <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all
                                 </div>
                             )}
-                            {os.map((item) => (
+                            {operating.map((item) => (
                                 <label key={item.label} className={item.label}>
-                                    <input type="checkbox" value={item.value} checked={container.os?.includes(item.value) || false} onChange={() => handleCheckbox("os", item.value)} /> {item.value}
+                                    <input type="checkbox" value={item.value} checked={container.operating?.includes(item.value) || false} onChange={() => handleCheckbox("operating", item.value)} /> {item.value}
                                 </label>
                             ))}
                         </div>
@@ -677,14 +677,14 @@ function FiltLeft({ setFilterValue, filterValue }) {
                     </div>
                     {rateHide && (
                         <div className="checkUsage">
-                            {container.rate && container.rate.length > 0 && (
-                                <div className="usageClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("rate")}>
+                            {container.ratings && container.ratings.length > 0 && (
+                                <div className="usageClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("ratings")}>
                                     <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all
                                 </div>
                             )}
-                            {rate.map((item) => (
+                            {ratings.map((item) => (
                                 <label key={item.label}>
-                                    <input type="checkbox" value={item.value} checked={container.rate?.includes(item.value) || false} onChange={() => handleCheckbox("rate", item.value)} /> {item.label}
+                                    <input type="checkbox" value={item.value} checked={container.ratings?.includes(item.value) || false} onChange={() => handleCheckbox("ratings", item.value)} /> {item.label}
                                 </label>
                             ))}
                         </div>
@@ -726,14 +726,14 @@ function FiltLeft({ setFilterValue, filterValue }) {
                     </div>
                     {genHide && (
                         <div className="checkGen">
-                            {container.generation && container.generation.length > 0 && (
-                                <div className="genClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("generation")}>
+                            {container.proGen && container.proGen.length > 0 && (
+                                <div className="genClear iClear" style={{ color: "#878787", cursor: "pointer" }} onClick={() => clearItem("proGen")}>
                                     <span style={{ backgroundColor: "#dddd", color: "black", padding: "1px", paddingLeft: "3px", paddingRight: "3px" }}>x</span> Clear all
                                 </div>
                             )}
-                            {generation.map((item) => (
+                            {proGen.map((item) => (
                                 <label key={item.label} className={item.label}>
-                                    <input type="checkbox" value={item.value} checked={container.generation?.includes(item.value) || false} onChange={() => handleCheckbox("generation", item.value)} /> {item.value}
+                                    <input type="checkbox" value={item.value} checked={container.proGen?.includes(item.value) || false} onChange={() => handleCheckbox("proGen", item.value)} /> {item.value}
                                 </label>
                             ))}
                         </div>

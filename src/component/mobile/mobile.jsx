@@ -67,7 +67,6 @@ function Mobile({ initialData = [], filterValue = {}, setFilterValue }) {
         });
     }, [items, filterValue, checkedItems, filteredItems]);
 
-    console.log("🎯 Final products to display:", filteredProducts);
 
     
     const sortedProducts = useMemo(() => {

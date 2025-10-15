@@ -630,6 +630,7 @@ body{
     margin-top: 20px;
     padding-left: 12px;
     gap: 10px;
+    position: fixed;
 }
 .clearAllItem button{
     width: 360px;
