@@ -92,7 +92,7 @@ function MobHead({ prod = [], sortSelect, setSortSelect, checkedItems, setChecke
                                     left:0,
                                     width: "100%",
                                     height:"100%",
-                                    background: "rgba(0,0,0,0.66",
+                                    background: "rgba(0,0,0,0.66)",
                                     zIndex: 50,
                                 }}
                                 onClick={() => setSort(false)}

@@ -77,50 +77,19 @@ function Filt({ setFilterValue }) {
 
     const anyChecked = Object.values(checkedItems).some(group => Object.values(group).some(Boolean));
 
-    // const clearFilters = () => {
-    //     setCheckedItems({});
-    //     setFilterValue && setFilterValue({});
-    // };
+    const openClearModal = () => {
+        const keysWithSelected = Object.keys(checkedItems).filter(
+            key => Object.values(checkedItems[key] || {}).some(Boolean)
+        );
+        const initialModalKeys = {};
+        keysWithSelected.forEach(key => {
+            initialModalKeys[key] = true;
+        });
+        setModalCheckedKeys(initialModalKeys);
+        setClear(true);
+    }
 
-    // const clearFilters =() => {
-    //     const keyToClear = Object.keys(modalCheckedKeys).filter(key => modalCheckedKeys[key]);
-    //     if(keyToClear.length === 0){
-    //         // setClear(false);
-    //         return;
-    //     }
-    //     setCheckedItems(prev => {
-    //         const updated = {...prev};
-    //         keyToClear.forEach(key => {
-    //             updated[key] = {};
-    //         });
-    //         return updated;
-    //     });
-    //     setFilterValue && setFilterValue(prev => {
-    //         const updated = {...prev};
-    //         keyToClear.forEach(key => delete updated[key]);
-    //         return updated;
-    //     });
-    //     // setModalCheckedKeys({});
-    //     // setClear(false);
-
-    //     console.log("poyi");
-    // };
-
-
-    //     const openClearModal = () => {
-    //     // initialize modalCheckedKeys with all currently selected filters
-    //     const keysWithSelected = Object.keys(checkedItems).filter(
-    //         key => Object.values(checkedItems[key] || {}).some(Boolean)
-    //     );
-
-    //     const initialModalKeys = {};
-    //     keysWithSelected.forEach(key => {
-    //         initialModalKeys[key] = true;
-    //     });
-
-    //     setModalCheckedKeys(initialModalKeys);
-    //     setClear(true);
-    // };
+    
 
     const clearFilters = () => {
         const keyToClear = Object.keys(modalCheckedKeys).filter(key => modalCheckedKeys[key]);
@@ -142,9 +111,9 @@ function Filt({ setFilterValue }) {
 
         // setClear(false);
         setModalCheckedKeys({});
+
+        console.log("filters cleared")
     };
-
-
 
 
     const price = [
@@ -195,7 +164,7 @@ function Filt({ setFilterValue }) {
 
     ];
 
-    const os = [
+    const OS = [
         { label: "Windows 11 Home", value: "Windows 11 Home" }, { label: "Windows 11", value: "Windows 11" },
         { label: "Chrome", value: "Chrome" }, { label: "Mac OS", value: "Mac OS" },
         { label: "Android", value: "Android" }, { label: "Windows 10", value: "Windows 10" }
@@ -232,12 +201,12 @@ function Filt({ setFilterValue }) {
 
     const filterMap = {
         price, brand, type, processor, generation, ram, ssd, screen,
-        os, discount, customer, touch, storage, ramType, availability
+        OS, discount, customer, touch, storage, ramType, availability
     };
 
     return (
         <>
-            <div id="smallFilt" style={{ position: "relative" }}>
+            <div id="smallFilt" style={{ position: "relative",width:"100%",overflowY:"hidden" }}>
                 <div id="filtHead">
                     <Link to={"/product"} style={{ textDecoration: "none", color: "black" }}>
                         <div>
@@ -249,12 +218,11 @@ function Filt({ setFilterValue }) {
                     </Link>
 
                     {anyChecked && (
-                        <div className="mobClearFilt" onClick={() => setClear(true)}>
+                        <div className="mobClearFilt" onClick={openClearModal}>
                             <span>Clear Filters</span>
                         </div>
                     )}
                 </div>
-
 
 
                 <div className="mobFilters">
@@ -304,38 +272,49 @@ function Filt({ setFilterValue }) {
 
 
             {clear && (
-                <div id="clearPage">
+                <div id="clearPage"
+                    style={{backgroundColor:"#393b3dbc"}}
+                >
                     <div className="clearSelect">
-                        <div className="clearHead">
-                            <svg onClick={() => setClear(false)} xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
-                                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
-                            </svg>
-                            <span style={{ fontSize: "16px", marginLeft: "15px" }}>Clear Filters</span>
-                        </div>
+                        <div className="cl">
+                            <div className="clearHead">
+                                <svg onClick={() =>
+                                    setClear(false)
 
-                        <div className="clearOpt" style={{marginTop:"auto",height:"auto",marginBottom:""}} >
-                            <span>Clear Filters</span>
-                            <span>Would you like to clear the following filters?</span>
-
-                            <div style={{overflowY:"scroll", position:"absolute",height:"auto",marginTop:"10px"}}>
-                            {Object.keys(checkedItems).map((filterType) => {
-                                const hasSelected = Object.values(checkedItems[filterType] || {}).some(Boolean);
-                                if (!hasSelected) return null;
-
-                                return (
-                                    <label key={filterType} style={{ display: "block", height: "auto" }}>
-                                        <input type="checkbox"
-                                            checked={modalCheckedKeys[filterType] ?? true}
-                                            onChange={(e) => setModalCheckedKeys((prev) => ({
-                                                ...prev,
-                                                [filterType]: e.target.checked
-                                            }))}
-                                        />
-                                        {filterType}
-                                    </label>
-                                );
-                            })}
+                                }
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
+                                    <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+                                </svg>
+                                <span className="headClr" >Clear Filters</span>
                             </div>
+
+                            <div className="clearOpt" style={{ marginTop: "auto", height: "auto", marginBottom: "" }} >
+                                <span className="clearItmHead">Clear Filters</span>
+                                <span style={{fontSize:"14px", color:"#8a8989ff"}}>Would you like to clear the following filters?</span>
+
+                                <div style={{ overflowY: "scroll", height: "auto", marginTop: "10px",marginBottom:"25px" }}>
+                                    {Object.keys(checkedItems).map((filterType) => {
+                                        const hasSelected = Object.values(checkedItems[filterType] || {}).some(Boolean);
+                                        if (!hasSelected) return null;
+
+                                        return (
+                                            <label key={filterType} style={{ display: "block", height: "auto",fontSize:"14px" }}>
+
+                                                <input type="checkbox" style={{marginRight:"10px"}}
+                                                    checked={!!modalCheckedKeys[filterType]}
+                                                    onChange={(e) => setModalCheckedKeys((prev) => ({
+                                                        ...prev,
+                                                        [filterType]: e.target.checked,
+                                                    }))}
+                                                />
+
+                                                {filterType}
+                                            </label>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+
                         </div>
 
                         <div className="clearAllItem">
@@ -346,19 +325,19 @@ function Filt({ setFilterValue }) {
                                 }
                                 onClick={() => {
                                     clearFilters();
-                                    // setClear(false);
-                                    setModalCheckedKeys({});
+                                    setClear(false);
+                                    // setModalCheckedKeys({});
+                                    // openClearModal();
+                                    setTimeout(() => setModalCheckedKeys({}), 0);
                                 }}>Clear</button>
                         </div>
                     </div>
                 </div>
             )}
 
-        </>
+        </> 
     );
 }
 export default Filt;
-
-
 
 
