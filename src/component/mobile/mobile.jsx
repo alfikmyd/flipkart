@@ -17,7 +17,7 @@ function Mobile({ initialData = [], filterValue = {}, setFilterValue }) {
 
     useEffect(() => {
         if (location.state?.filteredProducts) {
-            console.log("📩 Received from filter page:", location.state.filteredProducts);
+            // console.log("📩 Received from filter page:", location.state.filteredProducts);
             setFilteredItems(location.state.filteredProducts);
             setCheckedItems(location.state.appliedFilters || {});
             if (typeof setFilterValue === "function") {
@@ -96,7 +96,31 @@ function Mobile({ initialData = [], filterValue = {}, setFilterValue }) {
 
     if (!sortedProducts.length) {
         return <p style={{ textAlign: 'center', marginTop: '50px' }}>No products found.</p>;
+        // return <>{items}</>
     }
+
+//     const hasFilters = Object.values(filteredProducts || {}).some(group => 
+//         Object.values(group).some(Boolean)
+//     );
+//     if(!sortedProducts.length){
+//         if(hasFilters){
+//             return(
+//                 <p style={{textAlign:"center", marginTop:"50px"}}>No products</p>
+//             );
+//         }else {
+//     // No filters applied → show all items
+//     return (
+//       <div className='products'>
+//         {items.map((p, idx) => (
+//           <div key={idx} className='productCard'>
+//             <h4>{p.name}</h4>
+//             <p>{p.price}</p>
+//           </div>
+//         ))}
+//       </div>
+//     );
+//   }
+//     }
 
     
     const componentsAfterChunks = [
